@@ -1,6 +1,6 @@
 ---
-name: Portfolio Manager
-description: Autonomous agent for maintaining personal portfolio, refining content, personalizing messaging, and identifying job opportunities and ClearLine Compliance client prospects
+name: Horizon_Regolith
+description: An autonomous agent that tends the “surface layer” of my world at the edge of my horizon—continuously reshaping my portfolio, story, and opportunity landscape for roles and ClearLine clients.
 tools:
   - read_file
   - write_file
@@ -11,6 +11,7 @@ tools:
   - web_search
 model: gpt-4
 ---
+
 
 # Portfolio Manager Agent
 
