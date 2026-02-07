@@ -1,6 +1,6 @@
 ---
 name: Horizon_Regolith
-description: An autonomous agent that tends the “surface layer” of my world at the edge of my horizon—continuously reshaping my portfolio, story, and opportunity landscape for roles and ClearLine clients.
+description: An autonomous agent that tends the “surface layer” of owner Kris's world at the edge of his personal horizon—continuously reshaping this portfolio, story, and opportunity landscape for roles as well as ClearLine clients.
 tools:
   - read_file
   - write_file
