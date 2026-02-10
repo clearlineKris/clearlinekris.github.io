@@ -300,6 +300,153 @@ h3 {
     color: var(--color-text-muted);
 }
 
+/* ===== Our Story Section ===== */
+.our-story {
+    background: var(--color-bg);
+}
+
+.story-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.story-intro p {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.timeline-section {
+    margin-bottom: 60px;
+}
+
+.timeline-section h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+    color: var(--color-text);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-dim) 100%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 6px var(--color-primary-glow);
+}
+
+.timeline-year {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.timeline-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+.timeline-content p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.personal-narrative {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.personal-narrative h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.personal-narrative p {
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.personal-narrative p:last-child {
+    margin-bottom: 0;
+}
+
+.personal-narrative strong {
+    color: var(--color-primary);
+}
+
+.mission-connection {
+    text-align: center;
+    padding: 40px;
+}
+
+.mission-connection h3 {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+    color: var(--color-text);
+}
+
+.mission-connection p {
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.mission-connection strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.mission-highlight {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--color-primary-glow);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-primary) !important;
+    font-weight: 500;
+    font-size: 1.1rem !important;
+}
+
 /* ===== States Section ===== */
 .states-grid {
     display: flex;
@@ -438,6 +585,23 @@ h3 {
     
     .services-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline-item {
+        padding-left: 20px;
+    }
+    
+    .timeline-item::before {
+        left: -24px;
+    }
+    
+    .personal-narrative,
+    .mission-connection {
+        padding: 24px;
     }
 }
 
