@@ -10,6 +10,10 @@ tools:
   - search_github_issues
   - search_github_prs
   - web_search
+  - bash
+  - rg
+  - glob
+  - edit
 model: gpt-4
 ---
 
