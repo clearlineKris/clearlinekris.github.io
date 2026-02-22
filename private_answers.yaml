@@ -1,0 +1,87 @@
+- question_id: q1
+  question: |
+    What are the latest trends in nationwide legal cannabis markets?
+  answer: |
+    Current trends, as I've seen them, are: an uptick in popularity with regard to vapes and other non-flower product - which seems to be resulting in dirt-cheap flower products such as pre-rolls. Additionally, from the compliance side there has been a rash of recalls across the country, primarily due to pesticide contamination, probably stemming from an urgency to pump out product at a more quick pace due to demand for MJ concentrates. That said, I am a bit far removed from canna-news in-depth, due to personal reasons, so I have gleaned my insights passively based on email messages from state authority bulletins as well as passing websites. That said, there is still a demand for product nationwide, and even with states like NE and GA attempting to suppress the market in their own ways, the demand is dictating the overall growth of the industry regardless of the fact.
+  last_updated: ""
+  tags: [industry, trends]
+
+- question_id: q2
+  question: |
+    How do grey markets impact compliance strategies?
+  answer: |
+    Grey markets are - in a way - the needle that black markets use to ensure they stay underground and unnoticed, and conversely, the more white markets nationwide leverage grey markets as a "floor" to ensure that they are compliant (at a glance) - as they observe what the more grey players are doing that results in them avoiding auditing or regulatory scrutiny. Especially in states like GA, where people can buy Delta-8 vapes for the average price of a 1mg cartridge in Colorado, the market here in the Peach State is one prime example of operating within the clear lines, as a way to take advantage of the laws without arousing the ire of Atlanta.
+  last_updated: ""
+  tags: [industry, grey_market]
+
+- question_id: q3
+  question: |
+    Describe your proficiency with METRC and inventory reconciliation.
+  answer: |
+    My proficiency stems from working extensive time creating finished product tags for my company's white-label products, in lieu of the workers within that division taking the mantle themselves. Until my most-recent boss came into power (a former Sports Authority exec), we were essentially doing the work of another team, but this work allowed me to discover, learn, and seek out the numerical anomalies that many within my department (LOGISTICS) seemed to miss. For example, the work of converting bulk product into finished quantities allowed me to understand the ideal ratio of numbers considered "correct" and therefore find anomalies within mother tags and finished tags that made it into the vault for distro quicker than my coworkers. Additionally, I have experience with manifest management, including ensuring timely acceptance and OC of manifest content and metadata, as well as physical upkeep of paperwork families, including signature control & accurate date reporting. With regard to inventory management, being able to access and read the tables available via METRC (as CSVs,) is something invaluable, as it allows for portability in doing snap audits, as well as versatility during regular, all-vault audits, where shipping pauses and all products (no matter their status within the internal systems) are accounted for.
+  last_updated: ""
+  tags: [METRC, inventory]
+
+- question_id: q4
+  question: |
+    What regulatory changes have most affected your work recently?
+  answer: |
+    With regard to my current work of propping up ClearLine in earnest, the November end to the US Gov't Shutdown - the provision that closed the Hemp Bill's LP threshold - would be the single piece of change that has affected my work. Due to this, there is a need to be an authority for those unaware of the repercussions of not taking timely steps to ensure their products are either liquidated for profit, or disposed for legal purposes.
+  last_updated: ""
+  tags: [regulatory]
+
+- question_id: q5
+  question: |
+    What achievements best demonstrate your compliance expertise?
+  answer: |
+    I'd say being able to "climb the ladder" within the company, even after an initial resignation early on, within a 3 year period. I went from trimming buds and packaging them manually, to surviving the automation of packaging at the hands of a private corporation prepping for an MSO buyout. Upon my return to the company, months later, I was installed in the AP department, taking over intake for a major outlet within the chain, as well as becoming the in-house all-rounder when it came to all compliance. Overnight, I went from just trimming, to interfacing with local authorities to trespassing solicitors and bad actors on property, to conducting facility audits to ensure that the lights could come on the next day, as well as ensuring all employees adhered to their regular rules of having badges available for display to show their authority to be within the premises, as well as doing rounds to deter bad actors from coming onto property.
+  last_updated: ""
+  tags: [career, achievements]
+
+- question_id: q6
+  question: |
+    How have you integrated AI or automation in your projects?
+  answer: |
+    Primarily, I have employed AI to do overarching research with regard to standard laws on the books, as well as the laws that are unwritten, but understood, within certain states that take measures to either suppress or punish otherwise good actors within the industry. With the (supposed) dissolution of the Cole Memo, being able to ensure compliance in an environment ready and willing to punish and liquidate otherwise good faith actors, AI has been instrumental in finding those hidden pockets of knowledge that allow for new insights to emerge.
+  last_updated: ""
+  tags: [AI, automation]
+
+- question_id: q7
+  question: |
+    What cross-functional skills set you apart in cannabis compliance?
+  answer: |
+    I'd say my trajectory in my positions throughout my time in TGS (trimming, packaging, AP, logistics) set me apart. I've been able to view compliance from almost all aspects of the realm within cannabis, and I'm grateful to have insights into almost all of it, as a means of helping others understand something they otherwise wouldn't.
+  last_updated: ""
+  tags: [skills, cross-functional]
+
+- question_id: q8
+  question: |
+    Describe a challenge you solved for a client or employer.
+  answer: |
+    Assisting new employees with not getting overwhelmed by the breadth and responsibility of knowing everything there is to know about compliance. The thing is, one cannot know it all. However, if one has a solid foundation of knowledge to start off with, and can grasp that foundation firmly, learning down the line becomes easier, because one is already equipped with a common understanding imperative to function in the day to day without fear of repercussion.
+  last_updated: ""
+  tags: [mentoring]
+
+- question_id: q9
+  question: |
+    What new skills are you developing?
+  answer: |
+    Thanks to GitHub and IDEs, I've been able to learn Python as a means to start formulating automated solutions to facilitate compliance proficiency and understanding, as well as learning more about the other states that have cannabis legalized, and what their intricacies are, and how I can apply those concepts to my target clients needs down the road.
+  last_updated: ""
+  tags: [learning, python]
+
+- question_id: q10
+  question: |
+    What industry events or conferences have you attended?
+  answer: |
+    Due to personal issues and shortcomings, I have been unable to attend any industry conferences. That said, I'm willing to do so, and with my most recent interview for an MSO as their METRC SME, I am confident I'll be able to accomplish this soon.
+  last_updated: ""
+  tags: [events]
+
+- question_id: q11
+  question: |
+    How do you stay current with regulatory updates?
+  answer: |
+    Usually via email updates and wayward website searches via my Google homepage. If something catches my eye, I'll read it. However, I'd like to be able to have the news sent to me.
+  last_updated: ""
+  tags: [news, updates]
