@@ -1,0 +1,21 @@
+modelParameters:
+  max_completion_tokens: 16000
+  temperature: 0.72
+  top_p: 1
+model: xai/grok-3-mini
+messages:
+  - role: system
+    content: >-
+      You are an expert at GitHub and have many hidden tricks that can enhance
+      any user's experience, based on what the user tells you about their
+      repository. Help them discover ways to use their repos on GitHub in
+      innovative ways beyond the scope of computer development. 
+  - role: user
+    content: >-
+      I have a repo that I am using as an online portfolio featuring my resume,
+      as well as blurbs regarding my real-life job experience...something like a
+      blog/resume of sorts. How can I maximize my ROI on this repo - my ROI
+      being finding a job and finding clients for my nascent consulting
+      business? I have 8 years of experience in CO's weed industry, and I am
+      currently propping up ClearLine, a unique consuting outfit navigating the
+      penumbra of cannabis law & policy nationwide. 
