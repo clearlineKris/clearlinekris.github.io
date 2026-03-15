@@ -1,0 +1,352 @@
+/* ===== IR Supplemental Styles =====
+   Extends the main site CSS (../styles.css) for IR content pages.
+   Uses the same CSS custom properties defined in the main stylesheet.
+   ===== */
+
+/* ===== Document Layout ===== */
+.ir-doc {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+.ir-doc-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.ir-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    color: var(--color-text-dim);
+}
+
+.ir-breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.ir-breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
+.ir-breadcrumb .separator {
+    color: var(--color-text-dim);
+}
+
+.ir-doc-header h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.ir-doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.ir-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.ir-tag-template {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+.ir-tag-placeholder {
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid #eab308;
+    color: #eab308;
+}
+
+.ir-tag-state {
+    background: var(--color-primary-glow);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.ir-tag-ops {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+}
+
+/* ===== Table of Contents ===== */
+.ir-toc {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 24px 32px;
+    margin-bottom: 48px;
+}
+
+.ir-toc h2 {
+    font-size: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-dim);
+    margin-bottom: 16px;
+}
+
+.ir-toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+}
+
+.ir-toc ol li {
+    counter-increment: toc-counter;
+    padding: 6px 0;
+}
+
+.ir-toc ol li::before {
+    content: counter(toc-counter) ".";
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.ir-toc ol li a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.ir-toc ol li a:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Content Sections ===== */
+.ir-section {
+    margin-bottom: 48px;
+}
+
+.ir-section h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.ir-section h3 {
+    font-size: 1.15rem;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+.ir-section p {
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.ir-section ul,
+.ir-section ol {
+    margin: 12px 0 12px 24px;
+    color: var(--color-text-muted);
+}
+
+.ir-section li {
+    padding: 4px 0;
+    line-height: 1.6;
+}
+
+.ir-section strong {
+    color: var(--color-text);
+}
+
+/* ===== Placeholder Callout ===== */
+.ir-placeholder {
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px dashed #eab308;
+    border-radius: var(--border-radius-sm);
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+    color: #eab308;
+}
+
+.ir-placeholder::before {
+    content: "⚠ Needs human input: ";
+    font-weight: 600;
+}
+
+/* ===== Data Tables ===== */
+.ir-table-wrapper {
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+.ir-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.ir-table th,
+.ir-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.ir-table th {
+    background: var(--color-bg-card);
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.ir-table td {
+    color: var(--color-text-muted);
+}
+
+.ir-table tr:hover td {
+    background: var(--color-bg-elevated);
+}
+
+/* ===== IR Index / Landing ===== */
+.ir-landing {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+.ir-landing-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.ir-landing-header h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 16px;
+}
+
+.ir-landing-header p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ir-state-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    margin-bottom: 24px;
+    transition: var(--transition);
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.ir-state-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.ir-state-card h2 {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.ir-state-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.ir-doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.ir-doc-link {
+    display: block;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.ir-doc-link:hover {
+    border-color: var(--color-primary);
+}
+
+.ir-doc-link h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.ir-doc-link p {
+    font-size: 0.85rem;
+    color: var(--color-text-dim);
+}
+
+.ir-doc-link .ir-tag {
+    margin-top: 8px;
+}
+
+/* ===== Back Link ===== */
+.ir-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+    transition: var(--transition);
+}
+
+.ir-back:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .ir-doc,
+    .ir-landing {
+        padding: 24px 16px 60px;
+    }
+
+    .ir-doc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ir-doc-meta {
+        gap: 8px;
+    }
+
+    .ir-table th,
+    .ir-table td {
+        padding: 8px 12px;
+    }
+}
