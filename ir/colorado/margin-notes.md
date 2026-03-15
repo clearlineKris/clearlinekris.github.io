@@ -1,6 +1,6 @@
 # Margin Notes — Colorado
 
-> **Status:** `[TEMPLATE]` — Outline-level scaffolding only  
+> **Status:** `[CO-PLACEHOLDER]` — Outline-level scaffolding only  
 > **IR Package:** Colorado Intelligence Rollout ([Issue #18](https://github.com/clearlineKris/clearlinekris.github.io/issues/18))
 
 ## Purpose
