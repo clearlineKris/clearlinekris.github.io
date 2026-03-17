@@ -54,4 +54,4 @@ Also known as **Kris in the Loop** — always at the intersection of human judgm
 
 ---
 
-*Built in Denver, Colorado. Navigating penumbrant ambiguity — one commit at a time.*
+*Made in North Philly, forged by the peaks near Denver, Colorado. Navigating penumbrant ambiguity — one commit at a time.*
