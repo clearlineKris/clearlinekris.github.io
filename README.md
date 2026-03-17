@@ -24,6 +24,121 @@ If you're here, you're probably a potential client, collaborator, or fellow buil
 
 ---
 
+## Intelligence Rollout (IR)
+
+State IR reviews require at least an outline of each CCC/GMP document. The following states are in scope:
+
+- Colorado
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Minnesota
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Pennsylvania
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Nebraska
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- New York
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Ohio
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- California
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Florida
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Oklahoma
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Texas
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Michigan
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+- Missouri
+  - Penumbrant Papers & One-Pager
+  - Working Class Exhaustive
+  - Reg & Pol Volume
+  - Margin Notes
+  - Field Problems (fmr. Field Notes)
+  - Letter of the Law Stack (LOTL)
+  - Lil LOTL (corresponding)
+  - Compliance Guide (for white-ops, grey-ops)
+
+---
+
 ## About ClearLine
 
 **ClearLine** is a boutique compliance consulting firm specializing in:
