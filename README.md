@@ -26,116 +26,18 @@ If you're here, you're probably a potential client, collaborator, or fellow buil
 
 ## Intelligence Rollout (IR)
 
-State IR reviews require at least an outline of each CCC/GMP document. The following states are in scope:
+State IR reviews require at least an outline of each CCC/GMP document. Each in-scope state needs:
 
-- Colorado
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Minnesota
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Pennsylvania
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Nebraska
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- New York
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Ohio
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- California
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Florida
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Oklahoma
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Texas
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Michigan
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
-- Missouri
-  - Penumbrant Papers & One-Pager
-  - Working Class Exhaustive
-  - Reg & Pol Volume
-  - Margin Notes
-  - Field Problems (fmr. Field Notes)
-  - Letter of the Law Stack (LOTL)
-  - Lil LOTL (corresponding)
-  - Compliance Guide (for white-ops, grey-ops)
+- Penumbrant Papers & One-Pager
+- Working Class Exhaustive
+- Reg & Pol Volume
+- Margin Notes
+- Field Problems (fmr. Field Notes)
+- Letter of the Law Stack (LOTL)
+- Lil LOTL (corresponding)
+- Compliance Guide (for white-ops, grey-ops)
+
+The current 12-state IR scope is: Colorado, Minnesota, Pennsylvania, Nebraska, New York, Ohio, California, Florida, Oklahoma, Texas, Michigan, and Missouri.
 
 ---
 
