@@ -514,6 +514,38 @@ h3 {
     font-size: 0.9rem;
 }
 
+.states-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.states-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Project Cards ===== */
+a.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.project-link:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+}
+
+.project-status {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
 /* ===== Contact Section ===== */
 .contact {
     background: var(--color-bg-elevated);
@@ -604,6 +636,16 @@ h3 {
 .footer-copy {
     color: var(--color-text-dim);
     font-size: 0.85rem;
+}
+
+.footer-link {
+    color: var(--color-text-dim);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-link:hover {
+    color: var(--color-primary);
 }
 
 /* ===== Responsive ===== */
