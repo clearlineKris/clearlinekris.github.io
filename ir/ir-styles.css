@@ -88,6 +88,7 @@
     gap: 12px;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .ir-state-card:hover {
@@ -96,25 +97,41 @@
     box-shadow: 0 12px 40px rgba(34, 197, 94, 0.08);
 }
 
-.ir-state-card::after {
-    content: attr(data-state);
+.ir-state-card::before {
+    content: '';
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid rgba(34, 197, 94, 0.35);
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.08));
-    color: var(--color-primary);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    top: 50%;
+    right: -12px;
+    width: 128px;
+    height: 128px;
+    background-image: var(--state-outline);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateY(-44%);
+    opacity: 0.16;
+    filter: drop-shadow(0 0 18px rgba(34, 197, 94, 0.14));
+    pointer-events: none;
+    z-index: 0;
 }
+
+.ir-state-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.ir-state-card[data-state="CO"] { --state-outline: url('../assets/state-outlines/co.svg'); }
+.ir-state-card[data-state="MN"] { --state-outline: url('../assets/state-outlines/mn.svg'); }
+.ir-state-card[data-state="OH"] { --state-outline: url('../assets/state-outlines/oh.svg'); }
+.ir-state-card[data-state="MI"] { --state-outline: url('../assets/state-outlines/mi.svg'); }
+.ir-state-card[data-state="OK"] { --state-outline: url('../assets/state-outlines/ok.svg'); }
+.ir-state-card[data-state="MO"] { --state-outline: url('../assets/state-outlines/mo.svg'); }
+.ir-state-card[data-state="CA"] { --state-outline: url('../assets/state-outlines/ca.svg'); }
+.ir-state-card[data-state="NY"] { --state-outline: url('../assets/state-outlines/ny.svg'); }
+.ir-state-card[data-state="PA"] { --state-outline: url('../assets/state-outlines/pa.svg'); }
+.ir-state-card[data-state="FL"] { --state-outline: url('../assets/state-outlines/fl.svg'); }
+.ir-state-card[data-state="TX"] { --state-outline: url('../assets/state-outlines/tx.svg'); }
+.ir-state-card[data-state="NE"] { --state-outline: url('../assets/state-outlines/ne.svg'); }
 
 .ir-state-card .state-name {
     font-size: 1.35rem;
@@ -277,6 +294,12 @@
 
     .ir-state-grid {
         grid-template-columns: 1fr;
+    }
+
+    .ir-state-card::before {
+        width: 112px;
+        height: 112px;
+        right: -8px;
     }
 
     .ir-section {
