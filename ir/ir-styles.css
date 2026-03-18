@@ -13,6 +13,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .ir-hero::after {
@@ -40,6 +41,24 @@
     max-width: 640px;
     margin: 0 auto 32px;
     line-height: 1.7;
+}
+
+.ir-hero[data-state]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: max(5%, 24px);
+    width: 180px;
+    height: 180px;
+    background-image: var(--state-outline);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateY(-42%);
+    opacity: 0.12;
+    filter: drop-shadow(0 0 24px rgba(34, 197, 94, 0.18));
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* ===== Breadcrumb ===== */
@@ -120,18 +139,30 @@
     z-index: 1;
 }
 
-.ir-state-card[data-state="CO"] { --state-outline: url('../assets/state-outlines/co.svg'); }
-.ir-state-card[data-state="MN"] { --state-outline: url('../assets/state-outlines/mn.svg'); }
-.ir-state-card[data-state="OH"] { --state-outline: url('../assets/state-outlines/oh.svg'); }
-.ir-state-card[data-state="MI"] { --state-outline: url('../assets/state-outlines/mi.svg'); }
-.ir-state-card[data-state="OK"] { --state-outline: url('../assets/state-outlines/ok.svg'); }
-.ir-state-card[data-state="MO"] { --state-outline: url('../assets/state-outlines/mo.svg'); }
-.ir-state-card[data-state="CA"] { --state-outline: url('../assets/state-outlines/ca.svg'); }
-.ir-state-card[data-state="NY"] { --state-outline: url('../assets/state-outlines/ny.svg'); }
-.ir-state-card[data-state="PA"] { --state-outline: url('../assets/state-outlines/pa.svg'); }
-.ir-state-card[data-state="FL"] { --state-outline: url('../assets/state-outlines/fl.svg'); }
-.ir-state-card[data-state="TX"] { --state-outline: url('../assets/state-outlines/tx.svg'); }
-.ir-state-card[data-state="NE"] { --state-outline: url('../assets/state-outlines/ne.svg'); }
+.ir-state-card[data-state="CO"],
+.ir-hero[data-state="CO"] { --state-outline: url('../assets/state-outlines/co.svg'); }
+.ir-state-card[data-state="MN"],
+.ir-hero[data-state="MN"] { --state-outline: url('../assets/state-outlines/mn.svg'); }
+.ir-state-card[data-state="OH"],
+.ir-hero[data-state="OH"] { --state-outline: url('../assets/state-outlines/oh.svg'); }
+.ir-state-card[data-state="MI"],
+.ir-hero[data-state="MI"] { --state-outline: url('../assets/state-outlines/mi.svg'); }
+.ir-state-card[data-state="OK"],
+.ir-hero[data-state="OK"] { --state-outline: url('../assets/state-outlines/ok.svg'); }
+.ir-state-card[data-state="MO"],
+.ir-hero[data-state="MO"] { --state-outline: url('../assets/state-outlines/mo.svg'); }
+.ir-state-card[data-state="CA"],
+.ir-hero[data-state="CA"] { --state-outline: url('../assets/state-outlines/ca.svg'); }
+.ir-state-card[data-state="NY"],
+.ir-hero[data-state="NY"] { --state-outline: url('../assets/state-outlines/ny.svg'); }
+.ir-state-card[data-state="PA"],
+.ir-hero[data-state="PA"] { --state-outline: url('../assets/state-outlines/pa.svg'); }
+.ir-state-card[data-state="FL"],
+.ir-hero[data-state="FL"] { --state-outline: url('../assets/state-outlines/fl.svg'); }
+.ir-state-card[data-state="TX"],
+.ir-hero[data-state="TX"] { --state-outline: url('../assets/state-outlines/tx.svg'); }
+.ir-state-card[data-state="NE"],
+.ir-hero[data-state="NE"] { --state-outline: url('../assets/state-outlines/ne.svg'); }
 
 .ir-state-card .state-name {
     font-size: 1.35rem;
@@ -300,6 +331,13 @@
         width: 112px;
         height: 112px;
         right: -8px;
+    }
+
+    .ir-hero[data-state]::before {
+        width: 124px;
+        height: 124px;
+        right: max(0px, 16px);
+        transform: translateY(-34%);
     }
 
     .ir-section {
