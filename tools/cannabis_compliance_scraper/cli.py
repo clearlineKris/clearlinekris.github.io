@@ -5,7 +5,7 @@ Command-line interface for cannabis_compliance_scraper.
 
 Usage
 -----
-python -m cannabis_compliance_scraper [OPTIONS]
+python -m tools.cannabis_compliance_scraper.cli [OPTIONS]
 
 Options
 -------
@@ -17,13 +17,13 @@ Options
 Examples
 --------
 # Scrape all states, print JSON to stdout
-python -m cannabis_compliance_scraper
+python -m tools.cannabis_compliance_scraper.cli
 
 # Scrape CO and CA only, write Markdown to a file
-python -m cannabis_compliance_scraper --states CO CA --format markdown --output updates.md
+python -m tools.cannabis_compliance_scraper.cli --states CO CA --format markdown --output updates.md
 
 # Scrape NY, verbose logging, CSV output
-python -m cannabis_compliance_scraper --states NY --format csv --log debug
+python -m tools.cannabis_compliance_scraper.cli --states NY --format csv --log debug
 """
 
 from __future__ import annotations
