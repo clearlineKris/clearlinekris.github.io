@@ -24,7 +24,7 @@ from __future__ import annotations
 import logging
 import time
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Optional
 from urllib.parse import urljoin
 
@@ -48,7 +48,7 @@ class RegulatoryItem:
     published_date: Optional[str] = None
     category: Optional[str] = None
     summary: Optional[str] = None
-    scraped_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    scraped_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
     def to_dict(self) -> dict:
         return {
