@@ -44,6 +44,7 @@ Dependencies: `requests`, `beautifulsoup4`, `lxml`
 ### Command line
 
 ```bash
+# From the tools/cannabis_compliance_scraper directory:
 # Scrape all states, JSON output to stdout
 python -m cannabis_compliance_scraper
 
@@ -55,6 +56,9 @@ python -m cannabis_compliance_scraper --states CO MN NY --format markdown --outp
 
 # CSV with verbose logging
 python -m cannabis_compliance_scraper --format csv --log debug --output results.csv
+
+# Alternatively, from the repo root:
+# PYTHONPATH=tools python -m cannabis_compliance_scraper --states CO CA
 ```
 
 ### Python API
