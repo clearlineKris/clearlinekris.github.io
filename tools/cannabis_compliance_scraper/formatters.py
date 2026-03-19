@@ -44,13 +44,29 @@ FIELDNAMES = [
 ]
 
 
+def _sanitize_csv_value(value):
+    """
+    Neutralize potentially dangerous leading characters in string values to
+    mitigate CSV formula injection when opened in spreadsheet software.
+    """
+    if isinstance(value, str) and value and value[0] in ("=", "+", "-", "@"):
+        return "'" + value
+    return value
+
+
+def _sanitize_csv_row(row: dict) -> dict:
+    """Return a copy of *row* with all values sanitized for CSV output."""
+    return {key: _sanitize_csv_value(value) for key, value in row.items()}
+
+
 def to_csv(items: List[RegulatoryItem]) -> str:
     """Serialize items to a CSV string."""
     buf = io.StringIO()
     writer = csv.DictWriter(buf, fieldnames=FIELDNAMES, extrasaction="ignore")
     writer.writeheader()
     for item in items:
-        writer.writerow(item.to_dict())
+        row = item.to_dict()
+        writer.writerow(_sanitize_csv_row(row))
     return buf.getvalue()
 
 
