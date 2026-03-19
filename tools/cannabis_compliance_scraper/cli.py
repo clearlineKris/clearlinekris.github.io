@@ -10,7 +10,7 @@ python -m cannabis_compliance_scraper [OPTIONS]
 Options
 -------
   --states   CO MN CA ...   States to scrape (default: all)
-  --format   json|csv|markdown  Output format (default: json)
+  --format   json|csv|markdown|md  Output format (default: json)
   --output   PATH           Write to file instead of stdout
   --log      debug|info|warning   Log verbosity (default: info)
 
@@ -62,7 +62,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--format",
         dest="fmt",
-        choices=["json", "csv", "markdown"],
+        choices=["json", "csv", "markdown", "md"],
         default="json",
         help="Output format. Default: json.",
     )
