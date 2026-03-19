@@ -30,6 +30,8 @@ Intelligence Rollout (IR) scope:
 
 ## Installation
 
+Requires **Python 3.10 or later**.
+
 ```bash
 # From the tools/cannabis_compliance_scraper directory
 pip install -r requirements.txt
