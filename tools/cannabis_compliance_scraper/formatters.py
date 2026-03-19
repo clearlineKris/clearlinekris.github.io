@@ -63,7 +63,23 @@ _MD_HEADER = "| State | Agency | Title | Date | Category | URL |\n|---|---|---|-
 
 def _md_row(item: RegulatoryItem) -> str:
     def esc(s: str | None) -> str:
-        return (s or "").replace("|", "\\|")
+        """
+        Escape Markdown-significant characters for safe use in table cells.
+
+        - Normalizes newlines to spaces to keep each cell on one line.
+        - Escapes characters that can interfere with tables/links.
+        """
+        if not s:
+            return ""
+
+        # Normalize newlines so table rows remain single-line.
+        s = s.replace("\r\n", " ").replace("\r", " ").replace("\n", " ")
+
+        # Escape Markdown-significant characters that can break tables/links.
+        for ch in ("|", "[", "]", "(", ")", "*", "_", "`"):
+            s = s.replace(ch, "\\" + ch)
+
+        return s
 
     title_cell = (
         f"[{esc(item.title)}]({item.url})" if item.url else esc(item.title)
