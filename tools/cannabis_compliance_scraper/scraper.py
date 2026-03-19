@@ -119,7 +119,7 @@ class BaseScraper:
 
     def _soup(self, url: str) -> BeautifulSoup:
         resp = self._get(url)
-        return BeautifulSoup(resp.text, "html.parser")
+        return BeautifulSoup(resp.text, "lxml")
 
     def _abs(self, href: str) -> str:
         """Turn a relative URL into an absolute one."""
