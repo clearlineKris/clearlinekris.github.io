@@ -589,7 +589,7 @@ def run_scrapers(states: Optional[List[str]] = None) -> List[RegulatoryItem]:
             items = scraper.fetch_updates()
             logger.info("  → %d items found.", len(items))
             results.extend(items)
-        except Exception as exc:  # noqa: BLE001
-            logger.error("Error scraping %s: %s", code, exc)
+        except Exception:  # noqa: BLE001
+            logger.exception("Error scraping %s", code)
 
     return results
