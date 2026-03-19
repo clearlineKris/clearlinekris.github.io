@@ -24,7 +24,7 @@
         <div class="hero-content">
             <div class="badge fade-in">Internal Framework</div>
             <h1 class="slide-up">ClearLine OS</h1>
-            <p class="hero-subtitle slide-up-delay">A four-layer knowledge base for regulated cannabis markets — from the Core Intelligence Layer that drives analysis, to Penumbrant Papers (state-specific intelligence documents) that carry ground-level operator guidance.</p>
+            <p class="hero-subtitle slide-up-delay">A layered intelligence framework for regulated cannabis markets.</p>
             <div class="hero-actions slide-up-delay-more">
                 <a href="#architecture" class="btn btn-primary">See the architecture</a>
                 <a href="../index.html#work" class="btn btn-secondary">Back to featured work</a>
@@ -38,7 +38,7 @@
     <section id="architecture" class="section">
         <div class="container">
             <h2>Knowledge Base Architecture</h2>
-            <p class="section-intro">Four layers, built top-down. The CIL informs everything — the SPI and RNPs frame each state — PENs carry the state-specific intelligence — Grey Areas (GAs) are the discrete intelligence items inside each PEN.</p>
+            <p class="section-intro">Four layers, built top-down: CIL → SPI + RNPs → PENs → GAs.</p>
 
             <div class="layer-stack">
                 <div class="layer-card">
@@ -74,7 +74,7 @@
                     <div class="layer-num">Layer 3</div>
                     <div class="layer-info">
                         <h3>Statutory Placement Index <span class="layer-abbr">SPI</span></h3>
-                        <p>Where a state places cannabis in its code. Surfaced as its own layer for visibility; analytically nested inside JSE.</p>
+                        <p>Classification system for cannabis statutory placement.</p>
                     </div>
                     <div class="layer-tags">
                         <span class="layer-tag">VP</span>
@@ -104,94 +104,54 @@
     <section id="central-intelligence-layer" class="section approach">
         <div class="container">
             <h2>Core Intelligence Layer</h2>
-            <p class="section-intro">The CIL is the analytical engine behind ClearLine OS. Its four components work together to track, score, and surface the regulatory signals that shape operator decisions.</p>
+            <p class="section-intro">Four components that track regulatory signals and score compliance ambiguity.</p>
 
             <div class="cil-grid">
                 <div class="cil-card">
                     <div class="cil-code">JSE</div>
                     <div class="cil-name">Jurisdictional Signal Engine</div>
-                    <p>Reads jurisdictional signals and maps how each state's regulatory environment is structured. Hosts the Statutory Placement Index (SPI) as a sub-component.</p>
+                    <p>Maps state regulatory structures and cannabis statutory placement.</p>
                 </div>
                 <div class="cil-card">
                     <div class="cil-code">EMX</div>
                     <div class="cil-name">Enforcement Matrix</div>
-                    <p>Tracks and categorizes enforcement behavior across jurisdictions, mapping patterns over time to reveal how agencies actually enforce versus what the statute says.</p>
+                    <p>Tracks enforcement patterns and agency behavior over time.</p>
                 </div>
                 <div class="cil-card">
                     <div class="cil-code">DIN</div>
                     <div class="cil-name">Drift Index Number</div>
-                    <p>A numerical score measuring how far a grey area has drifted from clear statutory guidance — helping prioritize which ambiguities deserve attention first.</p>
+                    <p>Scores regulatory ambiguity to prioritize grey areas.</p>
                 </div>
                 <div class="cil-card">
                     <div class="cil-code">SSU</div>
                     <div class="cil-name">Stalwart Suite</div>
-                    <p>The set of landmark cases and laws (LOTLs) that anchor the KB's legal framework. These are the fixed reference points every analysis traces back to.</p>
+                    <p>Landmark cases and laws that anchor the legal framework.</p>
                 </div>
             </div>
 
             <div class="spi-section">
                 <h3 class="spi-heading">Statutory Placement Index (SPI)</h3>
-                <p class="spi-subtext">Five ways a state can place cannabis in its statutory code. The SPI is a classification sub-component of the JSE.</p>
-                
-                <div class="spi-grid">
-                    <div class="spi-card">
-                        <div class="spi-card-header">
-                            <span class="spi-code">VP</span>
-                            <span class="spi-label">Vice-Economy</span>
-                        </div>
-                        <p class="spi-explanation">Cannabis regulation is situated alongside alcohol, tobacco, gambling, or other vice-economy frameworks. The state treats cannabis as part of its broader vice-economy regulatory structure.</p>
-                        <div class="spi-states">
-                            <span class="state-badge">Colorado</span>
-                            <span class="state-badge">Nevada</span>
-                        </div>
+                <p class="spi-subtext">Five placement types for cannabis in state code.</p>
+                <div class="spi-row">
+                    <div class="spi-tag">
+                        <span class="spi-code">VP</span>
+                        <span class="spi-label">Vice-Economy</span>
                     </div>
-
-                    <div class="spi-card">
-                        <div class="spi-card-header">
-                            <span class="spi-code">PH</span>
-                            <span class="spi-label">Public Health</span>
-                        </div>
-                        <p class="spi-explanation">Cannabis is placed within public health statutes and overseen by health departments. The framework prioritizes medical access, patient safety, and health-oriented regulation over commercial licensing.</p>
-                        <div class="spi-states">
-                            <span class="state-badge">Minnesota</span>
-                            <span class="state-badge">Pennsylvania</span>
-                        </div>
+                    <div class="spi-tag">
+                        <span class="spi-code">PH</span>
+                        <span class="spi-label">Public Health</span>
                     </div>
-
-                    <div class="spi-card">
-                        <div class="spi-card-header">
-                            <span class="spi-code">SA</span>
-                            <span class="spi-label">Standalone Agency</span>
-                        </div>
-                        <p class="spi-explanation">The state creates a dedicated cannabis control authority with its own statutory chapter. This placement signals a deliberate intent to regulate cannabis distinctly from other vice or health frameworks.</p>
-                        <div class="spi-states">
-                            <span class="state-badge">California</span>
-                            <span class="state-badge">Massachusetts</span>
-                        </div>
+                    <div class="spi-tag">
+                        <span class="spi-code">SA</span>
+                        <span class="spi-label">Standalone Agency</span>
                     </div>
-
-                    <div class="spi-card">
-                        <div class="spi-card-header">
-                            <span class="spi-code">RV</span>
-                            <span class="spi-label">Revenue</span>
-                        </div>
-                        <p class="spi-explanation">Cannabis regulation is nested within revenue or taxation code. The primary statutory lens is fiscal — licensing and compliance mechanisms exist to serve tax collection and revenue optimization.</p>
-                        <div class="spi-states">
-                            <span class="state-badge">Illinois</span>
-                            <span class="state-badge">Michigan</span>
-                        </div>
+                    <div class="spi-tag">
+                        <span class="spi-code">RV</span>
+                        <span class="spi-label">Revenue</span>
                     </div>
-
-                    <div class="spi-card">
-                        <div class="spi-card-header">
-                            <span class="spi-code">CJ</span>
-                            <span class="spi-label">Criminal Justice</span>
-                        </div>
-                        <p class="spi-explanation">Cannabis remains primarily addressed through criminal code. Even when decriminalized or permitted medically, the statutory placement reflects a criminal justice framing rather than commercial or health regulation.</p>
-                        <div class="spi-states">
-                            <span class="state-badge">Texas</span>
-                            <span class="state-badge">Florida</span>
-                        </div>
+                    <div class="spi-tag">
+                        <span class="spi-code">CJ</span>
+                        <span class="spi-label">Criminal Justice</span>
                     </div>
                 </div>
             </div>
@@ -202,64 +162,45 @@
     <section class="section">
         <div class="container">
             <h2>Reg &amp; Pol Playbooks</h2>
-            <p class="section-intro">Five behavioral archetypes for how markets regulate. Type-specific, not state-specific — the same archetype can appear across multiple states.</p>
+            <p class="section-intro">Five behavioral archetypes for regulatory markets.</p>
 
             <div class="rnp-grid">
                 <div class="rnp-card">
                     <div class="rnp-code">RNP-01</div>
                     <div class="rnp-title">Mini Muni</div>
-                    <p>Municipal cadence layered on top of state statute. Local rules compound state requirements for operators in these markets.</p>
+                    <p>Municipal rules compound state requirements.</p>
                 </div>
                 <div class="rnp-card">
                     <div class="rnp-code">RNP-02</div>
                     <div class="rnp-title">Wet Paint</div>
-                    <p>Nascent markets still establishing their policies. Rules are in motion and ambiguity is high — early entrants absorb the most regulatory uncertainty.</p>
+                    <p>New markets with high ambiguity and shifting rules.</p>
                 </div>
                 <div class="rnp-card">
                     <div class="rnp-code">RNP-03</div>
                     <div class="rnp-title">Headliners</div>
-                    <p>Enforcement as spectacle. High-visibility actions shape operator behavior more than the underlying statute in these markets.</p>
+                    <p>High-visibility enforcement shapes behavior.</p>
                 </div>
                 <div class="rnp-card">
                     <div class="rnp-code">RNP-04</div>
                     <div class="rnp-title">Weathervanes</div>
-                    <p>Enforcement sensitive to political headwinds. The regulatory climate here shifts with election cycles and executive priorities.</p>
+                    <p>Enforcement shifts with political climate.</p>
                 </div>
                 <div class="rnp-card">
                     <div class="rnp-code">RNP-05</div>
                     <div class="rnp-title">Metronomes</div>
-                    <p>Steady, cadence-heavy enforcement. These markets keep consistent rhythm regardless of political climate — predictable but unrelenting.</p>
+                    <p>Steady, predictable enforcement cadence.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Top-Down Flow + PENs -->
+    <!-- Active PENs -->
     <section class="section our-story">
         <div class="container">
-            <h2>How the System Flows</h2>
-            <div class="approach-content">
-                <div class="approach-text">
-                    <p>The flow is top-down. The CIL sets the analytical foundation. The SPI and RNPs frame how each state is classified. Penumbrant Papers carry the state-specific intelligence — and inside each PEN, Grey Area entries (GAs) are the discrete, numbered intelligence items operators and compliance teams use directly.</p>
-                    <ul>
-                        <li><strong>CIL informs everything</strong> — four components, one analytical engine.</li>
-                        <li><strong>SPI + RNPs frame the state</strong> — statutory placement type and behavioral archetype.</li>
-                        <li><strong>PENs carry the intelligence</strong> — four sections per state document.</li>
-                        <li><strong>GAs are the ground floor</strong> — discrete, numbered, actionable.</li>
-                    </ul>
-                    <p>Each layer is legible on its own, but the value compounds as you move down — context from the top sharpens what the bottom-layer intelligence means in practice.</p>
-                </div>
-                <div class="approach-visual">
-                    <div class="engine-badge">
-                        <span class="engine-label">clearline core</span>
-                        <span class="engine-name">CIL → SPI + RNPs → PENs → GAs</span>
-                        <span class="engine-desc">Top-down flow. Each layer sharpens the context that reaches operators on the ground.</span>
-                    </div>
-                </div>
-            </div>
+            <h2>Active Intelligence</h2>
 
             <div class="pen-status-section">
-                <h3 class="pen-status-heading">Active Penumbrant Papers</h3>
+                <h3 class="pen-status-heading">Penumbrant Papers</h3>
                 <div class="pen-grid">
                     <div class="pen-card">
                         <span class="pen-code">PEN-01</span>
