@@ -46,17 +46,16 @@
 .ir-hero[data-state]::before {
     content: '';
     position: absolute;
-    top: 50%;
-    right: max(5%, 24px);
-    width: 180px;
-    height: 180px;
+    top: -42px;
+    right: -34px;
+    width: 170px;
+    height: 170px;
     background-image: var(--state-outline);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    transform: translateY(-42%);
-    opacity: 0.12;
-    filter: drop-shadow(0 0 24px rgba(34, 197, 94, 0.18));
+    opacity: 0.17;
+    filter: drop-shadow(0 10px 26px rgba(34, 197, 94, 0.2));
     pointer-events: none;
     z-index: -1;
 }
@@ -117,21 +116,7 @@
 }
 
 .ir-state-card::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -12px;
-    width: 128px;
-    height: 128px;
-    background-image: var(--state-outline);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translateY(-44%);
-    opacity: 0.16;
-    filter: drop-shadow(0 0 18px rgba(34, 197, 94, 0.14));
-    pointer-events: none;
-    z-index: 0;
+    content: none;
 }
 
 .ir-state-card > * {
@@ -181,6 +166,25 @@
     font-size: 0.92rem;
     color: var(--color-text-muted);
     line-height: 1.6;
+    position: relative;
+    padding-right: 96px;
+}
+
+.ir-state-card .state-teaser::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -56px;
+    width: 118px;
+    height: 118px;
+    background-image: var(--state-outline);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateY(-52%);
+    opacity: 0.15;
+    filter: drop-shadow(0 6px 18px rgba(34, 197, 94, 0.16));
+    pointer-events: none;
 }
 
 /* ===== Section Cards (State Pages) ===== */
@@ -328,16 +332,24 @@
     }
 
     .ir-state-card::before {
-        width: 112px;
-        height: 112px;
-        right: -8px;
+        content: none;
+    }
+
+    .ir-state-card .state-teaser {
+        padding-right: 72px;
+    }
+
+    .ir-state-card .state-teaser::after {
+        width: 94px;
+        height: 94px;
+        right: -42px;
     }
 
     .ir-hero[data-state]::before {
-        width: 124px;
-        height: 124px;
-        right: max(0px, 16px);
-        transform: translateY(-34%);
+        width: 122px;
+        height: 122px;
+        top: -30px;
+        right: -26px;
     }
 
     .ir-section {
