@@ -122,6 +122,10 @@
     isolation: isolate;
 }
 
+.ir-state-card:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary);
+}
 .ir-state-card:hover {
     border-color: var(--color-primary);
     transform: translateY(-4px);
