@@ -46,16 +46,16 @@
 .ir-hero[data-state]::before {
     content: '';
     position: absolute;
-    top: -42px;
+    top: -44px;
     right: -34px;
-    width: 170px;
-    height: 170px;
+    width: 208px;
+    height: 208px;
     background-image: var(--state-outline);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    opacity: 0.17;
-    filter: drop-shadow(0 10px 26px rgba(34, 197, 94, 0.2));
+    opacity: 0.2;
+    filter: grayscale(1) saturate(0) brightness(0.12) contrast(1.25) drop-shadow(0 10px 24px rgba(0, 0, 0, 0.32));
     pointer-events: none;
     z-index: -1;
 }
@@ -115,6 +115,11 @@
     box-shadow: 0 12px 40px rgba(34, 197, 94, 0.08);
 }
 
+.ir-state-card:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary);
+}
+
 .ir-state-card::before {
     content: none;
 }
@@ -125,17 +130,17 @@
 }
 
 .ir-state-card[data-state="CO"],
-.ir-hero[data-state="CO"] { --state-outline: url('../assets/state-outlines/co.svg'); }
+.ir-hero[data-state="CO"] { --state-outline: url('../assets/state-seals/co.svg'); }
 .ir-state-card[data-state="MN"],
-.ir-hero[data-state="MN"] { --state-outline: url('../assets/state-outlines/mn.svg'); }
+.ir-hero[data-state="MN"] { --state-outline: url('../assets/state-seals/mn.svg'); }
 .ir-state-card[data-state="OH"],
-.ir-hero[data-state="OH"] { --state-outline: url('../assets/state-outlines/oh.svg'); }
+.ir-hero[data-state="OH"] { --state-outline: url('../assets/state-seals/oh.svg'); }
 .ir-state-card[data-state="MI"],
-.ir-hero[data-state="MI"] { --state-outline: url('../assets/state-outlines/mi.svg'); }
+.ir-hero[data-state="MI"] { --state-outline: url('../assets/state-seals/mi.svg'); }
 .ir-state-card[data-state="OK"],
-.ir-hero[data-state="OK"] { --state-outline: url('../assets/state-outlines/ok.svg'); }
+.ir-hero[data-state="OK"] { --state-outline: url('../assets/state-seals/ok.svg'); }
 .ir-state-card[data-state="MO"],
-.ir-hero[data-state="MO"] { --state-outline: url('../assets/state-outlines/mo.svg'); }
+.ir-hero[data-state="MO"] { --state-outline: url('../assets/state-seals/mo.svg'); }
 .ir-state-card[data-state="CA"],
 .ir-hero[data-state="CA"] { --state-outline: url('../assets/state-outlines/ca.svg'); }
 .ir-state-card[data-state="NY"],
@@ -168,6 +173,8 @@
     line-height: 1.6;
     position: relative;
     padding-right: 96px;
+    z-index: 0;
+    isolation: isolate;
 }
 
 .ir-state-card .state-teaser::after {
@@ -175,16 +182,17 @@
     position: absolute;
     top: 50%;
     right: -56px;
-    width: 118px;
-    height: 118px;
+    width: 130px;
+    height: 130px;
     background-image: var(--state-outline);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transform: translateY(-52%);
-    opacity: 0.15;
-    filter: drop-shadow(0 6px 18px rgba(34, 197, 94, 0.16));
+    opacity: 0.16;
+    filter: grayscale(1) saturate(0) brightness(0.1) contrast(1.25) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.28));
     pointer-events: none;
+    z-index: -1;
 }
 
 /* ===== Section Cards (State Pages) ===== */
@@ -340,16 +348,16 @@
     }
 
     .ir-state-card .state-teaser::after {
-        width: 94px;
-        height: 94px;
-        right: -42px;
+        width: 104px;
+        height: 104px;
+        right: -40px;
     }
 
     .ir-hero[data-state]::before {
-        width: 122px;
-        height: 122px;
-        top: -30px;
-        right: -26px;
+        width: 136px;
+        height: 136px;
+        top: -26px;
+        right: -20px;
     }
 
     .ir-section {
