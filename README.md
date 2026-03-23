@@ -61,7 +61,7 @@ ClearLine operates on one core principle: *compliance doesn't have to be chaos.*
 
 Kris is a METRC Specialist and Compliance Strategist with nearly a decade of hands-on experience in Colorado's cannabis industry — from trimming 50,000+ sq ft grows to building compliance systems for multi-state operators. A builder at heart, Kris combines deep operational expertise with advanced AI tooling to create systems that actually work in the real world.
 
-Most recently worked at Bonanza Cannabis in Colorado before being let go in early 2026 as the company faced legal challenges. Now focused full-time on building ClearLine and researching regulatory architecture across emerging markets.
+Most recently worked at Bonanza Cannabis in Colorado before being let go just recently as the company faced legal challenges in a synthetic THC case. Now focused full-time on building ClearLine and researching regulatory architecture across emerging markets.
 
 Also known as **Kris in the Loop** — always at the intersection of human judgment and automated systems. Proudly a **Human with a K**: the irreplaceable, carbon-based variable in every compliance workflow.
 
