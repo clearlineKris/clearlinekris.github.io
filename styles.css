@@ -280,6 +280,13 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.engine-badge:hover {
+    border-color: var(--color-primary);
 }
 
 .engine-label {
@@ -566,6 +573,92 @@ h3 {
 .footer-copy {
     color: var(--color-text-dim);
     font-size: 0.85rem;
+}
+
+/* ===== Engine Room Section ===== */
+.engine-room {
+    background: var(--color-bg);
+}
+
+.engine-room .badge {
+    display: block;
+    text-align: center;
+    margin: 0 auto 16px;
+    width: fit-content;
+}
+
+.engines-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.engine-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    flex: 1 1 280px;
+    max-width: 360px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.engine-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+}
+
+.engine-card-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.engine-card-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.engine-card-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.engine-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.engine-card--evaluation {
+    border-style: dashed;
+    opacity: 0.75;
+}
+
+.engine-card--evaluation:hover {
+    opacity: 1;
+    border-style: dashed;
+    transform: none;
+}
+
+.engine-card-status {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 4px 12px;
+    border: 1px solid var(--color-text-dim);
+    color: var(--color-text-dim);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 /* ===== Responsive ===== */
