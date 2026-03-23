@@ -37,7 +37,10 @@ State IR reviews require at least an outline of each CCC/GMP document. Each stat
 - Lil LOTL (corresponding)
 - Compliance Guide (for white-ops, grey-ops)
 
-**States in scope:** Colorado, Minnesota, Pennsylvania, Nebraska, New York, Ohio, California, Florida, Oklahoma, Texas, Michigan, Missouri
+**Knowledge Tiers:**
+- **⬥ Operational Experience:** Colorado (2017-2026, hands-on floor-to-compliance experience)
+- **△ Regulatory Tracking:** Pennsylvania (home state), Minnesota, Ohio, Oklahoma, Nebraska, Texas
+- **⋯ Research Phase:** California, New York, Florida, Michigan, Missouri
 
 ---
 
@@ -56,7 +59,9 @@ ClearLine operates on one core principle: *compliance doesn't have to be chaos.*
 
 ## About Kris
 
-Kris is a METRC Specialist and Compliance Strategist with years of hands-on experience across Colorado's cannabis industry — from dispensary operations to multi-state operator (MSO) environments. A builder at heart, Kris combines deep regulatory expertise with advanced AI tooling to create systems that actually work in the real world.
+Kris is a METRC Specialist and Compliance Strategist with nearly a decade of hands-on experience in Colorado's cannabis industry — from trimming 50,000+ sq ft grows to building compliance systems for multi-state operators. A builder at heart, Kris combines deep operational expertise with advanced AI tooling to create systems that actually work in the real world.
+
+Most recently worked at Bonanza Cannabis in Colorado before being let go in early 2026 as the company faced legal challenges. Now focused full-time on building ClearLine and researching regulatory architecture across emerging markets.
 
 Also known as **Kris in the Loop** — always at the intersection of human judgment and automated systems. Proudly a **Human with a K**: the irreplaceable, carbon-based variable in every compliance workflow.
 
