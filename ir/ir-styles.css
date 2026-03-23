@@ -60,6 +60,19 @@
     z-index: -1;
 }
 
+.ir-hero[data-state="CA"]::before,
+.ir-hero[data-state="NY"]::before,
+.ir-hero[data-state="PA"]::before,
+.ir-hero[data-state="FL"]::before,
+.ir-hero[data-state="TX"]::before,
+.ir-hero[data-state="NE"]::before {
+    width: 320px;
+    height: 320px;
+    top: -70px;
+    right: -62px;
+    opacity: 0.18;
+}
+
 /* ===== Breadcrumb ===== */
 .ir-breadcrumb {
     padding: 20px 24px 0;
@@ -358,6 +371,18 @@
         height: 136px;
         top: -26px;
         right: -20px;
+    }
+
+    .ir-hero[data-state="CA"]::before,
+    .ir-hero[data-state="NY"]::before,
+    .ir-hero[data-state="PA"]::before,
+    .ir-hero[data-state="FL"]::before,
+    .ir-hero[data-state="TX"]::before,
+    .ir-hero[data-state="NE"]::before {
+        width: 228px;
+        height: 228px;
+        top: -52px;
+        right: -42px;
     }
 
     .ir-section {
