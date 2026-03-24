@@ -219,7 +219,7 @@
             <h2>Say Hello</h2>
             <p class="section-intro">Whether it's a question about compliance, a project idea, or just connecting — I'd like to hear from you.</p>
             
-            <form class="contact-form" action="https://formspree.io/f/maqnryyz" method="POST">
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/maqnryyz" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -234,7 +234,8 @@
                     <label for="message">What's on your mind?</label>
                     <textarea id="message" name="message" rows="4"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                <button type="submit" id="contact-submit" class="btn btn-primary btn-full">Send Message</button>
+                <p id="contact-feedback" class="form-feedback" aria-live="polite"></p>
             </form>
         </div>
     </section>
@@ -252,5 +253,76 @@
             <p class="footer-copy">&copy; 2026 Kris Gracia · <a href="https://github.com/clearlineKris" class="footer-link">GitHub</a></p>
         </div>
     </footer>
+
+    <!-- Contact form handler: logs to Google Sheets + Formspree email notification -->
+    <script>
+    (function () {
+        // -------------------------------------------------------------------
+        // Replace this with your deployed Google Apps Script Web App URL.
+        // See tools/google-sheets-setup.md for step-by-step instructions.
+        // -------------------------------------------------------------------
+        var SHEETS_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+        var FORMSPREE_URL = 'https://formspree.io/f/maqnryyz';
+
+        var form     = document.getElementById('contact-form');
+        var btn      = document.getElementById('contact-submit');
+        var feedback = document.getElementById('contact-feedback');
+
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var payload = {
+                name:      form.name.value.trim(),
+                email:     form.email.value.trim(),
+                message:   form.message.value.trim(),
+                timestamp: new Date().toISOString()
+            };
+
+            btn.disabled    = true;
+            btn.textContent = 'Sending…';
+            feedback.textContent = '';
+            feedback.className   = 'form-feedback';
+
+            var requests = [
+                // Formspree — sends email notification
+                fetch(FORMSPREE_URL, {
+                    method:  'POST',
+                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                    body:    JSON.stringify(payload)
+                }),
+                // Google Apps Script — logs row in Google Sheet.
+                // no-cors is required; the response will be opaque but the
+                // sheet still receives the data.
+                SHEETS_URL !== 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'
+                    ? fetch(SHEETS_URL, {
+                        method:  'POST',
+                        mode:    'no-cors',
+                        headers: { 'Content-Type': 'text/plain' },
+                        body:    JSON.stringify(payload)
+                    })
+                    : Promise.resolve()
+            ];
+
+            Promise.allSettled(requests).then(function (results) {
+                var formspreeOk = results[0].status === 'fulfilled';
+
+                if (formspreeOk) {
+                    form.reset();
+                    feedback.textContent = "Got it — I'll be in touch soon.";
+                    feedback.classList.add('form-feedback--success');
+                } else {
+                    feedback.textContent = 'Something went wrong. Try emailing me directly.';
+                    feedback.classList.add('form-feedback--error');
+                }
+            }).finally(function () {
+                btn.disabled    = false;
+                btn.textContent = 'Send Message';
+            });
+        });
+    })();
+    </script>
 </body>
 </html>

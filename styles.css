@@ -610,6 +610,21 @@ a.project-link:hover {
     min-height: 100px;
 }
 
+.form-feedback {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+    min-height: 1.4em;
+}
+
+.form-feedback--success {
+    color: var(--color-primary);
+}
+
+.form-feedback--error {
+    color: #f87171;
+}
+
 /* ===== Footer ===== */
 .footer {
     padding: 60px 0 40px;
