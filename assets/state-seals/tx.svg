@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <!-- Texas State Seal — wireframe -->
+  <!-- Outer border rings -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+
+  <!-- State name arc text (top) -->
+  <path id="tx-top-arc" d="M 18,100 A 82,82 0 0,1 182,100" fill="none"/>
+  <text font-family="serif" font-size="13" fill="#22c55e" letter-spacing="2">
+    <textPath href="#tx-top-arc" startOffset="14%">THE STATE OF TEXAS</textPath>
+  </text>
+  <path id="tx-bot-arc" d="M 28,108 A 72,72 0 0,0 172,108" fill="none"/>
+  <text font-family="serif" font-size="11" fill="#22c55e" letter-spacing="3">
+    <textPath href="#tx-bot-arc" startOffset="18%">FRIENDSHIP</textPath>
+  </text>
+
+  <!-- Central Lone Star (5-pointed) -->
+  <polygon points="100,72 105,90 124,90 109,101 115,119 100,108 85,119 91,101 76,90 95,90" fill="none" stroke="#22c55e" stroke-width="2"/>
+
+  <!-- Live oak branch (left) -->
+  <line x1="76" y1="100" x2="60" y2="90" stroke="#22c55e" stroke-width="1.2"/>
+  <path d="M 60,90 Q 52,84 54,78 Q 58,80 60,86" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <path d="M 60,90 Q 54,96 48,92 Q 50,86 56,90" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <path d="M 68,96 Q 62,106 56,102 Q 58,96 66,96" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <path d="M 72,102 Q 68,114 60,110 Q 62,104 70,104" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <line x1="76" y1="100" x2="72" y2="118" stroke="#22c55e" stroke-width="1.2"/>
+  <!-- Acorn detail (oak) -->
+  <ellipse cx="57" cy="77" rx="3" ry="4" fill="none" stroke="#22c55e" stroke-width="0.8"/>
+  <line x1="57" y1="73" x2="57" y2="70" stroke="#22c55e" stroke-width="0.8"/>
+
+  <!-- Olive branch (right) -->
+  <line x1="124" y1="100" x2="140" y2="90" stroke="#22c55e" stroke-width="1.2"/>
+  <path d="M 140,90 Q 148,84 146,78 Q 142,80 140,86" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <path d="M 140,90 Q 146,96 152,92 Q 150,86 144,90" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <path d="M 132,96 Q 138,106 144,102 Q 142,96 134,96" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <path d="M 128,102 Q 132,114 140,110 Q 138,104 130,104" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <line x1="124" y1="100" x2="128" y2="118" stroke="#22c55e" stroke-width="1.2"/>
+  <!-- Olive berries -->
+  <circle cx="147" cy="77" r="2.5" fill="none" stroke="#22c55e" stroke-width="0.8"/>
+  <circle cx="153" cy="91" r="2.5" fill="none" stroke="#22c55e" stroke-width="0.8"/>
+
+  <!-- Cannon (bottom center, Texas Revolution symbol) -->
+  <rect x="84" y="116" width="32" height="8" rx="2" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+  <circle cx="84" cy="120" r="4" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <circle cx="116" cy="120" r="4" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <!-- Cannon ball stack -->
+  <circle cx="100" cy="127" r="3" fill="none" stroke="#22c55e" stroke-width="0.8"/>
+  <circle cx="96" cy="131" r="3" fill="none" stroke="#22c55e" stroke-width="0.8"/>
+  <circle cx="104" cy="131" r="3" fill="none" stroke="#22c55e" stroke-width="0.8"/>
+
+  <!-- Year -->
+  <text x="100" y="152" font-family="serif" font-size="9" text-anchor="middle" fill="#22c55e">1845</text>
+
+  <!-- Small stars decorative ring (every 30 degrees) -->
+  <circle cx="100" cy="62" r="1.5" fill="#22c55e"/>
+  <circle cx="131" cy="69" r="1.5" fill="#22c55e"/>
+  <circle cx="152" cy="90" r="1.5" fill="#22c55e"/>
+  <circle cx="152" cy="110" r="1.5" fill="#22c55e"/>
+  <circle cx="131" cy="131" r="1.5" fill="#22c55e"/>
+  <circle cx="100" cy="138" r="1.5" fill="#22c55e"/>
+  <circle cx="69" cy="131" r="1.5" fill="#22c55e"/>
+  <circle cx="48" cy="110" r="1.5" fill="#22c55e"/>
+  <circle cx="48" cy="90" r="1.5" fill="#22c55e"/>
+  <circle cx="69" cy="69" r="1.5" fill="#22c55e"/>
+</svg>

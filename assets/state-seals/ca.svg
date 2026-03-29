@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <!-- California State Seal — wireframe -->
+  <!-- Outer border rings -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+
+  <!-- State name arc text (top) -->
+  <path id="ca-top-arc" d="M 18,100 A 82,82 0 0,1 182,100" fill="none"/>
+  <text font-family="serif" font-size="13" fill="#22c55e" letter-spacing="2">
+    <textPath href="#ca-top-arc" startOffset="10%">THE GREAT SEAL OF THE</textPath>
+  </text>
+  <path id="ca-bot-arc" d="M 22,108 A 78,78 0 0,0 178,108" fill="none"/>
+  <text font-family="serif" font-size="14" fill="#22c55e" letter-spacing="3">
+    <textPath href="#ca-bot-arc" startOffset="18%">STATE OF CALIFORNIA</textPath>
+  </text>
+
+  <!-- Minerva figure (simplified) -->
+  <ellipse cx="72" cy="88" rx="7" ry="9" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="72" y1="97" x2="72" y2="116" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="65" y1="104" x2="79" y2="104" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="72" y1="116" x2="66" y2="126" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="72" y1="116" x2="78" y2="126" stroke="#22c55e" stroke-width="1.2"/>
+  <!-- Spear -->
+  <line x1="61" y1="78" x2="61" y2="128" stroke="#22c55e" stroke-width="1"/>
+  <polygon points="61,74 58,82 64,82" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <!-- Shield -->
+  <rect x="53" y="95" width="10" height="12" rx="1" fill="none" stroke="#22c55e" stroke-width="1"/>
+
+  <!-- Bear (California Grizzly) - simplified -->
+  <ellipse cx="112" cy="108" rx="14" ry="10" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+  <circle cx="122" cy="100" r="7" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="98" y1="114" x2="95" y2="124" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="104" y1="116" x2="102" y2="126" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="116" y1="116" x2="114" y2="126" stroke="#22c55e" stroke-width="1.2"/>
+  <line x1="122" y1="114" x2="124" y2="124" stroke="#22c55e" stroke-width="1.2"/>
+
+  <!-- Mountains (background) -->
+  <polyline points="82,120 90,106 98,120 108,98 118,120 130,108 140,120" fill="none" stroke="#22c55e" stroke-width="1"/>
+
+  <!-- Bay / water lines -->
+  <path d="M 58,128 Q 80,124 100,128 Q 120,132 142,128" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <path d="M 62,132 Q 82,128 100,132 Q 118,136 138,132" fill="none" stroke="#22c55e" stroke-width="1"/>
+
+  <!-- Sun rays (top left) -->
+  <line x1="86" y1="78" x2="84" y2="72" stroke="#22c55e" stroke-width="1"/>
+  <line x1="90" y1="75" x2="90" y2="69" stroke="#22c55e" stroke-width="1"/>
+  <line x1="94" y1="74" x2="96" y2="68" stroke="#22c55e" stroke-width="1"/>
+  <circle cx="90" cy="80" r="5" fill="none" stroke="#22c55e" stroke-width="1"/>
+
+  <!-- Ships on water (simplified) -->
+  <line x1="126" y1="124" x2="136" y2="124" stroke="#22c55e" stroke-width="1"/>
+  <line x1="131" y1="114" x2="131" y2="124" stroke="#22c55e" stroke-width="1"/>
+  <line x1="131" y1="116" x2="137" y2="120" stroke="#22c55e" stroke-width="1"/>
+
+  <!-- EUREKA motto -->
+  <text x="100" y="148" font-family="serif" font-size="11" text-anchor="middle" fill="#22c55e" letter-spacing="4">EUREKA</text>
+
+  <!-- Star above motto -->
+  <polygon points="100,138 102,144 108,144 103,148 105,154 100,150 95,154 97,148 92,144 98,144" fill="none" stroke="#22c55e" stroke-width="0.8"/>
+
+  <!-- Year founded -->
+  <text x="100" y="162" font-family="serif" font-size="9" text-anchor="middle" fill="#22c55e">1850</text>
+
+  <!-- Cornucopia (simplified) -->
+  <path d="M 138,100 Q 148,96 152,108 Q 148,118 136,116 Q 130,108 138,100 Z" fill="none" stroke="#22c55e" stroke-width="1"/>
+  <line x1="152" y1="108" x2="160" y2="104" stroke="#22c55e" stroke-width="1"/>
+  <line x1="152" y1="108" x2="160" y2="112" stroke="#22c55e" stroke-width="1"/>
+  <line x1="154" y1="106" x2="162" y2="108" stroke="#22c55e" stroke-width="1"/>
+</svg>
