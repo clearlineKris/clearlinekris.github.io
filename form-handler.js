@@ -23,7 +23,15 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Collect all form values
+    // Guard: if SCRIPT_URL has not been configured yet, show a clear message
+    // rather than silently failing or submitting to a placeholder endpoint.
+    if (!SCRIPT_URL || SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL' ||
+        SCRIPT_URL.slice(0, 34) !== 'https://script.google.com/macros/') {
+      showStatus('error', 'Form is not yet configured. Please check back soon.');
+      return;
+    }
+
+    // Collect all form values (includes honeypot field; see Code.gs)
     var params = new URLSearchParams();
     new FormData(form).forEach(function (value, key) {
       params.append(key, value);
@@ -36,8 +44,8 @@
 
     // POST to Google Apps Script
     // no-cors makes this a simple CORS request so no preflight is needed.
-    // The response is opaque — success is optimistic (the data still reaches
-    // the sheet; we cannot distinguish server-side errors from success).
+    // The response is opaque — success is optimistic (the request is sent,
+    // but we cannot verify delivery or distinguish server-side errors from success).
     fetch(SCRIPT_URL, {
       method:  'POST',
       mode:    'no-cors',

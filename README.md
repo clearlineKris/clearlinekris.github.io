@@ -47,7 +47,8 @@ each submission to a Google Sheet via a Google Apps Script Web App.
    - Click **Deploy → New deployment**.
    - Under *Select type*, choose **Web app**.
    - Set **Execute as** → *Me*.
-   - Set **Who has access** → *Anyone*.
+   - Set **Who has access** → *Anyone with the link* (recommended; reduces
+     automated spam compared to fully public access).
    - Click **Deploy** and authorise when prompted.
    - **Copy the Web App URL** shown in the confirmation dialog.
 
@@ -57,6 +58,7 @@ each submission to a Google Sheet via a Google Apps Script Web App.
      ```js
      var SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
      ```
+   - Also update the `action` attribute on the `<form>` tag in `index.html` with the same URL (used as a no-JS fallback).
    - Commit and push the change.
 
 5. **Test it**
@@ -78,9 +80,19 @@ each submission to a Google Sheet via a Google Apps Script Web App.
 | Zip       | Zip code            |
 | Message   | Message             |
 
----
+### Anti-abuse measures built into the Apps Script
 
-## Intelligence Rollout (IR)
+The deployed script includes several safeguards to protect your Sheet:
+
+| Measure | How it works |
+|---------|--------------|
+| **Honeypot** | A hidden field (`hp`) is added to the form. Real users never see or fill it; bots that blindly populate all fields get silently discarded. |
+| **Required-field guard** | Submissions missing `name` or `email` are rejected before any data is written. |
+| **Rate limiting** | Each email address is limited to **5 submissions per hour** via `CacheService`. Requests over the cap receive an error response without touching the Sheet. |
+| **Formula injection protection** | All cell values are sanitized before writing: strings starting with `=`, `+`, `-`, `@`, `\|`, or `%` are prefixed with a tab character so Sheets stores them as plain text instead of executing them as formulas. |
+| **Concurrent write safety** | `LockService` serialises simultaneous requests so sheet creation and row appends are race-condition-free. |
+
+---
 
 State IR reviews require at least an outline of each CCC/GMP document. Each state in scope requires the following documents:
 

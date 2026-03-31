@@ -640,6 +640,17 @@ a.project-link:hover {
     color: #ef4444;
 }
 
+/* Honeypot trap — off-screen and inert for real users; bots still fill it */
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* ===== Footer ===== */
 .footer {
     padding: 60px 0 40px;
