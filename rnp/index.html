@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reg &amp; Pol Volumes — ClearLine's five behavioral archetypes for cannabis regulatory markets. Understanding how regulatory environments act, not just what the rules say.">
+    <title>Reg &amp; Pol Volumes | ClearLine Compliance</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../ir/ir-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== R&P Volume Cards ===== */
+        .rnp-volume-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .rnp-volume-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-primary);
+            border-radius: var(--border-radius);
+            padding: 40px 48px;
+            transition: var(--transition);
+        }
+
+        .rnp-volume-card:hover {
+            border-color: var(--color-primary);
+            transform: translateX(4px);
+        }
+
+        .rnp-volume-header {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .rnp-volume-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--color-primary-glow);
+            border: 1px solid var(--color-primary);
+            border-radius: 6px;
+            padding: 4px 10px;
+            white-space: nowrap;
+        }
+
+        .rnp-volume-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+
+        .rnp-volume-tagline {
+            font-size: 0.9rem;
+            color: var(--color-text-dim);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .rnp-volume-body p {
+            color: var(--color-text-muted);
+            line-height: 1.75;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .rnp-volume-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .rnp-volume-body strong {
+            color: var(--color-text);
+        }
+
+        .rnp-facts {
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .rnp-facts li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+            color: var(--color-text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .rnp-facts li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+
+        .rnp-factoid {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-sm);
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .rnp-factoid-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .rnp-factoid p {
+            color: var(--color-text-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* ===== Explainer Banner ===== */
+        .rnp-explainer {
+            background: var(--color-primary-glow);
+            border: 1px solid var(--color-primary);
+            border-radius: var(--border-radius);
+            padding: 32px 40px;
+            margin-bottom: 48px;
+        }
+
+        .rnp-explainer h3 {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+
+        .rnp-explainer p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .rnp-explainer p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== Five-Type Index ===== */
+        .rnp-index-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+
+        .rnp-index-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        .rnp-index-chip:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .rnp-index-chip .chip-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 0.08em;
+        }
+
+        .rnp-index-chip .chip-name {
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .rnp-volume-card {
+                padding: 28px 24px;
+            }
+
+            .rnp-volume-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">ClearLine</span>
+            </a>
+        </div>
+        <a href="../index.html#contact" class="nav-cta">Get Started</a>
+    </nav>
+
+    <div class="ir-breadcrumb">
+        <a href="../index.html">Home</a><span>›</span>
+        Reg &amp; Pol Volumes
+    </div>
+
+    <div class="ir-hero">
+        <div class="badge fade-in">Behavioral Archetypes</div>
+        <h1 class="slide-up">Reg &amp; Pol Volumes</h1>
+        <p class="ir-subtitle slide-up-delay">Five patterns that describe how cannabis regulatory markets actually behave — not just what the rules say, but how enforcement thinks, moves, and lands.</p>
+    </div>
+
+    <!-- What is Reg & Pol -->
+    <section class="ir-section">
+        <div class="ir-container">
+            <span class="section-tag">The Moniker Explained</span>
+            <h2>What Is "Reg &amp; Pol"?</h2>
+
+            <p><strong>Reg &amp; Pol</strong> is shorthand for Regulation &amp; Policy — the two forces that determine how cannabis compliance actually works in practice. Regulation is what's written. Policy is what's enforced. In cannabis law, the gap between those two things is where operators win and lose.</p>
+
+            <p>Every state cannabis market has a statute. Most have implementing regulations. But statutes and regulations don't tell you how often the agency shows up, which violations trigger action versus a warning letter, whether the enforcement posture shifts after an election, or how much a local municipality can quietly undo what the state just permitted. That's the domain of Reg &amp; Pol — the living character of a regulatory environment, not just its written bones.</p>
+
+            <p>ClearLine developed the <strong>R&amp;P classification system</strong> to map these behavioral patterns across markets. Each R&amp;P type — a Reg &amp; Pol Playbook, or RNP — describes an archetype that recurs across states regardless of the specific statute text. A market that scores high on RNP-01 (Mini Muni) looks different from one that's primarily RNP-04 (Weathervane), even if both have legal adult-use cannabis and comprehensive seed-to-sale tracking requirements. The archetype predicts behavior; the statute only describes the surface.</p>
+
+            <p>Understanding which R&amp;P archetype governs a given market is often more predictive of compliance risk than any amount of rule-reading. It tells you who's watching, how they're watching, what gets them to act, and what they'll overlook. The full Reg &amp; Pol Volumes are the deep-dive guides to each archetype — for operators who need more than a rulebook.</p>
+
+            <div class="rnp-explainer">
+                <h3>How R&amp;P Relates to Cannabis Law</h3>
+                <p>Cannabis legalization didn't create a single unified regulatory model. Each state borrowed from the frameworks it already had — alcohol, healthcare, tax administration, law enforcement — and the agency that took ownership of cannabis compliance brought its own institutional culture with it. That culture is the hidden operating system of every cannabis market.</p>
+                <p>The R&amp;P classification surfaces that operating system. When you know a market is a Metronome (RNP-05), you can build compliance calendars with confidence. When you know it's Wet Paint (RNP-02), you build in interpretive buffers and stay close to agency guidance channels. When it's a Weathervane (RNP-04), your compliance strategy has to account for political developments the same way it accounts for rulemaking cycles.</p>
+                <p>The Reg &amp; Pol Volumes are the intelligence layer beneath the Grey Matter Volumes — the behavioral map that explains why a market operates the way it does.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volume Index Jump Links -->
+    <section class="ir-section">
+        <div class="ir-container">
+            <span class="section-tag">The Five Volumes</span>
+            <h2>R&amp;P Archetypes at a Glance</h2>
+            <p>Each archetype describes a distinct behavioral pattern in how cannabis regulatory markets operate. Most states exhibit elements of multiple types; the dominant type determines the compliance posture operators should build toward.</p>
+
+            <div class="rnp-index-row">
+                <a href="#rnp-01" class="rnp-index-chip">
+                    <span class="chip-code">RNP-01</span>
+                    <span class="chip-name">Mini Muni</span>
+                </a>
+                <a href="#rnp-02" class="rnp-index-chip">
+                    <span class="chip-code">RNP-02</span>
+                    <span class="chip-name">Wet Paint</span>
+                </a>
+                <a href="#rnp-03" class="rnp-index-chip">
+                    <span class="chip-code">RNP-03</span>
+                    <span class="chip-name">Headliners</span>
+                </a>
+                <a href="#rnp-04" class="rnp-index-chip">
+                    <span class="chip-code">RNP-04</span>
+                    <span class="chip-name">Weathervanes</span>
+                </a>
+                <a href="#rnp-05" class="rnp-index-chip">
+                    <span class="chip-code">RNP-05</span>
+                    <span class="chip-name">Metronomes</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RNP-01: Mini Muni -->
+    <section class="ir-section" id="rnp-01">
+        <div class="ir-container">
+            <span class="section-tag">Volume I</span>
+            <h2>The Five Reg &amp; Pol Volumes</h2>
+
+            <div class="rnp-volume-grid">
+
+                <div class="rnp-volume-card">
+                    <div class="rnp-volume-header">
+                        <span class="rnp-volume-code">RNP-01</span>
+                        <span class="rnp-volume-title">Mini Muni</span>
+                    </div>
+                    <p class="rnp-volume-tagline">Where the real rules live one jurisdiction down from the state line.</p>
+                    <div class="rnp-volume-body">
+                        <p>Mini Muni markets are defined by the gap between what state law permits and what local jurisdictions actually allow. The state sets the floor; the municipality sets the ceiling, and sometimes the ceiling is very low. In Mini Muni environments, operators face a compliance surface that is literally wider than any single regulatory document — because staying legal requires satisfying two distinct bodies of law that were written by agencies that rarely coordinate.</p>
+                        <p>Local authority in cannabis is broad and jealously held. Most state enabling legislation explicitly preserves municipal rights to ban, restrict hours, limit license counts, add zoning setbacks, require community notifications, and impose fees above the state schedule. The practical result is that operators in Mini Muni markets cannot fully comply by mastering state regulations alone. They need a second compliance track — one that accounts for a different inspection authority, a different standard of proof, and a political environment that is far more immediately responsive to neighborhood complaints than any state agency.</p>
+                        <ul class="rnp-facts">
+                            <li>State and local compliance tracks coexist with limited coordination between the two licensing authorities</li>
+                            <li>Municipal rules frequently address signage, odor, hours, and community notification with no state analog</li>
+                            <li>A license in good standing with the state is no protection against local enforcement action</li>
+                            <li>Multi-location operators must maintain separate compliance workflows per jurisdiction</li>
+                        </ul>
+                        <div class="rnp-factoid">
+                            <span class="rnp-factoid-label">Field Illustration</span>
+                            <p>In Colorado, Denver's Office of Cannabis Management imposes neighborhood notification requirements and community impact assessments on new retail applicants — processes that have no equivalent in the MED's state licensing framework. A licensed operator who complied fully with every state rule but failed to navigate Denver's local community review process has lost a retail license over a layer of compliance that existed entirely outside the document they were trained on. The state knows nothing about it until after the local denial is issued.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RNP-02: Wet Paint -->
+                <div class="rnp-volume-card" id="rnp-02">
+                    <div class="rnp-volume-header">
+                        <span class="rnp-volume-code">RNP-02</span>
+                        <span class="rnp-volume-title">Wet Paint</span>
+                    </div>
+                    <p class="rnp-volume-tagline">The rules are still being written while the market is already open.</p>
+                    <div class="rnp-volume-body">
+                        <p>Wet Paint markets are early-stage regulatory environments where the framework is formally in place but functionally incomplete. Rules get promulgated in stages. Emergency regulations fill gaps left by permanent rulemaking that's running behind the market. Agency guidance frequently supersedes, clarifies, or quietly contradicts the text that was published six months earlier. Operators in these markets face the unusual position of needing to comply with expectations that aren't fully articulated anywhere in writing.</p>
+                        <p>Wet Paint is not a criticism of agency competence — it is a structural condition of cannabis legalization. Agencies building programs from scratch lack the institutional precedent that makes enforcement predictable. The rulemaking calendar typically lags the market launch by design, because the legislature wanted sales to begin before the administrative record was complete. In this environment, operators who stay close to agency communication channels — attending stakeholder meetings, monitoring informal guidance, tracking draft rules — have a material compliance advantage over those who rely exclusively on the published regulatory text.</p>
+                        <ul class="rnp-facts">
+                            <li>Formal rules are incomplete or provisional; agency guidance frequently carries more operational weight than the published regulation</li>
+                            <li>Enforcement posture is restrained early — agencies use warnings and education before penalty escalation while they build their own precedent</li>
+                            <li>Rule changes arrive quickly and with short implementation timelines; compliance calendars must build in revision capacity</li>
+                            <li>The window for shaping regulation through stakeholder engagement is actively open — more so than at any other stage</li>
+                        </ul>
+                        <div class="rnp-factoid">
+                            <span class="rnp-factoid-label">Field Illustration</span>
+                            <p>Minnesota's adult-use market launched in 2023 under a framework where the Office of Cannabis Management was still conducting formal rulemaking after retail operations had already begun. Early licensees operated under temporary rules that were being revised in real time. An operator who built their compliance program around the first-published draft rules found that several key provisions — including some packaging and labeling requirements — had been materially revised before the first inspection cycle. The compliance posture that was correct in Q4 2023 was different from the one that applied in Q2 2024.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RNP-03: Headliners -->
+                <div class="rnp-volume-card" id="rnp-03">
+                    <div class="rnp-volume-header">
+                        <span class="rnp-volume-code">RNP-03</span>
+                        <span class="rnp-volume-title">Headliners</span>
+                    </div>
+                    <p class="rnp-volume-tagline">The enforcement action you didn't receive shapes your behavior as much as the one you did.</p>
+                    <div class="rnp-volume-body">
+                        <p>Headliner markets are defined by the amplifying effect of public enforcement. When an agency takes high-visibility action — a publicized raid, a major license revocation, a criminal referral that makes the trade press — the behavioral effect extends far beyond the licensed operator named in the headline. Operators across the market adjust, often dramatically, in response to what they read. The regulatory communication is implicit: this is what happens when you get this wrong.</p>
+                        <p>The Headliner archetype is most powerful in large, fragmented markets where agency resources are insufficient to inspect every licensee with regularity. Because direct regulatory contact is infrequent for most operators, the market reads indirect signals — enforcement headlines, trade press commentary, insider conversations at industry events — and calibrates risk tolerance accordingly. Compliance in Headliner markets is partly a function of what peers believe the agency is watching, not only what the agency has actually communicated.</p>
+                        <ul class="rnp-facts">
+                            <li>Public enforcement actions function as de facto regulatory communication — announcing priorities without issuing formal guidance</li>
+                            <li>Compliance behavior is responsive to industry perception of risk, which is shaped by media and peer networks as much as agency contact</li>
+                            <li>Over-compliance is common: operators enforce against themselves more aggressively than the agency likely would</li>
+                            <li>The gap between publicly visible enforcement and aggregate agency activity can be very large — most enforcement is quiet; the headlines are selected, not representative</li>
+                        </ul>
+                        <div class="rnp-factoid">
+                            <span class="rnp-factoid-label">Field Illustration</span>
+                            <p>Following a series of high-visibility enforcement actions against unlicensed California cannabis operators in 2021 — actions that received substantial trade and general press coverage — licensed dispensaries in markets not directly targeted by the Bureau of Cannabis Control reported measurably increasing their own internal compliance documentation and audit frequency. The driver wasn't a new rule, a direct regulatory communication, or any formal agency notice to licensed operators. It was the news cycle. Headliner markets produce compliance behavior at industry scale through a mechanism that doesn't appear anywhere in the regulatory text.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RNP-04: Weathervanes -->
+                <div class="rnp-volume-card" id="rnp-04">
+                    <div class="rnp-volume-header">
+                        <span class="rnp-volume-code">RNP-04</span>
+                        <span class="rnp-volume-title">Weathervanes</span>
+                    </div>
+                    <p class="rnp-volume-tagline">The compliance risk that arrives without a rulemaking is the one that catches operators off guard.</p>
+                    <div class="rnp-volume-body">
+                        <p>Weathervane markets are regulated environments where enforcement posture is meaningfully tied to the political priorities of whoever holds executive or agency authority at a given moment. The statute doesn't change; the regulations don't change; but the behavior of the enforcement apparatus shifts sharply enough that operators effectively face a different compliance environment following an election or a key appointment. Weathervane markets require a compliance strategy that includes political tracking alongside regulatory calendars.</p>
+                        <p>The Weathervane archetype is not a product of bad regulatory design — it is an honest description of what happens when agencies with broad discretionary authority are led by individuals whose priorities differ from their predecessors. Cannabis enforcement is inherently discretion-heavy. Inspection frequency, violation thresholds for escalation, the pace of license renewal processing, and the willingness to negotiate consent agreements are all matters of agency culture and leadership tone. Under one director, an audit flag triggers a corrective action letter. Under the next, it triggers a suspension.</p>
+                        <ul class="rnp-facts">
+                            <li>Enforcement intensity can shift materially without any change to statute or regulation</li>
+                            <li>Agency leadership transitions are compliance events — operators should monitor appointments and track stated priorities</li>
+                            <li>The same behavior that was tolerated under one administration may constitute a pattern of violations under the next</li>
+                            <li>Weathervane markets reward operators who maintain clean compliance records regardless of enforcement intensity — the low-activity periods are not safety</li>
+                        </ul>
+                        <div class="rnp-factoid">
+                            <span class="rnp-factoid-label">Field Illustration</span>
+                            <p>Oklahoma's medical cannabis program underwent a documented shift in enforcement posture following the 2022 gubernatorial transition. The Oklahoma Medical Marijuana Authority accelerated its license revocation pace and inspection frequency under new agency leadership — a behavioral pattern that had been comparatively dormant in the preceding two-year period under the same underlying statutory framework. Operators who had calibrated their compliance programs to the previous enforcement cadence found the ground had shifted without any change to the rules they were trained on. The Weathervane had turned.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RNP-05: Metronomes -->
+                <div class="rnp-volume-card" id="rnp-05">
+                    <div class="rnp-volume-header">
+                        <span class="rnp-volume-code">RNP-05</span>
+                        <span class="rnp-volume-title">Metronomes</span>
+                    </div>
+                    <p class="rnp-volume-tagline">Predictability is not the absence of risk. It is the ability to prepare for it.</p>
+                    <div class="rnp-volume-body">
+                        <p>Metronome markets are mature regulatory environments with consistent, predictable enforcement cadences. Inspection cycles are regular. Penalty structures are documented and applied with reasonable uniformity. Agency guidance is consistent with actual enforcement outcomes. The adjudication record is accessible enough that experienced compliance professionals can tell you, within reasonable confidence, what violation thresholds trigger action and which infractions reliably resolve through corrective action letters. The rhythm is knowable — and in compliance, a knowable rhythm is a profound advantage.</p>
+                        <p>Metronome markets are typically mature programs — five or more years past initial legalization — where the enforcement apparatus has had time to develop institutional memory, publish its precedent, and settle into operational patterns that don't depend on leadership transitions or political cycles. The predictability is itself the product of accumulated enforcement history, not the inherent design of the regulatory framework. Metronomes are made, not born. They are what cannabis markets look like when the Wet Paint dries and the Weathervane stabilizes.</p>
+                        <ul class="rnp-facts">
+                            <li>Inspection frequency and structure are stable and largely predictable from the prior enforcement record</li>
+                            <li>Penalty progressions are documented; first-offense outcomes are consistent with published precedent</li>
+                            <li>Operators can build compliance calendars that anticipate regulatory contact rather than react to it</li>
+                            <li>The adjudication record is the most valuable compliance document in a Metronome market — more predictive than the rule text itself</li>
+                        </ul>
+                        <div class="rnp-factoid">
+                            <span class="rnp-factoid-label">Field Illustration</span>
+                            <p>Colorado's Marijuana Enforcement Division has developed one of the most predictable enforcement models in American cannabis. Operators with a decade of market experience describe the inspection cycle with precision: a formal scheduled inspection cadence per license type, with unannounced visits typically triggered by identifiable METRC anomaly flags rather than random targeting. Experienced compliance professionals in the Colorado market structure their quarterly internal audits to front-run the state's known review cycle — using the MED's own rhythm against the risk of finding a problem on inspection day that an internal audit would have caught two weeks earlier. That kind of operational precision is only possible in a Metronome.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon / Full Guides -->
+    <section class="ir-section">
+        <div class="ir-container">
+            <span class="section-tag">What's Coming</span>
+            <h2>The Full R&amp;P Volumes</h2>
+
+            <p>These one-pagers are the teaser layer — the surface signal of each archetype. The full Reg &amp; Pol Volumes are multi-page guides built for operators and compliance teams who need more than a description. Each full Volume covers the archetype's diagnostic criteria, the compliance strategies that work specifically within it, the failure patterns that are endemic to it, and how to identify when a market is transitioning from one type to another.</p>
+
+            <p>The full Volumes are in development and will be available through ClearLine's intelligence subscription. If you're navigating a market that fits one of these archetypes and need more than an orientation — <a href="../index.html#contact" style="color:var(--color-primary);text-decoration:underline;">get in touch</a>.</p>
+
+            <div class="ir-callout">
+                <p>The R&amp;P classification is one component of the ClearLine OS knowledge base — alongside the Core Intelligence Layer, the Statutory Placement Index, and the Penumbrant Papers. <a href="../clearline-os/index.html" style="color:var(--color-primary);text-decoration:underline;">See the full architecture →</a></p>
+            </div>
+
+            <a href="../index.html" class="ir-back">← Back to home</a>
+        </div>
+    </section>
+
+    <footer class="ir-footer">
+        <div class="ir-container">
+            <p>&copy; 2026 <a href="../index.html">Kris Gracia / ClearLine</a>. Reg &amp; Pol Volumes — Behavioral archetypes for cannabis regulatory markets.</p>
+        </div>
+    </footer>
+</body>
+</html>
