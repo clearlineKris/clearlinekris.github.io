@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Clear Lines — real-time cannabis regulatory signal feed from ClearLine. Dispatches on enforcement drift, METRC contradictions, and policy shifts.">
+    <title>The Clear Lines | Regulatory Signal Feed</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .article-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+        .article-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+        .article-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+        }
+        .article-card p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .article-meta {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            color: var(--color-text-dim);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">clearlineKris</span>
+            </a>
+        </div>
+        <a href="../index.html#contact" class="nav-cta">Get Started</a>
+    </nav>
+
+    <div class="ir-hero">
+        <div class="badge fade-in">Living Signal Layer</div>
+        <h1 class="slide-up">The Clear Lines</h1>
+        <p class="ir-subtitle slide-up-delay">The article index for real-time cannabis regulatory drift — enforcement anomalies, METRC contradictions, and policy shifts as they happen.</p>
+    </div>
+
+    <section class="ir-section">
+        <div class="ir-container">
+            <span class="section-tag">Article Index</span>
+            <h2>Dispatches</h2>
+            <p>These articles track the regulatory front lines and feed the vault. They are the public surface of ClearLine's change-detection layer.</p>
+
+            <div class="article-grid slide-up-delay-more">
+                <a class="article-card" href="https://github.com/clearlineKris/Clear-FrontLines" target="_blank" rel="noopener">
+                    <h3>The Clear Lines Repo</h3>
+                    <p>Browse the full dispatch archive by year and jurisdiction.</p>
+                    <div class="article-meta">GitHub → clearlineKris/Clear-FrontLines</div>
+                </a>
+                <a class="article-card" href="../ir/index.html">
+                    <h3>RegMatrix Volumes</h3>
+                    <p>State-by-state compliance intelligence: field notes, margin analysis, and regulatory insights.</p>
+                    <div class="article-meta">Active markets · Research backlog</div>
+                </a>
+                <a class="article-card" href="../rnp/index.html">
+                    <h3>Reg &amp; Pol Volumes</h3>
+                    <p>Five behavioral archetypes for cannabis regulatory markets — Mini Muni through Metronome.</p>
+                    <div class="article-meta">Archetype previews · Full guides coming</div>
+                </a>
+                <a class="article-card" href="../penumbrant/index.html">
+                    <h3>Penumbrant Papers</h3>
+                    <p>State-specific analysis of why cannabis regulation is structured the way it is — and what that means for operators.</p>
+                    <div class="article-meta">Per-state series · Published + In Progress</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="ir-section">
+        <div class="ir-container">
+            <span class="section-tag">What This Is</span>
+            <h2>Signal, Not Noise</h2>
+            <p>Clear-FrontLines is not a blog. It is an article index for dispatches generated from regulatory change detection. Each item is tied to a concrete source: statute, rulemaking, agency memo, enforcement action, or METRC data anomaly.</p>
+            <p>The feed is strongest at the intersection of real-time signal and historical context — the RegMatrix layer gives the state background; The Clear Lines gives the day-to-day delta.</p>
+        </div>
+    </section>
+
+    <footer class="ir-footer">
+        <div class="ir-container">
+            <p>&copy; 2026 <a href="../index.html">Kris Gracia / ClearLine</a>. The Clear Lines — Regulatory Signal Feed.</p>
+        </div>
+    </footer>
+</body>
+</html>
