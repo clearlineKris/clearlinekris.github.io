@@ -517,6 +517,13 @@ h3 {
     color: var(--color-text-dim);
 }
 
+.state-badge--outline {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: none;
+}
+
 .states-note {
     text-align: center;
     color: var(--color-text-dim);
