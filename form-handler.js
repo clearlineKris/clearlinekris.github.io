@@ -1,17 +1,24 @@
 /**
  * form-handler.js
  *
- * Submits the contact form to a Google Apps Script Web App which appends
- * each lead to a Google Sheet.
+ * Submits the contact form to a Zapier Catch Hook webhook, which the
+ * Zap can forward anywhere (sheet, email, CRM, Slack, etc).
  *
- * Setup: deploy google-apps-script/Code.gs as a Web App (see README for
- * full instructions) and paste the resulting URL into SCRIPT_URL below.
+ * Setup: in Zapier create a Zap with the "Webhooks by Zapier" trigger
+ * (event: Catch Hook), then replace YOUR_ZAPIER_HOOK_URL below with
+ * the URL Zapier gives you after clicking "Test trigger".
  */
 (function () {
   'use strict';
 
-  // ── Replace with your deployed Google Apps Script Web App URL ────────────
-  var SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+  // ── Replace with your Zapier Catch Hook URL ──────────────────────────────
+  //   1. In Zapier: create a Zap with the "Webhooks by Zapier" trigger,
+  //      choose "Catch Hook", copy the URL it gives you after clicking
+  //      "Test trigger".
+  //   2. Paste that URL below (looks like
+  //      https://hooks.zapier.com/hooks/catch/12345/abcdef/ ).
+  //   3. Map the form fields in the Zap action step (name, email, etc.).
+  var SCRIPT_URL = 'YOUR_ZAPIER_HOOK_URL';
   // ─────────────────────────────────────────────────────────────────────────
 
   var form = document.getElementById('contact-form');
@@ -25,8 +32,8 @@
 
     // Guard: if SCRIPT_URL has not been configured yet, show a clear message
     // rather than silently failing or submitting to a placeholder endpoint.
-    if (!SCRIPT_URL || SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL' ||
-        SCRIPT_URL.slice(0, 34) !== 'https://script.google.com/macros/') {
+    if (!SCRIPT_URL || SCRIPT_URL === 'YOUR_ZAPIER_HOOK_URL' ||
+        SCRIPT_URL.slice(0, 30) !== 'https://hooks.zapier.com/') {
       showStatus('error', 'Form is not yet configured. Please check back soon.');
       return;
     }
@@ -42,7 +49,7 @@
     submitBtn.disabled    = true;
     submitBtn.textContent = 'Sending\u2026';
 
-    // POST to Google Apps Script
+    // POST to Zapier webhook
     // no-cors makes this a simple CORS request so no preflight is needed.
     // The response is opaque — success is optimistic (the request is sent,
     // but we cannot verify delivery or distinguish server-side errors from success).
