@@ -4,7 +4,7 @@
 1. Content Refinement & Portfolio Maintenance
 2. Personalization & Brand Alignment
 3. Job Opportunity Identification
-4. ClearLine Client Prospecting
+4. Veridion Client Prospecting
 
 ## Codex Agent Capabilities
 - General-purpose LLM (GPT-4)
@@ -22,8 +22,8 @@
 ### 3. Job Opportunity Identification
 - Codex can use web search and GitHub issue/PR search to monitor and surface relevant job opportunities, flagging those that match technical and industry criteria.
 
-### 4. ClearLine Client Prospecting
-- Codex can prospect for ClearLine clients by monitoring industry news, regulatory updates, and hiring signals using web search and file tools.
+### 4. Veridion Client Prospecting
+- Codex can prospect for Veridion clients by monitoring industry news, regulatory updates, and hiring signals using web search and file tools.
 
 ## Gaps
 - Codex lacks persistent memory and autonomous scheduling.

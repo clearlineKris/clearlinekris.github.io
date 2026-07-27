@@ -42,7 +42,7 @@ def build_parser() -> argparse.ArgumentParser:
         prog="cannabis_compliance_scraper",
         description=(
             "Scrape state cannabis regulatory agency websites for compliance "
-            "updates, bulletins, and rule changes. Part of the ClearLine "
+            "updates, bulletins, and rule changes. Part of the Veridion "
             "Engine Room toolchain."
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,

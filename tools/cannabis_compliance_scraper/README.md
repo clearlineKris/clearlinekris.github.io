@@ -1,6 +1,6 @@
 # cannabis_compliance_scraper
 
-> **ClearLine Engine Room — Regulatory Intelligence Tool**
+> **Veridion Engine Room — Regulatory Intelligence Tool**
 > Scrapes state cannabis agency websites for compliance updates, bulletins, and rule changes.
 
 ---
@@ -8,7 +8,7 @@
 ## Overview
 
 `cannabis_compliance_scraper` is a Python package that pulls regulatory updates
-from official state agency websites across all twelve states in ClearLine's
+from official state agency websites across all twelve states in Veridion's
 Intelligence Rollout (IR) scope:
 
 | Code | State       | Agency                                          |
@@ -154,7 +154,7 @@ class NevadaScraper(BaseScraper):
 
 - All HTTP requests include a polite 1.5-second delay between calls.
 - The scraper retries once on failure before giving up for a state.
-- The `User-Agent` header identifies ClearLine so agencies can identify the bot.
+- The `User-Agent` header identifies Veridion so agencies can identify the bot.
 - State agency websites change their markup periodically — selectors may need
   updates. When a scraper returns 0 results, inspect the live page HTML.
 
@@ -162,7 +162,7 @@ class NevadaScraper(BaseScraper):
 
 ## Engine Room Integration
 
-This tool is designed to feed data into the ClearLine Engine Room workflow:
+This tool is designed to feed data into the Veridion Engine Room workflow:
 
 ```
 cannabis_compliance_scraper → RegForge knowledge base ingestion
@@ -176,4 +176,4 @@ changes before they affect client operations.
 
 ---
 
-*Part of the ClearLine compliance intelligence stack — built by Kris Gracia.*
+*Part of the Veridion compliance intelligence stack — built by Kris Gracia.*

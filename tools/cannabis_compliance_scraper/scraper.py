@@ -69,7 +69,7 @@ class RegulatoryItem:
 
 DEFAULT_HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (compatible; ClearLine-ComplianceScraper/0.1; "
+        "Mozilla/5.0 (compatible; Veridion-ComplianceScraper/0.1; "
         "+https://clearlinekris.github.io)"
     )
 }

@@ -1,6 +1,6 @@
 # clearlinekris.github.io
 
-> **Official portfolio for Kris Gracia — Cannabis Compliance Strategist, AI Automation Architect, and Founder of ClearLine.**
+> **Official portfolio for Kris Gracia — Cannabis Compliance Strategist, AI Automation Architect, and Founder of Veridion.**
 
 🌐 **Live site:** [clearlinekris.github.io](https://clearlinekris.github.io)
 
@@ -8,7 +8,7 @@
 
 ## About This Repo
 
-This is the source code for Kris Gracia's personal and professional portfolio — the digital front door to **ClearLine**, a compliance consulting platform built at the intersection of cannabis regulation, AI-enhanced automation, and operational precision.
+This is the source code for Kris Gracia's personal and professional portfolio — the digital front door to **Veridion**, a compliance consulting platform built at the intersection of cannabis regulation, AI-enhanced automation, and operational precision.
 
 If you're here, you're probably a potential client, collaborator, or fellow builder navigating the increasingly complex world of cannabis compliance.
 
@@ -20,7 +20,7 @@ If you're here, you're probably a potential client, collaborator, or fellow buil
 - **`styles.css`** — Clean, branded styling
 - **`form-handler.js`** — Contact form submission logic (Google Sheets integration)
 - **`google-apps-script/Code.gs`** — Apps Script to deploy for the Google Sheets backend
-- **`favicon.png`** — The mark of ClearLine
+- **`favicon.png`** — The mark of Veridion
 - **`Codex_Horizon_Regolith_Mapping.md`** — Internal knowledge architecture documentation
 - **`.github/`** — Workflow and automation configuration
 
@@ -35,7 +35,7 @@ each submission to a Google Sheet via a Google Apps Script Web App.
 
 1. **Create a Google Sheet**
    - Open [Google Sheets](https://sheets.google.com) and create a new spreadsheet.
-   - Name it something like `ClearLine Leads`.
+   - Name it something like `Veridion Leads`.
 
 2. **Add the Apps Script**
    - In the spreadsheet, click **Extensions → Apps Script**.
@@ -109,16 +109,16 @@ State IR reviews require at least an outline of each CCC/GMP document. Each stat
 
 ---
 
-## About ClearLine
+## About Veridion
 
-**ClearLine** is a boutique compliance consulting firm specializing in:
+**Veridion** is a boutique compliance consulting firm specializing in:
 
 - 🌿 **METRC compliance** — seed-to-sale tracking, audit prep, and data reconciliation
 - 🤖 **AI-enhanced operations** — intelligent agents for regulatory workflows
 - 📋 **Cannabis waste & packaging audits** — documentation-ready, inspection-proof
 - 📊 **Data extraction & ETL pipelines** — turning raw compliance data into actionable intelligence
 
-ClearLine operates on one core principle: *compliance doesn't have to be chaos.*
+Veridion operates on one core principle: *compliance doesn't have to be chaos.*
 
 ---
 

@@ -3,14 +3,16 @@
     --color-bg: #0a0a0f;
     --color-bg-elevated: #12121a;
     --color-bg-card: #1a1a24;
-    --color-primary: #22c55e;
-    --color-primary-dim: #16a34a;
-    --color-primary-glow: rgba(34, 197, 94, 0.15);
+    --color-primary: #a855f7;
+    --color-primary-dim: #7e22ce;
+    --color-primary-glow: rgba(168, 85, 247, 0.15);
+    --color-secondary: #22c55e;
+    --color-secondary-glow: rgba(34, 197, 94, 0.18);
     --color-text: #f8fafc;
     --color-text-muted: #94a3b8;
     --color-text-dim: #64748b;
     --color-border: #2a2a3a;
-    --color-accent: #8b5cf6;
+    --color-accent: #c084fc;
     
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --border-radius: 16px;
@@ -201,8 +203,18 @@ h3 {
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.35rem);
     color: var(--color-text-muted);
-    margin: 24px 0 28px;
+    margin: 24px 0 40px;
     max-width: 600px;
+}
+
+.hero-tagline {
+    font-size: clamp(1.15rem, 2.8vw, 1.6rem);
+    font-weight: 500;
+    color: var(--color-secondary);
+    margin: 16px 0 8px;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    max-width: 700px;
 }
 
 .hero-pills {
@@ -496,38 +508,156 @@ h3 {
 
 /* ===== States Section ===== */
 .states-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
     margin-bottom: 24px;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .state-badge {
-    padding: 12px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px 8px 12px;
     background: var(--color-bg-card);
     border: 1px solid var(--color-primary);
     border-radius: 50px;
     font-weight: 500;
     color: var(--color-primary);
-    min-width: 0;
-    max-width: 100%;
-    inline-size: auto;
-    overflow-wrap: anywhere;
+    cursor: default;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
 }
 
-.state-badge.coming-soon {
-    border-color: var(--color-border);
-    color: var(--color-text-dim);
+.state-badge:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-primary-glow);
+}
+
+.state-badge__shape {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    opacity: 0.9;
 }
 
 .state-badge--outline {
     background: transparent;
-    border-color: #ffffff;
-    color: #ffffff;
-    box-shadow: none;
+    border-color: var(--color-border);
+    color: var(--color-text-dim);
+}
+
+.state-badge--outline .state-badge__shape {
+    opacity: 0.45;
+    filter: grayscale(50%);
+}
+
+.state-badge--outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.state-badge--outline:hover .state-badge__shape {
+    opacity: 0.9;
+    filter: none;
+}
+
+.state-badge .name {
+    display: inline;
+}
+
+.state-badge .abbr {
+    display: none;
+}
+
+/* Tagline: hidden on desktop by default, shown as tooltip on hover */
+.state-badge .tagline {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 12px);
+    transform: translateX(-50%);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    white-space: normal;
+    text-align: center;
+    min-width: 220px;
+    max-width: 300px;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.2s ease 0.15s;
+}
+
+.state-badge:hover .tagline {
+    display: block;
+    opacity: 1;
+}
+
+.state-badge .tagline::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-top-color: var(--color-border);
+}
+
+/* Source labels on taglines */
+.state-badge .tagline[data-source="brain"]::before {
+    content: '◆ Veridion Brain';
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
+    margin-bottom: 6px;
+}
+
+.state-badge .tagline[data-source="training"]::before {
+    content: '◆ Field Training';
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 6px;
+}
+
+/* Mobile: show abbr instead of full name, hover tooltip still works */
+@media (max-width: 639px) {
+    .state-badge {
+        padding: 8px 14px 8px 8px;
+        gap: 6px;
+    }
+    .state-badge__shape {
+        width: 22px;
+        height: 22px;
+        flex: 0 0 22px;
+    }
+    .state-badge .name {
+        display: none;
+    }
+    .state-badge .abbr {
+        display: inline;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+    }
+    .state-badge .tagline {
+        min-width: 180px;
+        max-width: 240px;
+    }
 }
 
 .states-note {

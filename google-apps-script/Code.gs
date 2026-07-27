@@ -1,5 +1,5 @@
 /**
- * Code.gs — Google Apps Script for ClearLine Contact Form → Google Sheets
+ * Code.gs — Google Apps Script for Veridion Contact Form → Google Sheets
  *
  * Deployment instructions (see README for full details):
  *   1. Open your target Google Sheet in Google Drive.
