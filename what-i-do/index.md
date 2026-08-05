@@ -1,6 +1,6 @@
 ---
 title: What I Do
-description: Veridion compliance and AI services — RegMatrix intelligence, The Clear Lines signal layer, AI/automation, and the Five Engines product stack.
+description: Veridion compliance and AI services — RegMatrix intelligence, The Clear Line editorial journal, AI/automation, and the Five Engines product stack.
 ---
 
 # What I Do
@@ -12,7 +12,7 @@ I work at the intersection of regulation, technology, and operations — where t
 | Service | Description |
 |---|---|
 | **RegMatrix** | Unified compliance intelligence layer — across states, statutes, and enforcement behavior — built for operators who need more than a rulebook. |
-| **The Clear Lines** | Real-time signal layer for regulatory drift. Index of enforcement anomalies, METRC contradictions, and policy shifts as they happen. |
+| **The Clear Line** | Editorial journal of regulatory intelligence. One-pagers that reveal the regulatory boundaries cannabis operators must understand — built on the RegMatrix backbone. |
 | **AI & Automation** | Guardrailed AI agents and automation for compliance workflows — grounded in the vault, not wrapped around it. |
 | **Five Engines** | KiloKeep, PRFCTpack, RecallRepel, RegulaGreen, and GuaranGreen — the operational core of Veridion's product stack. |
 
