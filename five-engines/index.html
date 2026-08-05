@@ -104,36 +104,6 @@
             border-color: var(--color-guaran);
             color: var(--color-guaran);
         }
-        .engine-specs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .spec-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            padding: 24px;
-        }
-        .spec-card h4 {
-            margin: 0 0 12px;
-            font-size: 1rem;
-            color: var(--color-silver);
-        }
-        .spec-card ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-        .spec-card li {
-            margin-bottom: 8px;
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        .spec-card li:last-child {
-            margin-bottom: 0;
-        }
         .hero-gradient-silver {
             position: absolute;
             top: 0;
@@ -260,92 +230,6 @@
                     <h3>GuaranGreen</h3>
                     <p>Peer-to-peer vendor rating system designed to connect cannabis operators with vetted, compliant supply chain partners.</p>
                     <span class="engine-status evaluation">In Evaluation</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: var(--color-bg-elevated);">
-        <div class="container">
-            <h2>Engine Specifications</h2>
-            <p class="section-intro" style="max-width: 800px;">Each engine maps to a specific compliance surface and regulatory framework. The shared silver layer provides METRC sync, vault anchoring, and audit-ready exports.</p>
-
-            <div class="engine-specs">
-                <div class="spec-card">
-                    <h4>KiloKeep — Inventory</h4>
-                    <ul>
-                        <li>Real-time METRC reconciliation</li>
-                        <li>Variance threshold alerts (configurable by state)</li>
-                        <li>Automated adjustment workflows with audit trail</li>
-                        <li>Package-level genealogy tracking</li>
-                        <li>Audit-ready export packages (CSV + PDF)</li>
-                    </ul>
-                </div>
-                <div class="spec-card">
-                    <h4>PRFCTpack — Product Integrity</h4>
-                    <ul>
-                        <li>COA parsing + validation against state limits</li>
-                        <li>Label claim verification (potency, terpenes, contaminants)</li>
-                        <li>Child-resistant + tamper-evident checklist</li>
-                        <li>Batch-to-label reconciliation</li>
-                        <li>Failed COA quarantine workflow</li>
-                    </ul>
-                </div>
-                <div class="spec-card">
-                    <h4>RecallRepel — Risk Intelligence</h4>
-                    <ul>
-                        <li>Historical recall pattern database (multi-state)</li>
-                        <li>Live METRC anomaly correlation</li>
-                        <li>Risk scoring: likelihood × impact × detectability</li>
-                        <li>Automated CAPA draft generation</li>
-                        <li>Regulator notification timeline tracker</li>
-                    </ul>
-                </div>
-                <div class="spec-card">
-                    <h4>RegulaGreen — Waste Management</h4>
-                    <ul>
-                        <li>Step-by-step destruction protocol app</li>
-                        <li>Witness assignment + digital sign-off</li>
-                        <li>Render-unusable method selector by waste type</li>
-                        <li>METRC waste log auto-generation</li>
-                        <li>Photo/video evidence attachment</li>
-                    </ul>
-                </div>
-                <div class="spec-card">
-                    <h4>GuaranGreen — Vendor Network</h4>
-                    <ul>
-                        <li>Peer-to-peer compliance ratings</li>
-                        <li>License verification + good-standing checks</li>
-                        <li>Transaction history anonymization</li>
-                        <li>Dispute resolution framework</li>
-                        <li>Trust score: compliance × reliability × transparency</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2>RegMatrix Integration</h2>
-            <p class="section-intro" style="max-width: 800px;">The engines don't operate in isolation — they're fed by and feed back into RegMatrix. Every engine action updates the intelligence layer; every intelligence update sharpens the engine.</p>
-
-            <div class="philosophy-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <div class="philosophy-card">
-                    <h4>Engine → RegMatrix</h4>
-                    <p>Operational data (variance events, COA failures, recall triggers, waste logs, vendor interactions) enriches <code>CL-CANREG-SOP-*</code> and <code>CL-CANREG-DOC-*</code>.</p>
-                </div>
-                <div class="philosophy-card">
-                    <h4>RegMatrix → Engine</h4>
-                    <p>Regulatory drift alerts, enforcement pattern shifts, and rule changes auto-update engine thresholds, checklists, and workflow logic.</p>
-                </div>
-                <div class="philosophy-card">
-                    <h4>Field Kit Embedding</h4>
-                    <p>Each engine ships with <code>CL-CANREG-CHKL-*</code> checklists and <code>CL-CANREG-CTRL-*</code> controls for offline/field use.</p>
-                </div>
-                <div class="philosophy-card">
-                    <h4>Unified Audit Trail</h4>
-                    <p>Single export spans all five engines — one timeline, one evidence package, one defense.</p>
                 </div>
             </div>
         </div>
