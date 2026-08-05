@@ -27,6 +27,22 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            position: relative;
+        }
+        .line-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-ice), var(--color-secondary));
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .line-card:hover::before {
+            opacity: 1;
         }
         .line-card:hover {
             border-color: var(--color-ice);
@@ -39,6 +55,9 @@
             border-color: var(--color-border);
             transform: none;
             cursor: default;
+        }
+        .line-card.coming-soon:hover::before {
+            opacity: 0;
         }
         .line-icon {
             font-size: 2rem;
@@ -95,49 +114,6 @@
             color: var(--color-text-muted);
             font-size: 0.9rem;
             line-height: 1.6;
-        }
-        .cycle-timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 32px;
-        }
-        .cycle-phase {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            text-align: center;
-            position: relative;
-        }
-        .cycle-phase::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-ice), var(--color-secondary));
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-        .cycle-phase .phase-icon {
-            font-size: 2rem;
-            margin-bottom: 12px;
-        }
-        .cycle-phase h4 {
-            margin: 0 0 8px;
-            font-size: 1.1rem;
-        }
-        .cycle-phase .phase-duration {
-            color: var(--color-text-dim);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-        }
-        .cycle-phase p {
-            margin: 0;
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
         }
         .hero-gradient-ice {
             position: absolute;
@@ -235,41 +211,7 @@
 
     <section class="section" style="background: var(--color-bg-elevated);">
         <div class="container">
-            <h2>The Editorial Cycle</h2>
-            <p class="section-intro" style="max-width: 800px;">28 days per Line. Continuous pipeline = 4 Lines in staggered rotation. Each phase builds toward the next; nothing ships without passing the quality gates.</p>
-
-            <div class="cycle-timeline">
-                <div class="cycle-phase">
-                    <div class="phase-icon">🌑</div>
-                    <h4>Discovery</h4>
-                    <div class="phase-duration">7 days</div>
-                    <p>Find the Line. Read statutes, review regs, monitor agency updates, track industry developments, capture observations.</p>
-                </div>
-                <div class="cycle-phase">
-                    <div class="phase-icon">🌓</div>
-                    <h4>Interpretation</h4>
-                    <div class="phase-duration">7 days</div>
-                    <p>Understand the Line. Identify distinctions, draft argument, build framework, verify assumptions.</p>
-                </div>
-                <div class="cycle-phase">
-                    <div class="phase-icon">🌕</div>
-                    <h4>Publication</h4>
-                    <div class="phase-duration">7 days</div>
-                    <p>Reveal the Line. Final edits, source verification, publish, distribute.</p>
-                </div>
-                <div class="cycle-phase">
-                    <div class="phase-icon">🌗</div>
-                    <h4>Reflection</h4>
-                    <div class="phase-duration">7 days</div>
-                    <p>Preserve the Line. Archive, update RegMatrix, extract frameworks, select next Line.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2>The Lines (Pipeline)</h2>
+            <h2>The Lines</h2>
             <p class="section-intro" style="max-width: 800px;">Each Line aligns with one or more of the Five Engines — giving every article a place within Veridion's broader architecture. Readers don't need to know the Engine mapping; Veridion does.</p>
 
             <div class="lines-grid">
@@ -329,11 +271,11 @@
                 </a>
             </div>
 
-            <p style="text-align: center; margin-top: 32px; color: var(--color-text-muted);">More Lines enter the pipeline through the Triage Matrix (TVKH-TRIAGE-001). Each follows the 28-day cycle from Discovery through Reflection.</p>
+            <p style="text-align: center; margin-top: 32px; color: var(--color-text-muted);">More Lines enter the pipeline through the Triage Matrix (TVKH-TRIAGE-001).</p>
         </div>
     </section>
 
-    <section class="section" style="background: var(--color-bg-elevated);">
+    <section class="section">
         <div class="container">
             <h2>RegMatrix Integration</h2>
             <p class="section-intro" style="max-width: 800px;">RegMatrix is the research and intelligence backbone. It organizes law, political context, enforcement posture, gray areas, and operator consequences into reusable knowledge. The Clear Line is one of the editorial products that emerges from that system.</p>
@@ -359,7 +301,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="background: var(--color-bg-elevated);">
         <div class="container" style="text-align: center; max-width: 700px;">
             <h2>The Deeper Purpose</h2>
             <p style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 24px;">Compliance tells people what they <em>must</em> do. The Clear Line helps them understand what they <em>should notice</em>.</p>
