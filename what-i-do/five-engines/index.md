@@ -25,6 +25,8 @@ The operational core of Veridion's product stack — five compliance engines bui
 ## Related
 
 - [RegMatrix](../regmatrix/index.md) — compliance intelligence backbone
-- [The Clear Lines](../clear-lines/index.md) — signal layer
+- [The Clear Line](../clear-line/index.html) — editorial journal
+
+[Full Engine Specifications →](../five-engines/index.html)
 
 [← Back to What I Do](../index.md)

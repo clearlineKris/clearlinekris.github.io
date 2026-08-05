@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Five Engines — KiloKeep, PRFCTpack, RecallRepel, RegulaGreen, and GuaranGreen. The operational core of Veridion's compliance product stack.">
+    <title>Five Engines | Veridion Compliance Operations Suite</title>
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .engines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .engine-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            text-decoration: none;
+            color: var(--color-text);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .engine-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .engine-card:hover::before {
+            opacity: 1;
+        }
+        .engine-card:hover {
+            border-color: var(--engine-color);
+            transform: translateY(-4px);
+        }
+        .engine-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .engine-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.35rem;
+        }
+        .engine-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .engine-card p {
+            margin: 0 0 16px;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .engine-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: var(--color-text-dim);
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-border);
+        }
+        .engine-status {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .engine-status.active {
+            color: var(--color-secondary);
+        }
+        .engine-status.evaluation {
+            color: #f59e0b;
+        }
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .philosophy-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 24px;
+        }
+        .philosophy-card h4 {
+            margin: 0 0 12px;
+            font-size: 1rem;
+        }
+        .philosophy-card p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .hero-gradient-silver {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 600px;
+            background: radial-gradient(ellipse at center top, rgba(148, 163, 184, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .badge-silver {
+            background: rgba(148, 163, 184, 0.15);
+            border: 1px solid var(--color-text-dim);
+            color: var(--color-text-dim);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+            margin: 40px 0;
+        }
+        .engine-detail-section {
+            background: var(--color-bg-elevated);
+        }
+        .engine-detail-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .engine-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        .engine-detail-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .engine-detail-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+        .engine-detail-info h3 {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+        .engine-detail-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+        .engine-detail-info p {
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .engine-detail-body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .detail-item {
+            padding: 20px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-sm);
+        }
+        .detail-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-dim);
+            margin-bottom: 8px;
+        }
+        .detail-value {
+            color: var(--color-text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .integration-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 24px;
+        }
+        .integration-card h4 {
+            margin: 0 0 12px;
+            font-size: 1rem;
+        }
+        .integration-card p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .cta-section h2 {
+            margin-bottom: 16px;
+        }
+        .cta-section p {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .engine-detail-header {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .engine-detail-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">clearlineKris</span>
+            </a>
+        </div>
+        <a href="../../index.html#contact" class="nav-cta">Get in Touch</a>
+    </nav>
+
+    <header class="hero" style="min-height: 60vh;">
+        <div class="hero-content">
+            <div class="badge fade-in badge-silver">Compliance Operations Suite</div>
+            <h1 class="slide-up">Five Engines</h1>
+            <p class="hero-subtitle slide-up-delay">The operational core of Veridion's product stack — five compliance engines built from years of on-the-ground cannabis operations across regulated markets.</p>
+        </div>
+        <div class="hero-gradient-silver"></div>
+    </header>
+
+    <section class="section" style="background: var(--color-bg-elevated);">
+        <div class="container">
+            <h2>The Five Engines</h2>
+            <p class="section-intro" style="max-width: 800px;">Each engine solves a specific compliance domain. Together they form the operational backbone that turns regulatory complexity into executable workflows.</p>
+
+            <div class="engines-grid">
+                <a class="engine-card" href="#" style="--engine-color: #8b5cf6;">
+                    <div class="engine-icon">📦</div>
+                    <span class="engine-tag" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6; border: 1px solid rgba(139, 92, 246, 0.3);">Inventory</span>
+                    <h3>KiloKeep</h3>
+                    <p>Inventory hygiene at scale. Keeps your METRC records clean, reconciled, and audit-ready — before discrepancies become violations.</p>
+                    <div class="engine-meta">
+                        <span class="engine-status active">Active</span>
+                    </div>
+                </a>
+
+                <a class="engine-card" href="#" style="--engine-color: #3b82f6;">
+                    <div class="engine-icon">🔬</div>
+                    <span class="engine-tag" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3);">Product Integrity</span>
+                    <h3>PRFCTpack</h3>
+                    <p>COA inspection engine. Validates certificate of analysis data against packaging and labeling requirements to catch issues before product ever hits the shelf.</p>
+                    <div class="engine-meta">
+                        <span class="engine-status active">Active</span>
+                    </div>
+                </a>
+
+                <a class="engine-card" href="#" style="--engine-color: #ef4444;">
+                    <div class="engine-icon">⚠️</div>
+                    <span class="engine-tag" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3);">Risk Intelligence</span>
+                    <h3>RecallRepel</h3>
+                    <p>Predictive recall engine. Combines historical recall patterns with live METRC data to surface risk signals before they escalate into enforcement actions.</p>
+                    <div class="engine-meta">
+                        <span class="engine-status active">Active</span>
+                    </div>
+                </a>
+
+                <a class="engine-card" href="#" style="--engine-color: #22c55e;">
+                    <div class="engine-icon">♻️</div>
+                    <span class="engine-tag" style="background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3);">Waste Management</span>
+                    <h3>RegulaGreen</h3>
+                    <p>End-to-end waste management compliance. Includes a standalone app that walks operators step-by-step through proper destruction procedures — no guesswork, no gaps.</p>
+                    <div class="engine-meta">
+                        <span class="engine-status active">Active</span>
+                    </div>
+                </a>
+
+                <a class="engine-card" href="#" style="--engine-color: #f59e0b;">
+                    <div class="engine-icon">🤝</div>
+                    <span class="engine-tag" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">Vendor Network</span>
+                    <h3>GuaranGreen</h3>
+                    <p>Peer-to-peer vendor rating system designed to connect cannabis operators with vetted, compliant supply chain partners.</p>
+                    <div class="engine-meta">
+                        <span class="engine-status evaluation">In Evaluation</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section engine-detail-section">
+        <div class="container">
+            <h2>Engine Deep Dive</h2>
+            <p class="section-intro" style="max-width: 800px;">Each engine operates independently but shares the RegMatrix intelligence backbone — law, enforcement posture, political context, and operator consequences unified into one system.</p>
+
+            <div class="engine-detail-card" style="--engine-color: #8b5cf6;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--border-radius) var(--border-radius) 0 0; background: linear-gradient(90deg, #8b5cf6, #a855f7);"></div>
+                <div class="engine-detail-header">
+                    <div class="engine-detail-icon">📦</div>
+                    <div class="engine-detail-info">
+                        <h3>KiloKeep</h3>
+                        <span class="engine-detail-tag" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6; border: 1px solid rgba(139, 92, 246, 0.3);">Inventory Hygiene</span>
+                        <p>METRC reconciliation at scale. Automated variance detection, cycle-count orchestration, and audit-ready documentation that turns inventory from a liability into a controlled asset.</p>
+                    </div>
+                </div>
+                <div class="engine-detail-body">
+                    <div class="detail-item">
+                        <div class="detail-label">Core Capability</div>
+                        <div class="detail-value">Automated METRC reconciliation with configurable variance thresholds per license type</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Key Workflow</div>
+                        <div class="detail-value">Daily auto-reconcile → Variance flagging → Root-cause routing → Corrective action → Audit package</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">RegMatrix Integration</div>
+                        <div class="detail-value">CL-CANREG-SOP-INV-* playbooks; CL-CANREG-CTRL-INV-* controls; Field Kit checklists</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Operator Outcome</div>
+                        <div class="detail-value">Zero-surprise audits; variance resolution in hours not days; license defense documentation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="engine-detail-card" style="--engine-color: #3b82f6;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--border-radius) var(--border-radius) 0 0; background: linear-gradient(90deg, #3b82f6, #60a5fa);"></div>
+                <div class="engine-detail-header">
+                    <div class="engine-detail-icon">🔬</div>
+                    <div class="engine-detail-info">
+                        <h3>PRFCTpack</h3>
+                        <span class="engine-detail-tag" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3);">Product Integrity</span>
+                        <p>Certificate of Analysis validation against state packaging and labeling requirements. Catches formulation drift, label mismatches, and non-compliant claims before they reach retail.</p>
+                    </div>
+                </div>
+                <div class="engine-detail-body">
+                    <div class="detail-item">
+                        <div class="detail-label">Core Capability</div>
+                        <div class="detail-value">COA parsing → requirement mapping → gap detection → remediation routing</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Key Workflow</div>
+                        <div class="detail-value">COA ingest → potency/contaminant check → label claim verification → packaging compliance → release/hold</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">RegMatrix Integration</div>
+                        <div class="detail-value">CL-CANREG-SOP-QA-* playbooks; CL-CANREG-CTRL-QA-* controls; testing lab audit trails</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Operator Outcome</div>
+                        <div class="detail-value">No failed lab results at retail; label compliance at scale; brand protection from recall</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="engine-detail-card" style="--engine-color: #ef4444;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--border-radius) var(--border-radius) 0 0; background: linear-gradient(90deg, #ef4444, #f87171);"></div>
+                <div class="engine-detail-header">
+                    <div class="engine-detail-icon">⚠️</div>
+                    <div class="engine-detail-info">
+                        <h3>RecallRepel</h3>
+                        <span class="engine-detail-tag" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3);">Risk Intelligence</span>
+                        <p>Predictive recall engine trained on historical enforcement patterns. Identifies batch-level risk signals by correlating METRC movement, lab trends, and regulatory action history.</p>
+                    </div>
+                </div>
+                <div class="engine-detail-body">
+                    <div class="detail-item">
+                        <div class="detail-label">Core Capability</div>
+                        <div class="detail-value">Pattern recognition across recall history, METRC chain-of-custody, and enforcement databases</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Key Workflow</div>
+                        <div class="detail-value">Signal ingestion → risk scoring → batch flagging → CAPA initiation → stakeholder notification → regulatory reporting</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">RegMatrix Integration</div>
+                        <div class="detail-value">CL-CANREG-SOP-RCL-* playbooks; CL-CANREG-AUD-RCL-* audit frameworks; crisis communication templates</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Operator Outcome</div>
+                        <div class="detail-value">Early warning before enforcement; reduced recall scope; defensible corrective action records</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="engine-detail-card" style="--engine-color: #22c55e;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--border-radius) var(--border-radius) 0 0; background: linear-gradient(90deg, #22c55e, #4ade80);"></div>
+                <div class="engine-detail-header">
+                    <div class="engine-detail-icon">♻️</div>
+                    <div class="engine-detail-info">
+                        <h3>RegulaGreen</h3>
+                        <span class="engine-detail-tag" style="background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3);">Waste Management</span>
+                        <p>End-to-end cannabis waste compliance with a standalone mobile app. Guides operators through destruction procedures step-by-step — witness requirements, render methods, documentation, and chain-of-custody.</p>
+                    </div>
+                </div>
+                <div class="engine-detail-body">
+                    <div class="detail-item">
+                        <div class="detail-label">Core Capability</div>
+                        <div class="detail-value">Guided destruction workflows with photo/video evidence capture and witness attestation</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Key Workflow</div>
+                        <div class="detail-value">Waste classification → method selection → witness assignment → guided destruction → evidence upload → manifest generation → regulator submission</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">RegMatrix Integration</div>
+                        <div class="detail-value">CL-CANREG-SOP-WST-* playbooks; CL-CANREG-CHKL-WST-* field checklists; state-specific render method libraries</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Operator Outcome</div>
+                        <div class="detail-value">Inspection-ready waste logs; zero witness gaps; automated manifest generation per state requirements</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="engine-detail-card" style="--engine-color: #f59e0b; opacity: 0.85;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--border-radius) var(--border-radius) 0 0; background: linear-gradient(90deg, #f59e0b, #fbbf24);"></div>
+                <div class="engine-detail-header">
+                    <div class="engine-detail-icon">🤝</div>
+                    <div class="engine-detail-info">
+                        <h3>GuaranGreen</h3>
+                        <span class="engine-detail-tag" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">Vendor Network</span>
+                        <p>Peer-to-peer vendor rating system for cannabis supply chain. Operators rate and review vendors on compliance, reliability, and quality — building a trusted network that reduces vendor risk across the ecosystem.</p>
+                    </div>
+                </div>
+                <div class="engine-detail-body">
+                    <div class="detail-item">
+                        <div class="detail-label">Core Capability</div>
+                        <div class="detail-value">Verified operator reviews, compliance attestations, and vendor scoring across license categories</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Key Workflow</div>
+                        <div class="detail-value">Vendor discovery → verified review submission → compliance badge verification → score aggregation → network recommendations</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">RegMatrix Integration</div>
+                        <div class="detail-value">CL-CANREG-SOP-VND-* playbooks; CL-CANREG-DOC-VND-* vendor case libraries; cross-reference with enforcement actions</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Status</div>
+                        <div class="detail-value">In Evaluation — architecture defined, prototype phase, operator beta recruitment planned</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-bg-elevated);">
+        <div class="container">
+            <h2>RegMatrix Integration</h2>
+            <p class="section-intro" style="max-width: 800px;">The Five Engines don't operate in isolation. Every engine reads from and writes to the RegMatrix intelligence layer — creating a compounding knowledge flywheel where each operational cycle strengthens the whole system.</p>
+
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <h4 style="color: #8b5cf6;">KiloKeep → RegMatrix</h4>
+                    <p>Inventory variance patterns feed enforcement posture models; reconciliation gaps update control effectiveness scores in <code>CL-CANREG-CTRL-INV-*</code>.</p>
+                </div>
+                <div class="integration-card">
+                    <h4 style="color: #3b82f6;">PRFCTpack → RegMatrix</h4>
+                    <p>COA failure rates by lab, cannabinoid, and contaminant type populate testing integrity benchmarks in <code>CL-CANREG-AUD-QA-*</code> audit frameworks.</p>
+                </div>
+                <div class="integration-card">
+                    <h4 style="color: #ef4444;">RecallRepel → RegMatrix</h4>
+                    <p>Recall precursors and CAPA outcomes enrich the risk intelligence library — new patterns automatically generate <code>CL-CANREG-SOP-RCL-*</code> updates.</p>
+                </div>
+                <div class="integration-card">
+                    <h4 style="color: #22c55e;">RegulaGreen → RegMatrix</h4>
+                    <p>Destruction method compliance rates by state feed waste management playbooks; witness gaps trigger <code>CL-CANREG-CHKL-WST-*</code> checklist updates.</p>
+                </div>
+                <div class="integration-card">
+                    <h4 style="color: #f59e0b;">GuaranGreen → RegMatrix</h4>
+                    <p>Vendor compliance ratings cross-reference enforcement databases; supply chain risk scores feed <code>CL-CANREG-CTRL-VND-*</code> vendor management controls.</p>
+                </div>
+                <div class="integration-card">
+                    <h4 style="color: var(--color-ice);">Cross-Engine Intelligence</h4>
+                    <p>The Triage Matrix (TVKH-TRIAGE-001) routes signals across engines — a RecallRepel signal triggers KiloKeep reconciliation and PRFCTpack COA review automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Engine Philosophy</h2>
+            <p class="section-intro" style="max-width: 800px;">Five principles that govern how we build, deploy, and evolve every engine.</p>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h4 style="color: var(--color-ice);">Operator-First Design</h4>
+                    <p>Built for the person working a closing shift — not the compliance officer in a corner office. Every workflow reduces cognitive load, not adds to it.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4 style="color: var(--color-ice);">RegMatrix-Grounded</h4>
+                    <p>No engine operates on assumptions. Every rule, threshold, and workflow traces back to sourced law, enforcement history, and operator reality in the RegMatrix backbone.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4 style="color: var(--color-ice);">Audit-Ready by Default</h4>
+                    <p>Documentation isn't an afterthought — it's the output. Every engine produces the records an inspector expects to see, formatted to the standard they require.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4 style="color: var(--color-ice);">Interoperable, Not Monolithic</h4>
+                    <p>Each engine stands alone but connects via open protocols. Operators adopt what they need; the system compounds value when engines run together.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4 style="color: var(--color-ice);">Continuous Calibration</h4>
+                    <p>Engines evolve with the regulatory landscape. RegMatrix signal feeds trigger automatic threshold recalibration and playbook updates — no manual version bumps.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h4 style="color: var(--color-ice);">Human in the Loop</h4>
+                    <p>AI assists, operators decide. Critical actions — holds, recalls, destruction authorizations — always require human attestation. Guardrails, not autopilot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section" style="background: var(--color-bg-elevated);">
+        <div class="container">
+            <h2>Ready to See an Engine in Action?</h2>
+            <p>Pick the domain that matches your biggest compliance headache. We'll walk through the workflow, the RegMatrix integration, and the operator outcome.</p>
+            <div class="cta-buttons">
+                <a href="../../index.html#contact" class="btn btn-primary">Request a Demo</a>
+                <a href="../regmatrix/index.html" class="btn btn-secondary">Explore RegMatrix</a>
+                <a href="../../the-clear-line/index.html" class="btn btn-secondary">Read The Clear Line</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">◈</span>
+                    <span class="logo-text">clearlineKris</span>
+                </div>
+                <p class="footer-tagline">The Clear Line from Regulation to Relief</p>
+            </div>
+            <p class="footer-copy">&copy; 2026 Kris Gracia · <a href="https://github.com/clearlineKris" class="footer-link">GitHub</a></p>
+        </div>
+    </footer>
+</body>
+</html>
