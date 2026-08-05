@@ -29,7 +29,7 @@
             flex-direction: column;
         }
         .line-card:hover {
-            border-color: var(--color-primary);
+            border-color: var(--color-ice);
             transform: translateY(-4px);
         }
         .line-card.coming-soon {
@@ -65,8 +65,8 @@
             border-top: 1px solid var(--color-border);
         }
         .line-tag {
-            background: var(--color-primary-glow);
-            color: var(--color-primary);
+            background: var(--color-ice-glow);
+            color: var(--color-ice);
             padding: 4px 10px;
             border-radius: 4px;
             font-weight: 600;
@@ -88,7 +88,7 @@
         .philosophy-card h4 {
             margin: 0 0 12px;
             font-size: 1rem;
-            color: var(--color-primary);
+            color: var(--color-ice);
         }
         .philosophy-card p {
             margin: 0;
@@ -117,7 +117,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            background: linear-gradient(90deg, var(--color-ice), var(--color-secondary));
             border-radius: var(--border-radius) var(--border-radius) 0 0;
         }
         .cycle-phase .phase-icon {
@@ -139,6 +139,22 @@
             font-size: 0.9rem;
             line-height: 1.5;
         }
+        .hero-gradient-ice {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 600px;
+            background: radial-gradient(ellipse at center top, var(--color-ice-glow) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .badge-ice {
+            background: var(--color-ice-glow);
+            border: 1px solid var(--color-ice);
+            color: var(--color-ice);
+        }
     </style>
 </head>
 <body>
@@ -154,11 +170,11 @@
 
     <header class="hero" style="min-height: 60vh;">
         <div class="hero-content">
-            <div class="badge fade-in">Editorial Journal</div>
+            <div class="badge fade-in badge-ice">Editorial Journal</div>
             <h1 class="slide-up">The Clear Line</h1>
             <p class="hero-subtitle slide-up-delay">An editorial journal of regulatory intelligence — one-pagers that reveal the regulatory boundaries cannabis operators must understand to navigate responsibly.</p>
         </div>
-        <div class="hero-gradient"></div>
+        <div class="hero-gradient-ice"></div>
     </header>
 
     <section class="section" style="background: var(--color-bg-elevated);">
