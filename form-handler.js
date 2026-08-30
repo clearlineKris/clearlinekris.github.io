@@ -1,81 +1,82 @@
 /**
  * form-handler.js
  *
- * Submits the contact form to a Zapier Catch Hook webhook, which the
- * Zap can forward anywhere (sheet, email, CRM, Slack, etc).
- *
- * Setup: in Zapier create a Zap with the "Webhooks by Zapier" trigger
- * (event: Catch Hook), then replace YOUR_ZAPIER_HOOK_URL below with
- * the URL Zapier gives you after clicking "Test trigger".
+ * Sends The Double Blind intake form to the ClearLine Google Apps Script
+ * web app. The form action in index.html uses the same endpoint as a
+ * no-JavaScript fallback.
  */
 (function () {
   'use strict';
 
-  // ── Replace with your Zapier Catch Hook URL ──────────────────────────────
-  //   1. In Zapier: create a Zap with the "Webhooks by Zapier" trigger,
-  //      choose "Catch Hook", copy the URL it gives you after clicking
-  //      "Test trigger".
-  //   2. Paste that URL below (looks like
-  //      https://hooks.zapier.com/hooks/catch/12345/abcdef/ ).
-  //   3. Map the form fields in the Zap action step (name, email, etc.).
-  var SCRIPT_URL = 'YOUR_ZAPIER_HOOK_URL';
-  // ─────────────────────────────────────────────────────────────────────────
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwrKLuu1dvDwzpD72y1BSEBpMNzIXoPlrs9Q8HszOQwFwv7Www8cMSUBEzuFg2sOIiA/exec';
 
   var form = document.getElementById('contact-form');
   if (!form) return;
 
   var submitBtn = form.querySelector('button[type="submit"]');
   var statusEl  = document.getElementById('form-status');
+  var submitLabel = submitBtn ? submitBtn.textContent : 'Request the opening conversation';
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  // Keep the native form fallback aligned with the JavaScript endpoint.
+  form.setAttribute('action', SCRIPT_URL);
 
-    // Guard: if SCRIPT_URL has not been configured yet, show a clear message
-    // rather than silently failing or submitting to a placeholder endpoint.
-    if (!SCRIPT_URL || SCRIPT_URL === 'YOUR_ZAPIER_HOOK_URL' ||
-        SCRIPT_URL.slice(0, 30) !== 'https://hooks.zapier.com/') {
-      showStatus('error', 'Form is not yet configured. Please check back soon.');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (!isConfiguredAppsScriptUrl(SCRIPT_URL)) {
+      showStatus('error', 'The form is not configured yet. Please reach out through GitHub.');
       return;
     }
 
-    // Collect all form values (includes honeypot field; see Code.gs)
     var params = new URLSearchParams();
     new FormData(form).forEach(function (value, key) {
       params.append(key, value);
     });
     params.append('timestamp', new Date().toISOString());
 
-    // Disable button while in flight
-    submitBtn.disabled    = true;
-    submitBtn.textContent = 'Sending\u2026';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending\u2026';
+    }
 
-    // POST to Zapier webhook
-    // no-cors makes this a simple CORS request so no preflight is needed.
-    // The response is opaque — success is optimistic (the request is sent,
-    // but we cannot verify delivery or distinguish server-side errors from success).
+    // Apps Script does not return CORS headers, so the browser cannot inspect
+    // the response. A resolved fetch confirms that the request was sent.
     fetch(SCRIPT_URL, {
-      method:  'POST',
-      mode:    'no-cors',
+      method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body:    params.toString()
+      body: params.toString()
     })
       .then(function () {
-        showStatus('success', "Message received \u2014 I\u2019ll be in touch soon.");
+        showStatus('success', 'Request received \u2014 I\u2019ll be in touch soon.');
         form.reset();
       })
       .catch(function () {
-        showStatus('error', 'Something went wrong. Please try again or reach out directly.');
+        showStatus('error', 'Something went wrong. Please try again or reach out through GitHub.');
       })
       .finally(function () {
-        submitBtn.disabled    = false;
-        submitBtn.textContent = 'Send Message';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitLabel;
+        }
       });
   });
+
+  function isConfiguredAppsScriptUrl(value) {
+    try {
+      var url = new URL(value);
+      return url.protocol === 'https:' &&
+        url.hostname === 'script.google.com' &&
+        /^\/macros\/s\/[^/]+\/exec$/.test(url.pathname);
+    } catch (error) {
+      return false;
+    }
+  }
 
   function showStatus(type, message) {
     if (!statusEl) return;
     statusEl.textContent = message;
-    statusEl.className   = 'form-status form-status--' + type;
+    statusEl.className = 'form-status form-status--' + type;
     statusEl.removeAttribute('hidden');
   }
 }());

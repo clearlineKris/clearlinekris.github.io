@@ -1,142 +1,70 @@
-# clearlinekris.github.io
+# ClearLine
 
-> **Official portfolio for Kris Gracia — Cannabis Compliance Strategist, AI Automation Architect, and Founder of Veridion.**
+The public site for ClearLine and its introductory 68th Joint Insights offer, **The Double Blind**.
 
-🌐 **Live site:** [clearlinekris.github.io](https://clearlinekris.github.io)
+**Live site:** [clearlinekris.github.io](https://clearlinekris.github.io)
 
----
+ClearLine starts with an honest possibility: the operator may already be doing it right. The Double Blind compares a record the client trusts with a separate outside sample, then distinguishes among three findings:
 
-## About This Repo
+1. The work and the proof already hold.
+2. The work is sound, but the record depends on missing context.
+3. A real operating or documentation gap is visible.
 
-This is the source code for Kris Gracia's personal and professional portfolio — the digital front door to **Veridion**, a compliance consulting platform built at the intersection of cannabis regulation, AI-enhanced automation, and operational precision.
+## Repository map
 
-If you're here, you're probably a potential client, collaborator, or fellow builder navigating the increasingly complex world of cannabis compliance.
+- `index.html` — homepage and intake form
+- `styles.css` — responsive visual system
+- `form-handler.js` — Google Apps Script form submission
+- `google-apps-script/Code.gs` — Google Sheets lead-capture backend
+- `assets/` — site assets
+- `ir/`, `the-clear-line/`, `five-engines/` — deeper ClearLine systems
 
----
+## Contact form → Google Sheets
 
-## What You'll Find
+The homepage form sends URL-encoded submissions to a Google Apps Script web app. The configured endpoint appears in both `form-handler.js` and the form's `action` attribute so the native form remains a fallback.
 
-- **`index.html`** — The main portfolio page, hand-crafted with intention
-- **`styles.css`** — Clean, branded styling
-- **`form-handler.js`** — Contact form submission logic (Google Sheets integration)
-- **`google-apps-script/Code.gs`** — Apps Script to deploy for the Google Sheets backend
-- **`favicon.png`** — The mark of Veridion
-- **`Codex_Horizon_Regolith_Mapping.md`** — Internal knowledge architecture documentation
-- **`.github/`** — Workflow and automation configuration
+### Lead columns
 
----
+| Column | Form field |
+|---|---|
+| Timestamp | Submission time |
+| Name | Name |
+| Email | Email |
+| Company | Company or operation |
+| Service | The Double Blind |
+| Record Type | Selected record category |
+| Message | “What makes you pause?” response |
 
-## Contact Form → Google Sheets Integration
+The script creates a `Leads` tab on first submission. If a tab from the previous form already exists, it preserves the old columns and appends missing ClearLine fields.
 
-The contact form collects leads (name, email, company, and address) and sends
-each submission to a Google Sheet via a Google Apps Script Web App.
+### Deploy or update the Apps Script
 
-### One-time setup
+1. Open the Google Sheet that should receive leads.
+2. Choose **Extensions → Apps Script**.
+3. Replace `Code.gs` with [`google-apps-script/Code.gs`](google-apps-script/Code.gs).
+4. Choose **Deploy → Manage deployments**.
+5. Edit the production web-app deployment, select **New version**, and deploy.
+6. Confirm **Execute as: Me** and public access for anonymous site visitors.
+7. Keep the production URL ending in `/exec` in:
+   - `form-handler.js`
+   - the contact form `action` in `index.html`
+8. Submit a clearly labeled test lead from the live site and confirm the row appears.
 
-1. **Create a Google Sheet**
-   - Open [Google Sheets](https://sheets.google.com) and create a new spreadsheet.
-   - Name it something like `Veridion Leads`.
+Editing the script without creating a new deployment version does not update the production `/exec` endpoint.
 
-2. **Add the Apps Script**
-   - In the spreadsheet, click **Extensions → Apps Script**.
-   - Delete any existing code in `Code.gs`.
-   - Paste in the contents of [`google-apps-script/Code.gs`](google-apps-script/Code.gs).
-   - Click **Save** (💾).
+### Safeguards
 
-3. **Deploy as a Web App**
-   - Click **Deploy → New deployment**.
-   - Under *Select type*, choose **Web app**.
-   - Set **Execute as** → *Me*.
-   - Set **Who has access** → *Anyone with the link* (recommended; reduces
-     automated spam compared to fully public access).
-   - Click **Deploy** and authorise when prompted.
-   - **Copy the Web App URL** shown in the confirmation dialog.
+- Hidden honeypot field for basic bot filtering
+- Required name and email checks
+- Five submissions per email per hour
+- Spreadsheet-formula injection protection
+- Script locking for concurrent writes
+- Non-destructive migration of an existing `Leads` header row
 
-4. **Wire up the front end**
-   - Open [`form-handler.js`](form-handler.js).
-   - Replace the placeholder on the `SCRIPT_URL` line with the URL you just copied:
-     ```js
-     var SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
-     ```
-   - Also update the `action` attribute on the `<form>` tag in `index.html` with the same URL (used as a no-JS fallback).
-   - Commit and push the change.
+Do not collect METRC exports, invoices, or other sensitive operating records through this public lead form. Arrange a secure exchange after the opening conversation.
 
-5. **Test it**
-   - Fill in the contact form on the live site and click **Send Message**.
-   - Open your Google Sheet — a new row should appear in the **Leads** tab within
-     a few seconds.
+## Positioning
 
-### What gets recorded
+ClearLine provides operational and regulatory-intelligence support, not legal advice. Outcomes depend on jurisdiction, facts, and regulator discretion.
 
-| Column    | Source field        |
-|-----------|---------------------|
-| Timestamp | Submission time     |
-| Name      | Name                |
-| Email     | Email               |
-| Company   | Company/Organization|
-| Address   | Street address      |
-| City      | City                |
-| State     | State               |
-| Zip       | Zip code            |
-| Message   | Message             |
-
-### Anti-abuse measures built into the Apps Script
-
-The deployed script includes several safeguards to protect your Sheet:
-
-| Measure | How it works |
-|---------|--------------|
-| **Honeypot** | A hidden field (`hp`) is added to the form. Real users never see or fill it; bots that blindly populate all fields get silently discarded. |
-| **Required-field guard** | Submissions missing `name` or `email` are rejected before any data is written. |
-| **Rate limiting** | Each email address is limited to **5 submissions per hour** via `CacheService`. Requests over the cap receive an error response without touching the Sheet. |
-| **Formula injection protection** | All cell values are sanitized before writing: strings starting with `=`, `+`, `-`, `@`, `\|`, or `%` are prefixed with a tab character so Sheets stores them as plain text instead of executing them as formulas. |
-| **Concurrent write safety** | `LockService` serialises simultaneous requests so sheet creation and row appends are race-condition-free. |
-
----
-
-State IR reviews require at least an outline of each CCC/GMP document. Each state in scope requires the following documents:
-
-- Penumbrant Papers & One-Pager
-- Working Class Exhaustive
-- Reg & Pol Volume
-- Margin Notes
-- Field Problems (fmr. Field Notes)
-- Letter of the Law Stack (LOTL)
-- Lil LOTL (corresponding)
-- Compliance Guide (for white-ops, grey-ops)
-
-**States in scope:** Colorado, Minnesota, Pennsylvania, Nebraska, New York, Ohio, California, Florida, Oklahoma, Texas, Michigan, Missouri
-
----
-
-## About Veridion
-
-**Veridion** is a boutique compliance consulting firm specializing in:
-
-- 🌿 **METRC compliance** — seed-to-sale tracking, audit prep, and data reconciliation
-- 🤖 **AI-enhanced operations** — intelligent agents for regulatory workflows
-- 📋 **Cannabis waste & packaging audits** — documentation-ready, inspection-proof
-- 📊 **Data extraction & ETL pipelines** — turning raw compliance data into actionable intelligence
-
-Veridion operates on one core principle: *compliance doesn't have to be chaos.*
-
----
-
-## About Kris
-
-Kris is a METRC Specialist and Compliance Strategist with years of hands-on experience across Colorado's cannabis industry — from dispensary operations to multi-state operator (MSO) environments. A builder at heart, Kris combines deep regulatory expertise with advanced AI tooling to create systems that actually work in the real world.
-
-Also known as **Kris in the Loop** — always at the intersection of human judgment and automated systems. Proudly a **Human with a K**: the irreplaceable, carbon-based variable in every compliance workflow.
-
-**Stack:** Python · JavaScript · YAML · SQL · Obsidian · GitHub · Google Workspace · Claude/Copilot/Gemini
-
----
-
-## Contact & Connect
-
-- 📧 Reach out via the portfolio site
-- 🐙 GitHub: [@clearlineKris](https://github.com/clearlineKris)
-
----
-
-*Made in North Philly, forged by the peaks near Denver, Colorado. Navigating penumbrant ambiguity — one commit at a time.*
+[Connect with @clearlineKris](https://github.com/clearlineKris)
