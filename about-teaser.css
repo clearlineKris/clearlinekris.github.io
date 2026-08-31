@@ -1,0 +1,50 @@
+/* Homepage autobiography teaser */
+.about-marginal {
+  margin: 24px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: #aeb5af;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .7rem;
+  line-height: 1.65;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+
+.about-marginal strong {
+  color: #d5dad5;
+  font-weight: 700;
+}
+
+.about-marginal .marginal-item {
+  color: #ff9b54;
+}
+
+.about-actions {
+  margin-top: 18px;
+}
+
+.about-why {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 2px;
+  color: #e7ebe7;
+  text-decoration: none;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.about-why:hover,
+.about-why:focus-visible {
+  border-color: #f47a2c;
+  color: #ff9b54;
+  background: rgba(244,122,44,.04);
+  outline: none;
+}
