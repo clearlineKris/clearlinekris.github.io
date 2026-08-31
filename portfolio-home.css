@@ -122,6 +122,68 @@ button,input,select,textarea { font: inherit; }
 .portfolio-card.purple { --accent: var(--purple); --accent-soft: var(--purple-soft); }
 .portfolio-card.blue { --accent: var(--revo); --accent-soft: var(--revo-soft); }
 .portfolio-card.green { --accent: var(--chartreuse); --accent-soft: var(--chartreuse-soft); }
+.portfolio-card > :not(.state-field) { position: relative; z-index: 2; }
+
+/* RegMatrix state footprint: a quiet patchwork moving behind the purple card copy. */
+.state-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  padding: 25px 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  pointer-events: none;
+  color: rgba(194,174,255,.115);
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.28), #000 17%, #000 82%, rgba(0,0,0,.3));
+  mask-image: linear-gradient(90deg, rgba(0,0,0,.28), #000 17%, #000 82%, rgba(0,0,0,.3));
+}
+.state-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5,7,6,.22), transparent 25%, transparent 72%, rgba(5,7,6,.28)),
+    linear-gradient(90deg, rgba(5,7,6,.42), rgba(5,7,6,.05) 42%, rgba(5,7,6,.24));
+}
+.state-row {
+  position: relative;
+  display: flex;
+  width: max-content;
+  gap: clamp(28px, 3vw, 48px);
+  white-space: nowrap;
+  line-height: 1;
+  will-change: transform;
+  animation: state-wave-a 18s ease-in-out infinite alternate;
+}
+.state-row:nth-child(1) { left: -18%; font-size: .78rem; opacity: .82; animation-duration: 19s; }
+.state-row:nth-child(2) { left: -3%; font-size: .68rem; opacity: .64; animation-name: state-wave-b; animation-duration: 22s; animation-delay: -5s; }
+.state-row:nth-child(3) { left: -22%; font-size: .84rem; opacity: .72; animation-duration: 24s; animation-delay: -11s; }
+.state-row:nth-child(4) { left: 4%; font-size: .64rem; opacity: .58; animation-name: state-wave-b; animation-duration: 20s; animation-delay: -8s; }
+.state-row:nth-child(5) { left: -13%; font-size: .74rem; opacity: .72; animation-duration: 23s; animation-delay: -14s; }
+.state-row span { text-shadow: 0 0 18px rgba(143,92,255,.14); }
+.portfolio-card.purple:hover .state-field,
+.portfolio-card.purple:focus-visible .state-field { color: rgba(204,187,255,.16); }
+
+@keyframes state-wave-a {
+  0%   { transform: translate3d(-4px, -2px, 0) rotate(-.35deg) scaleY(.985); }
+  35%  { transform: translate3d(7px, 2px, 0) rotate(.15deg) scaleY(1.015); }
+  68%  { transform: translate3d(14px, -1px, 0) rotate(.3deg) scaleY(.99); }
+  100% { transform: translate3d(4px, 3px, 0) rotate(-.1deg) scaleY(1.01); }
+}
+@keyframes state-wave-b {
+  0%   { transform: translate3d(8px, 2px, 0) rotate(.25deg) scaleY(1.01); }
+  42%  { transform: translate3d(-3px, -2px, 0) rotate(-.2deg) scaleY(.985); }
+  75%  { transform: translate3d(-10px, 1px, 0) rotate(-.3deg) scaleY(1.015); }
+  100% { transform: translate3d(2px, -3px, 0) rotate(.1deg) scaleY(.995); }
+}
+
 .diamond-tab {
   position: absolute; top: -15px; right: -15px; width: 48px; height: 48px;
   display: grid; place-items: center; transform: rotate(45deg);
@@ -220,6 +282,8 @@ button,input,select,textarea { font: inherit; }
   .outcomes-mini { grid-template-columns: 1fr; }
   .quote-band { grid-template-columns: auto 1fr; }
   .quote-diamonds { grid-column: 1 / -1; justify-content: flex-end; }
+  .state-field { padding-block: 22px; }
+  .state-row { gap: 42px; }
 }
 
 @media (max-width: 700px) {
@@ -234,4 +298,9 @@ button,input,select,textarea { font: inherit; }
   .quote-diamonds { justify-content: flex-start; }
   .feature-panel,.about-panel,.contact-panel,.portfolio-card { padding-left: 24px; padding-right: 24px; }
   .diamond-tab { right: 10px; }
+  .state-field { color: rgba(194,174,255,.09); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .state-row { animation: none !important; transform: none !important; }
 }
