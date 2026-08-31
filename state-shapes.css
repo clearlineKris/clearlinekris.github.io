@@ -1,0 +1,100 @@
+/* RegMatrix jurisdiction field
+   State silhouette source: coryetzkorn/state-svg-defs (MIT), original icons credited to ProPublica.
+*/
+
+.state-field.shape-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 3px;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.42), #000 14%, #000 86%, rgba(0,0,0,.38));
+  mask-image: linear-gradient(90deg, rgba(0,0,0,.42), #000 14%, #000 86%, rgba(0,0,0,.38));
+  animation: jurisdiction-field-breathe 24s ease-in-out infinite alternate;
+}
+
+.state-field.shape-field::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(5,7,6,.2), transparent 24%, transparent 73%, rgba(5,7,6,.27)),
+    linear-gradient(90deg, rgba(5,7,6,.22), transparent 44%, rgba(5,7,6,.12));
+}
+
+.state-field.shape-field .state-row { display: none !important; }
+
+.state-shape {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+  transform-origin: center;
+  opacity: var(--opacity, .12);
+  z-index: 1;
+}
+
+.state-shape img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    invert(52%) sepia(77%) saturate(2600%) hue-rotate(237deg) brightness(107%) contrast(102%)
+    drop-shadow(0 0 7px rgba(143,92,255,.18));
+  transform-origin: center;
+  animation: state-shape-sway var(--duration, 17s) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+}
+
+.state-shape:nth-child(3n) img { animation-name: state-shape-sway-b; }
+.state-shape:nth-child(4n) img { animation-name: state-shape-sway-c; }
+
+.portfolio-card.purple:hover .state-shape,
+.portfolio-card.purple:focus-visible .state-shape {
+  opacity: calc(var(--opacity, .12) + .025);
+}
+
+@keyframes jurisdiction-field-breathe {
+  0% { transform: scale(1.008) translate3d(-2px, 1px, 0); }
+  45% { transform: scale(1.016) translate3d(3px, -2px, 0); }
+  100% { transform: scale(1.01) translate3d(-1px, 3px, 0); }
+}
+
+@keyframes state-shape-sway {
+  0% { transform: translate3d(-3px, -2px, 0) rotate(-1.4deg) scale(.985); }
+  38% { transform: translate3d(4px, 2px, 0) rotate(.7deg) scale(1.015); }
+  72% { transform: translate3d(7px, -1px, 0) rotate(1.2deg) scale(.995); }
+  100% { transform: translate3d(1px, 4px, 0) rotate(-.4deg) scale(1.01); }
+}
+
+@keyframes state-shape-sway-b {
+  0% { transform: translate3d(4px, 2px, 0) rotate(1deg) scale(1.01); }
+  46% { transform: translate3d(-4px, -3px, 0) rotate(-1deg) scale(.99); }
+  100% { transform: translate3d(2px, 4px, 0) rotate(.5deg) scale(1.015); }
+}
+
+@keyframes state-shape-sway-c {
+  0% { transform: translate3d(-2px, 3px, 0) rotate(-.8deg) scale(1.015); }
+  55% { transform: translate3d(5px, -3px, 0) rotate(1.1deg) scale(.985); }
+  100% { transform: translate3d(-4px, 1px, 0) rotate(.2deg) scale(1.008); }
+}
+
+@media (max-width: 900px) {
+  .state-shape { opacity: calc(var(--opacity, .12) * .82); }
+}
+
+@media (max-width: 700px) {
+  .state-field.shape-field { opacity: .82; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .state-field.shape-field,
+  .state-shape img { animation: none !important; }
+}
