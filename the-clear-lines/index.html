@@ -4,24 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Clear Lines — real-time cannabis regulatory signal feed from Veridion. Dispatches on enforcement drift, METRC contradictions, and policy shifts.">
-    <title>The Clear Lines | Regulatory Signal Feed</title>
+    <title>The Clear Lines | Regulatory Signal Desk</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="clear-lines-styles.css?v=revo-white-20260831b">
-    <style id="revo-critical">
-        html, body { background: #ffffff !important; color: #172235 !important; }
-        .nav { background: rgba(255,255,255,.96) !important; border-bottom-color: rgba(23,105,255,.16) !important; }
-        .logo, .logo-text, .ir-hero h1, .ir-section h2, .article-card h3 { color: #172235 !important; }
-        .logo-icon, .section-tag, .article-meta { color: #1769ff !important; }
-        .ir-hero, .ir-section, .article-card { background-color: #ffffff !important; }
-        .ir-section:nth-of-type(even), .ir-footer { background: #f7faff !important; }
-        .article-card { border-color: #cfe0ff !important; }
-        .badge { background: #eef5ff !important; border-color: #9fc2ff !important; color: #0d43b8 !important; }
-        .ir-subtitle, .ir-section p, .article-card p { color: #5d6b7e !important; }
-    </style>
+    <link rel="stylesheet" href="clear-lines-styles.css?v=revo-desk-20260831">
+    <style>html,body{background:#fff!important;color:#122033!important}</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="nav">
@@ -34,55 +24,152 @@
         <a href="../index.html#contact" class="nav-cta">Get Started</a>
     </nav>
 
-    <div class="ir-hero">
-        <div class="badge fade-in">Living Signal Layer</div>
-        <h1 class="slide-up">The Clear Lines</h1>
-        <p class="ir-subtitle slide-up-delay">The article index for real-time cannabis regulatory drift — enforcement anomalies, METRC contradictions, and policy shifts as they happen.</p>
-    </div>
+    <main>
+        <section class="signal-hero">
+            <div class="signal-shell hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-kicker mono fade-in"><span class="signal-dot"></span> Regulatory signal desk</div>
+                    <h1 class="slide-up">The Clear <span class="blue">Lines</span></h1>
+                    <p class="hero-deck slide-up-delay">A public-facing signal layer for cannabis regulatory drift — enforcement anomalies, rulemaking movement, METRC contradictions, and the operational deltas that matter before they become expensive.</p>
+                    <div class="hero-actions slide-up-delay-more">
+                        <a class="signal-button primary" href="https://github.com/clearlineKris/Clear-FrontLines" target="_blank" rel="noopener">Open Dispatch Archive <span>↗</span></a>
+                        <a class="signal-button secondary" href="../ir/index.html">Open RegMatrix <span>→</span></a>
+                    </div>
+                </div>
 
-    <section class="ir-section">
-        <div class="ir-container">
-            <span class="section-tag">Article Index</span>
-            <h2>Dispatches</h2>
-            <p>These articles track the regulatory front lines and feed the vault. They are the public surface of Veridion's change-detection layer.</p>
-
-            <div class="article-grid slide-up-delay-more">
-                <a class="article-card" href="https://github.com/clearlineKris/Clear-FrontLines" target="_blank" rel="noopener">
-                    <h3>The Clear Lines Repo</h3>
-                    <p>Browse the full dispatch archive by year and jurisdiction.</p>
-                    <div class="article-meta">GitHub → clearlineKris/Clear-FrontLines</div>
-                </a>
-                <a class="article-card" href="../ir/index.html">
-                    <h3>RegMatrix Volumes</h3>
-                    <p>State-by-state compliance intelligence: field notes, margin analysis, and regulatory insights.</p>
-                    <div class="article-meta">Active markets · Research backlog</div>
-                </a>
-                <a class="article-card" href="../rnp/index.html">
-                    <h3>Reg &amp; Pol Volumes</h3>
-                    <p>Five behavioral archetypes for cannabis regulatory markets — Mini Muni through Metronome.</p>
-                    <div class="article-meta">Archetype previews · Full guides coming</div>
-                </a>
-                <a class="article-card" href="../penumbrant/index.html">
-                    <h3>Penumbrant Papers</h3>
-                    <p>State-specific analysis of why cannabis regulation is structured the way it is — and what that means for operators.</p>
-                    <div class="article-meta">Per-state series · Published + In Progress</div>
-                </a>
+                <aside class="signal-console slide-up-delay-more" aria-label="Signal classes tracked by The Clear Lines">
+                    <div class="console-top">
+                        <div>
+                            <div class="mono section-tag">Signal console</div>
+                            <div class="console-title">What the desk is watching</div>
+                        </div>
+                        <div class="live-chip"><span class="signal-dot"></span> ACTIVE</div>
+                    </div>
+                    <div class="console-list">
+                        <div class="console-row">
+                            <span class="console-bar"></span>
+                            <div><span class="console-label">Enforcement Drift</span><span class="console-note">Agency posture, interpretation, inspection behavior</span></div>
+                            <span class="console-state">Watching</span>
+                        </div>
+                        <div class="console-row">
+                            <span class="console-bar"></span>
+                            <div><span class="console-label">Rule &amp; Policy Movement</span><span class="console-note">Statutes, rules, guidance, implementation changes</span></div>
+                            <span class="console-state">Watching</span>
+                        </div>
+                        <div class="console-row">
+                            <span class="console-bar"></span>
+                            <div><span class="console-label">Operational Contradictions</span><span class="console-note">METRC, workflow, record, and field-level friction</span></div>
+                            <span class="console-state">Watching</span>
+                        </div>
+                    </div>
+                    <div class="console-foot"><span>Source-backed</span><span>Jurisdiction-scoped</span><span>Operator-facing</span></div>
+                </aside>
             </div>
-        </div>
-    </section>
 
-    <section class="ir-section">
-        <div class="ir-container">
-            <span class="section-tag">What This Is</span>
-            <h2>Signal, Not Noise</h2>
-            <p>Clear-FrontLines is not a blog. It is an article index for dispatches generated from regulatory change detection. Each item is tied to a concrete source: statute, rulemaking, agency memo, enforcement action, or METRC data anomaly.</p>
-            <p>The feed is strongest at the intersection of real-time signal and historical context — the RegMatrix layer gives the state background; The Clear Lines gives the day-to-day delta.</p>
-        </div>
-    </section>
+            <div class="signal-rail">
+                <div class="signal-shell signal-rail-inner mono">
+                    <div class="rail-item">Source-backed</div>
+                    <div class="rail-item">Change-detected</div>
+                    <div class="rail-item">Context-routed</div>
+                    <div class="rail-item">Operator-relevant</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dispatch-section" id="dispatches">
+            <div class="signal-shell">
+                <div class="section-head">
+                    <div>
+                        <span class="mono section-tag">Dispatch desk</span>
+                        <h2>Where the signal lands.</h2>
+                    </div>
+                    <p>The Clear Lines is the fast-moving surface. When a change needs more history, authority, or operational context, the signal routes into the deeper ClearLine intelligence stack.</p>
+                </div>
+
+                <div class="dispatch-grid">
+                    <a class="dispatch-card featured" href="https://github.com/clearlineKris/Clear-FrontLines" target="_blank" rel="noopener">
+                        <span class="card-arrow">↗</span>
+                        <div>
+                            <span class="card-index">01 / Primary feed</span>
+                            <h3>The Clear Lines Dispatch Archive</h3>
+                            <p>Browse the living archive of jurisdiction-specific regulatory dispatches. This is where concrete movement gets surfaced before it disappears into the noise.</p>
+                        </div>
+                        <div class="article-meta">GitHub · clearlineKris/Clear-FrontLines</div>
+                    </a>
+
+                    <a class="dispatch-card" href="../ir/index.html">
+                        <span class="card-arrow">→</span>
+                        <span class="card-index">02 / Context layer</span>
+                        <h3>RegMatrix</h3>
+                        <p>State-by-state compliance intelligence for the history, authority, and operating environment behind the signal.</p>
+                        <div class="article-meta">Compliance intelligence</div>
+                    </a>
+
+                    <a class="dispatch-card" href="../rnp/index.html">
+                        <span class="card-arrow">→</span>
+                        <span class="card-index">03 / Behavior layer</span>
+                        <h3>Reg &amp; Pol</h3>
+                        <p>Regulatory and political patterning for understanding how a jurisdiction tends to move, not only what it says.</p>
+                        <div class="article-meta">Regulatory behavior</div>
+                    </a>
+
+                    <a class="dispatch-card" href="../penumbrant/index.html">
+                        <span class="card-arrow">→</span>
+                        <span class="card-index">04 / Penumbra layer</span>
+                        <h3>Penumbrant Papers</h3>
+                        <p>Longer-form analysis of the gray space around cannabis rules — where text, intent, enforcement, and operations stop matching cleanly.</p>
+                        <div class="article-meta">Penumbrant analysis</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="signal-shell">
+                <div class="process-intro">
+                    <span class="mono section-tag">Signal processing</span>
+                    <h2>Detection is only the first move.</h2>
+                    <p>The point is not to publish more noise. The point is to catch a meaningful delta, understand what changed around it, and route it toward something an operator can actually use.</p>
+                </div>
+                <div class="process-grid">
+                    <article class="process-step" data-step="01">
+                        <span class="step-label">Detect</span>
+                        <h3>Catch the delta.</h3>
+                        <p>A statute moves. Guidance changes. Enforcement behavior drifts. A field workflow no longer matches the record.</p>
+                    </article>
+                    <article class="process-step" data-step="02">
+                        <span class="step-label">Contextualize</span>
+                        <h3>Put the signal in its environment.</h3>
+                        <p>The change gets read against history, authority, agency posture, political conditions, and the jurisdiction's operating pattern.</p>
+                    </article>
+                    <article class="process-step" data-step="03">
+                        <span class="step-label">Route</span>
+                        <h3>Send it where it becomes useful.</h3>
+                        <p>The signal can stay a dispatch, deepen into RegMatrix, inform a Penumbrant analysis, or become operator-facing ClearLine work.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="doctrine-section">
+            <div class="signal-shell doctrine-grid">
+                <div class="doctrine-copy">
+                    <span class="mono section-tag">What this is</span>
+                    <h2>Signal, not noise.</h2>
+                    <p>The Clear Lines is not a blog dressed up as intelligence. Each dispatch begins with a concrete source or observable regulatory change: statute, rulemaking, agency guidance, enforcement action, or an operational contradiction worth tracing.</p>
+                    <p>RegMatrix holds the deeper state context. The Clear Lines carries the day-to-day delta. Together, they separate “something happened” from “here is why it matters.”</p>
+                </div>
+                <aside class="doctrine-panel">
+                    <span class="mono">Operating doctrine</span>
+                    <blockquote>Catch the movement. Trace the reason. Route the consequence.</blockquote>
+                </aside>
+            </div>
+        </section>
+    </main>
 
     <footer class="ir-footer">
-        <div class="ir-container">
-            <p>&copy; 2026 <a href="../index.html">Kris Gracia / Veridion</a>. The Clear Lines — Regulatory Signal Feed.</p>
+        <div class="signal-shell">
+            <p>&copy; 2026 <a href="../index.html">Kris Gracia / Veridion</a>. The Clear Lines — Regulatory Signal Desk.</p>
             <p style="margin-top:8px;">The Clear Line from Regulation to Relief</p>
         </div>
     </footer>
