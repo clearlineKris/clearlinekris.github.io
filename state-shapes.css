@@ -1,10 +1,10 @@
 @import url("hot-copper.css?v=hot-copper-20260831");
 
-/* RegMatrix jurisdiction field
+/* RegMatrix jurisdiction stream
    State silhouette source: coryetzkorn/state-svg-defs (MIT), original icons credited to ProPublica.
 */
 
-.state-field.shape-field {
+.state-field.state-stream {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -13,90 +13,95 @@
   padding: 0;
   border-radius: 3px;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.42), #000 14%, #000 86%, rgba(0,0,0,.38));
-  mask-image: linear-gradient(90deg, rgba(0,0,0,.42), #000 14%, #000 86%, rgba(0,0,0,.38));
-  animation: jurisdiction-field-breathe 24s ease-in-out infinite alternate;
+  -webkit-mask-image:
+    linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, #000 34%, #000 100%);
+  mask-image:
+    linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, #000 34%, #000 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
-.state-field.shape-field::after {
+.state-field.state-stream::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(180deg, rgba(5,7,6,.2), transparent 24%, transparent 73%, rgba(5,7,6,.27)),
-    linear-gradient(90deg, rgba(5,7,6,.22), transparent 44%, rgba(5,7,6,.12));
+    linear-gradient(90deg, rgba(5,7,6,.86) 0%, rgba(5,7,6,.42) 45%, rgba(5,7,6,.08) 76%, rgba(5,7,6,.18) 100%),
+    linear-gradient(180deg, rgba(5,7,6,.2), transparent 25%, transparent 75%, rgba(5,7,6,.24));
 }
 
-.state-field.shape-field .state-row { display: none !important; }
-
-.state-shape {
+.state-stream-track {
   position: absolute;
-  left: var(--x);
-  top: var(--y);
-  width: var(--size);
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
-  transform-origin: center;
-  opacity: var(--opacity, .12);
-  z-index: 1;
+  top: 0;
+  right: 5%;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  animation: state-stream-rise 38s linear infinite;
 }
 
-.state-shape img {
-  display: block;
+.state-stream-cycle {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.state-stream-item {
   width: 100%;
-  height: 100%;
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: minmax(58px, 82px) auto;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  color: rgba(205,190,255,.19);
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.state-stream-item img {
+  display: block;
+  width: 78px;
+  height: 72px;
   object-fit: contain;
+  opacity: .14;
   filter:
     invert(52%) sepia(77%) saturate(2600%) hue-rotate(237deg) brightness(107%) contrast(102%)
-    drop-shadow(0 0 7px rgba(143,92,255,.18));
-  transform-origin: center;
-  animation: state-shape-sway var(--duration, 17s) ease-in-out infinite alternate;
-  animation-delay: var(--delay, 0s);
+    drop-shadow(0 0 8px rgba(143,92,255,.18));
 }
 
-.state-shape:nth-child(3n) img { animation-name: state-shape-sway-b; }
-.state-shape:nth-child(4n) img { animation-name: state-shape-sway-c; }
-
-.portfolio-card.purple:hover .state-shape,
-.portfolio-card.purple:focus-visible .state-shape {
-  opacity: calc(var(--opacity, .12) + .025);
+.state-stream-item b {
+  min-width: 24px;
+  font-size: .68rem;
+  letter-spacing: .09em;
+  font-weight: 700;
 }
 
-@keyframes jurisdiction-field-breathe {
-  0% { transform: scale(1.008) translate3d(-2px, 1px, 0); }
-  45% { transform: scale(1.016) translate3d(3px, -2px, 0); }
-  100% { transform: scale(1.01) translate3d(-1px, 3px, 0); }
-}
+.portfolio-card.purple:hover .state-stream-item img,
+.portfolio-card.purple:focus-visible .state-stream-item img { opacity: .2; }
 
-@keyframes state-shape-sway {
-  0% { transform: translate3d(-3px, -2px, 0) rotate(-1.4deg) scale(.985); }
-  38% { transform: translate3d(4px, 2px, 0) rotate(.7deg) scale(1.015); }
-  72% { transform: translate3d(7px, -1px, 0) rotate(1.2deg) scale(.995); }
-  100% { transform: translate3d(1px, 4px, 0) rotate(-.4deg) scale(1.01); }
-}
+.portfolio-card.purple:hover .state-stream-item,
+.portfolio-card.purple:focus-visible .state-stream-item { color: rgba(215,202,255,.26); }
 
-@keyframes state-shape-sway-b {
-  0% { transform: translate3d(4px, 2px, 0) rotate(1deg) scale(1.01); }
-  46% { transform: translate3d(-4px, -3px, 0) rotate(-1deg) scale(.99); }
-  100% { transform: translate3d(2px, 4px, 0) rotate(.5deg) scale(1.015); }
-}
-
-@keyframes state-shape-sway-c {
-  0% { transform: translate3d(-2px, 3px, 0) rotate(-.8deg) scale(1.015); }
-  55% { transform: translate3d(5px, -3px, 0) rotate(1.1deg) scale(.985); }
-  100% { transform: translate3d(-4px, 1px, 0) rotate(.2deg) scale(1.008); }
+@keyframes state-stream-rise {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -50%, 0); }
 }
 
 @media (max-width: 900px) {
-  .state-shape { opacity: calc(var(--opacity, .12) * .82); }
+  .state-stream-track { right: 8%; width: 34%; }
 }
 
 @media (max-width: 700px) {
-  .state-field.shape-field { opacity: .82; }
+  .state-stream-track { right: 2%; width: 46%; }
+  .state-stream-item { min-height: 84px; grid-template-columns: minmax(48px, 68px) auto; }
+  .state-stream-item img { width: 64px; height: 60px; opacity: .1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .state-field.shape-field,
-  .state-shape img { animation: none !important; }
+  .state-stream-track { animation: none !important; transform: translateY(-18%); }
 }
