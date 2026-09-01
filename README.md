@@ -14,7 +14,7 @@ ClearLine helps cannabis teams make sense of rules, records, and the gray area b
 - `google-apps-script/Code.gs` — Google Sheets lead-capture backend
 - `assets/` — site assets
 - `ir/` — RegMatrix
-- `the-clear-lines/` — The Clear Lines regulatory signal desk
+- `the-clear-lines/` — The Clear Lines public cannabis knowledge floor
 - `five-engines/` — operational compliance concepts
 
 ## Contact form → Google Sheets
