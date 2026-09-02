@@ -454,6 +454,143 @@ button,input,select,textarea { font: inherit; }
   padding-top: 28px;
 }
 
+/* One diagnostic card, cut diagonally: confidence tested above, concern traced below. */
+.diagnostic-pair {
+  --accent: var(--chartreuse);
+  --accent-soft: var(--chartreuse-soft);
+  padding: 0;
+  overflow: visible;
+  border-color: rgba(185,255,0,.54);
+  background: #090c0a;
+}
+
+.diagnostic-split {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(185,255,0,.11), transparent 38%),
+    radial-gradient(circle at 88% 88%, rgba(255,111,60,.14), transparent 40%),
+    #090c0a;
+}
+
+.diagnostic-half {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.diagnostic-double-blind {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 42px 46% 42px 38px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  background: linear-gradient(145deg, rgba(185,255,0,.105), rgba(185,255,0,.018) 62%, transparent 63%);
+}
+
+.diagnostic-heat-seeker {
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 42px 38px 42px 46%;
+  text-align: right;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  background: linear-gradient(325deg, rgba(255,111,60,.13), rgba(255,111,60,.022) 62%, transparent 63%);
+}
+
+.diagnostic-status {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.diagnostic-double-blind .diagnostic-status,
+.diagnostic-double-blind .diagnostic-cta { color: var(--chartreuse); }
+
+.diagnostic-heat-seeker .diagnostic-status,
+.diagnostic-heat-seeker .diagnostic-cta { color: var(--hot-copper); }
+
+.diagnostic-name {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.diagnostic-prompt {
+  display: block;
+  max-width: 330px;
+  margin-top: 20px;
+  color: #d5dad5;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.45;
+}
+
+.diagnostic-prompt strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.diagnostic-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.diagnostic-double-blind .diagnostic-cta {
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(185,255,0,.42);
+}
+
+.diagnostic-double-blind:hover,
+.diagnostic-double-blind:focus-visible {
+  background: linear-gradient(145deg, rgba(185,255,0,.17), rgba(185,255,0,.035) 62%, transparent 63%);
+  outline: none;
+}
+
+.diagnostic-double-blind:hover .diagnostic-cta,
+.diagnostic-double-blind:focus-visible .diagnostic-cta {
+  color: #d7ff6d;
+  border-color: var(--chartreuse);
+}
+
+.diagnostic-diagonal {
+  position: absolute;
+  z-index: 3;
+  left: -8%;
+  top: 50%;
+  width: 116%;
+  height: 1px;
+  transform: rotate(-43.2deg);
+  transform-origin: center;
+  background: linear-gradient(90deg, var(--chartreuse), #f2f5ee 49.5%, var(--hot-copper) 50.5%);
+  box-shadow:
+    -10px 0 22px rgba(185,255,0,.24),
+    10px 0 24px rgba(255,111,60,.25);
+  pointer-events: none;
+}
+
+.diagnostic-pair > .diamond-tab {
+  --accent: var(--hot-copper);
+  --accent-soft: rgba(255,111,60,.15);
+  z-index: 6;
+}
+
 .engines-feature {
   --accent: var(--aqua);
   --accent-soft: var(--aqua-soft);
@@ -549,6 +686,20 @@ button,input,select,textarea { font: inherit; }
   .feature-row .feature-panel > .offer-actions {
     margin-top: 28px;
     padding-top: 0;
+  }
+
+  .feature-row .diagnostic-pair {
+    min-height: 650px;
+  }
+
+  .diagnostic-double-blind { padding: 34px 30% 34px 24px; }
+  .diagnostic-heat-seeker { padding: 34px 24px 34px 30%; }
+  .diagnostic-name { font-size: clamp(1.8rem, 9vw, 2.45rem); }
+  .diagnostic-prompt { max-width: 235px; font-size: .98rem; }
+  .diagnostic-diagonal {
+    left: -36%;
+    width: 172%;
+    transform: rotate(-62deg);
   }
 
   .engine-mini-grid { grid-template-columns: 1fr; }
