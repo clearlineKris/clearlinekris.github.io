@@ -1,0 +1,355 @@
+/* ===== Five Engines — RegMatrix-derived Silver/Aqua Theme ===== */
+/* This page deliberately shares RegMatrix's layout logic, translated into its own palette. */
+:root {
+    --color-bg: #dbe2e6;
+    --color-bg-elevated: #eef3f5;
+    --color-bg-card: #e8eef1;
+    --color-primary: #009fbd;
+    --color-primary-dim: #006f86;
+    --color-primary-glow: rgba(0, 159, 189, 0.17);
+    --color-text: #102b33;
+    --color-text-muted: #4c6770;
+    --color-text-dim: #70858c;
+    --color-border: #b8c7cd;
+    --color-accent: #20c4df;
+    --color-secondary: #009fbd;
+    --color-secondary-glow: rgba(0, 159, 189, 0.18);
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% -160px, rgba(0, 178, 210, 0.22) 0%, rgba(219, 226, 230, 0) 46%),
+        linear-gradient(118deg, #cbd4d9 0%, #edf1f3 34%, #d7dfe3 68%, #c5cfd4 100%);
+    background-attachment: fixed;
+    color: var(--color-text);
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    max-width: none;
+    padding-left: max(24px, calc((100vw - 1200px) / 2 + 24px));
+    padding-right: max(24px, calc((100vw - 1200px) / 2 + 24px));
+    background: rgba(224, 231, 234, 0.91);
+    border-bottom: 1px solid rgba(0, 111, 134, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 30px rgba(30, 63, 72, 0.07);
+}
+
+.logo-icon {
+    color: var(--color-primary);
+    text-shadow: 0 0 18px rgba(0, 159, 189, 0.27);
+}
+
+.logo-text {
+    color: var(--color-text);
+}
+
+.nav-cta {
+    background: rgba(239, 244, 246, 0.74);
+    border-color: #9eb9c2;
+    color: var(--color-primary-dim);
+    box-shadow: 0 5px 18px rgba(29, 67, 77, 0.07);
+}
+
+.nav-cta:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #f7fdff;
+    box-shadow: 0 10px 28px rgba(0, 159, 189, 0.24);
+}
+
+.badge {
+    background: rgba(226, 243, 247, 0.78);
+    border-color: #6fc6d6;
+    color: var(--color-primary-dim);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.62),
+        0 6px 20px rgba(20, 81, 94, 0.07);
+}
+
+.ir-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.ir-hero {
+    padding: 80px 24px 42px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.ir-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 400px;
+    background: radial-gradient(ellipse at center top, var(--color-primary-glow) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -2;
+}
+
+.ir-hero::before {
+    content: '';
+    position: absolute;
+    inset: 18px 8% auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 159, 189, 0.28), transparent);
+    pointer-events: none;
+}
+
+.ir-hero h1 {
+    font-size: clamp(2.35rem, 6vw, 3.75rem);
+    margin-bottom: 16px;
+    letter-spacing: -0.035em;
+    color: var(--color-primary-dim);
+}
+
+.ir-hero .ir-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 680px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.engines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 0 24px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.engine-card {
+    min-height: 270px;
+    background:
+        linear-gradient(150deg, rgba(255, 255, 255, 0.6), rgba(215, 225, 229, 0.82)),
+        var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    color: var(--color-text);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 8px 30px rgba(26, 60, 70, 0.07);
+}
+
+.engine-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--color-accent), rgba(0, 159, 189, 0.08));
+    opacity: 0.88;
+}
+
+.engine-card::after {
+    content: attr(data-mark);
+    position: absolute;
+    right: -8px;
+    bottom: -26px;
+    color: rgba(0, 111, 134, 0.09);
+    font-size: 7.25rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.09em;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.engine-card:hover {
+    border-color: #62bdcd;
+    transform: translateY(-4px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        0 16px 42px rgba(13, 91, 108, 0.15);
+}
+
+.engine-card:focus-within {
+    box-shadow: 0 0 0 3px var(--color-primary-glow), 0 0 0 1px var(--color-primary);
+}
+
+.engine-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.engine-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+}
+
+.engine-card.is-evaluation .engine-status {
+    color: #466c76;
+}
+
+.engine-name {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.engine-teaser {
+    margin: 0;
+    max-width: 92%;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.engine-card.is-evaluation {
+    background:
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0 9px, rgba(202, 215, 220, 0.22) 9px 18px),
+        linear-gradient(150deg, rgba(242, 246, 247, 0.68), rgba(208, 218, 222, 0.82));
+}
+
+.ir-section {
+    padding: 68px 0;
+    border-top: 1px solid rgba(87, 119, 128, 0.18);
+    background: rgba(239, 244, 246, 0.65);
+}
+
+.ir-section h2 {
+    font-size: clamp(1.75rem, 4vw, 2.45rem);
+    margin-bottom: 16px;
+    text-align: left;
+    color: var(--color-text);
+    letter-spacing: -0.035em;
+}
+
+.ir-section .section-tag {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.ir-section p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.principle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.principle-card {
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    background: rgba(228, 235, 238, 0.74);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.principle-card h3 {
+    margin: 0 0 9px;
+    color: var(--color-primary-dim);
+    font-size: 1.02rem;
+}
+
+.principle-card p {
+    margin: 0;
+    font-size: 0.93rem;
+    line-height: 1.65;
+}
+
+.ir-callout {
+    margin-top: 34px;
+    padding: 25px;
+    border: 1px solid #73c2d0;
+    border-radius: var(--border-radius-sm);
+    background:
+        linear-gradient(120deg, rgba(0, 159, 189, 0.11), rgba(238, 244, 246, 0.72)),
+        #e8eff1;
+    box-shadow: 0 8px 24px rgba(25, 79, 91, 0.07);
+}
+
+.ir-callout p {
+    margin: 0;
+    color: var(--color-primary-dim);
+    font-weight: 600;
+}
+
+.ir-footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    background: rgba(207, 216, 220, 0.86);
+}
+
+.ir-footer p {
+    color: var(--color-text-dim);
+    font-size: 0.85rem;
+}
+
+.ir-footer a {
+    color: var(--color-primary-dim);
+    text-decoration: none;
+}
+
+.ir-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .ir-hero {
+        padding: 60px 24px 28px;
+    }
+
+    .engines-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .engine-card {
+        min-height: 235px;
+    }
+
+    .principle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ir-section {
+        padding: 48px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .engine-card {
+        transition: none;
+    }
+
+    .engine-card:hover {
+        transform: none;
+    }
+}
