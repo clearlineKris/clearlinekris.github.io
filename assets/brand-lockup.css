@@ -33,12 +33,29 @@
   height: 13px;
   flex: 0 0 13px;
   transform: rotate(45deg);
-  border: 1px solid rgba(255,255,255,.72);
+  border: 1px solid var(--diamond-color);
   border-radius: 1px;
-  background: var(--diamond-color);
+  background: #0a0d0b;
+  color: var(--diamond-color);
   box-shadow:
-    0 0 0 1px rgba(0,0,0,.12),
-    0 0 10px color-mix(in srgb, var(--diamond-color) 48%, transparent);
+    0 0 0 1px rgba(0,0,0,.16),
+    0 0 11px color-mix(in srgb, var(--diamond-color) 44%, transparent);
+}
+
+.brand-diamond::after {
+  content: "◈";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform: rotate(-45deg);
+  color: var(--diamond-color);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 0 7px currentColor;
 }
 
 .brand-diamond + .brand-diamond {
@@ -54,8 +71,8 @@
 .brand-diamond:last-child {
   transform: rotate(45deg) scale(1.08);
   box-shadow:
-    0 0 0 1px rgba(0,0,0,.14),
-    0 0 14px color-mix(in srgb, var(--diamond-color) 62%, transparent);
+    0 0 0 1px rgba(0,0,0,.18),
+    0 0 15px color-mix(in srgb, var(--diamond-color) 60%, transparent);
 }
 
 .brand-diamond--purple { --diamond-color: #8f5cff; }
