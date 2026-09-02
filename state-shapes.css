@@ -14,11 +14,11 @@
   border-radius: 3px;
   pointer-events: none;
   -webkit-mask-image:
-    linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, #000 34%, #000 100%);
+    linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, #000 23%, #000 100%);
   mask-image:
-    linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, #000 34%, #000 100%);
+    linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, #000 23%, #000 100%);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
@@ -27,65 +27,90 @@
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   background:
-    linear-gradient(90deg, rgba(5,7,6,.86) 0%, rgba(5,7,6,.42) 45%, rgba(5,7,6,.08) 76%, rgba(5,7,6,.18) 100%),
-    linear-gradient(180deg, rgba(5,7,6,.2), transparent 25%, transparent 75%, rgba(5,7,6,.24));
+    linear-gradient(90deg, rgba(5,7,6,.88) 0%, rgba(5,7,6,.38) 39%, rgba(5,7,6,.04) 76%, rgba(5,7,6,.13) 100%),
+    linear-gradient(180deg, rgba(5,7,6,.18), transparent 24%, transparent 76%, rgba(5,7,6,.22));
 }
 
 .state-stream-track {
   position: absolute;
   top: 0;
-  right: 5%;
-  width: 42%;
+  right: 2%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   will-change: transform;
-  animation: state-stream-rise 38s linear infinite;
+  animation: state-stream-rise 44s linear infinite;
 }
 
 .state-stream-cycle {
   flex: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .state-stream-item {
+  position: relative;
   width: 100%;
-  min-height: 92px;
+  min-height: 112px;
   display: grid;
-  grid-template-columns: minmax(58px, 82px) auto;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  color: rgba(205,190,255,.19);
+  place-items: center;
+  color: rgba(218,205,255,.42);
   font-family: "IBM Plex Mono", monospace;
 }
 
 .state-stream-item img {
+  position: relative;
+  z-index: 0;
   display: block;
-  width: 78px;
-  height: 72px;
+  width: 98px;
+  height: 92px;
   object-fit: contain;
-  opacity: .14;
+  transform: translateX(-15%);
+  opacity: .22;
   filter:
     invert(52%) sepia(77%) saturate(2600%) hue-rotate(237deg) brightness(107%) contrast(102%)
-    drop-shadow(0 0 8px rgba(143,92,255,.18));
+    drop-shadow(0 0 10px rgba(143,92,255,.24));
 }
 
 .state-stream-item b {
-  min-width: 24px;
-  font-size: .68rem;
-  letter-spacing: .09em;
-  font-weight: 700;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 54%;
+  display: inline-flex;
+  align-items: baseline;
+  transform: translate(-18%, -50%);
+  min-width: 0;
+  color: inherit;
+  font-size: clamp(2.15rem, 3.6vw, 2.85rem);
+  font-weight: 900;
+  line-height: .82;
+  letter-spacing: -.13em;
+  text-shadow: 0 0 16px rgba(143,92,255,.18);
+}
+
+.state-stream-item .state-initial {
+  display: inline-block;
+  color: inherit;
+  background: linear-gradient(90deg, rgba(5,7,6,.98) 0 50%, currentColor 50% 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.state-stream-item .state-rest {
+  display: inline-block;
+  color: inherit;
 }
 
 .portfolio-card.purple:hover .state-stream-item img,
-.portfolio-card.purple:focus-visible .state-stream-item img { opacity: .2; }
+.portfolio-card.purple:focus-visible .state-stream-item img { opacity: .29; }
 
 .portfolio-card.purple:hover .state-stream-item,
-.portfolio-card.purple:focus-visible .state-stream-item { color: rgba(215,202,255,.26); }
+.portfolio-card.purple:focus-visible .state-stream-item { color: rgba(229,220,255,.56); }
 
 @keyframes state-stream-rise {
   from { transform: translate3d(0, 0, 0); }
@@ -93,13 +118,15 @@
 }
 
 @media (max-width: 900px) {
-  .state-stream-track { right: 8%; width: 34%; }
+  .state-stream-track { right: 5%; width: 38%; }
+  .state-stream-item b { font-size: 2.6rem; }
 }
 
 @media (max-width: 700px) {
-  .state-stream-track { right: 2%; width: 46%; }
-  .state-stream-item { min-height: 84px; grid-template-columns: minmax(48px, 68px) auto; }
-  .state-stream-item img { width: 64px; height: 60px; opacity: .1; }
+  .state-stream-track { right: 0; width: 50%; }
+  .state-stream-item { min-height: 96px; }
+  .state-stream-item img { width: 82px; height: 76px; opacity: .16; }
+  .state-stream-item b { left: 54%; font-size: 2.15rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
