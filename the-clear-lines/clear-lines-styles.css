@@ -726,3 +726,20 @@ body a { color: inherit; }
     .live-line-slide.is-active { transition: none; animation: none; transform: none; filter: none; clip-path: none; }
     .live-line-slide.is-active .live-line-link::before { animation: none; }
 }
+
+
+/* ===== Light-Surface Brand Diamonds ===== */
+.nav .brand-lockup--blue .brand-diamond {
+    background: color-mix(in srgb, var(--diamond-color) 7%, #fff);
+    box-shadow:
+        0 0 0 1px rgba(13,45,100,.07),
+        0 0 8px color-mix(in srgb, var(--diamond-color) 28%, transparent);
+}
+.nav .brand-lockup--blue .brand-diamond::after {
+    text-shadow: 0 0 4px color-mix(in srgb, var(--diamond-color) 52%, transparent);
+}
+.nav .brand-lockup--blue .brand-diamond:last-child {
+    box-shadow:
+        0 0 0 1px rgba(13,45,100,.09),
+        0 0 11px color-mix(in srgb, var(--diamond-color) 42%, transparent);
+}
