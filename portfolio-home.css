@@ -139,7 +139,10 @@ button,input,select,textarea { font: inherit; }
   aspect-ratio: auto;
   clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%);
 }
-.portfolio-card:hover,.portfolio-card:focus-visible {
+.portfolio-card:hover,
+.portfolio-card:focus-visible,
+.portfolio-card-shell:hover > .portfolio-card,
+.portfolio-card-shell:focus-within > .portfolio-card {
   transform: none; outline: none;
   background: linear-gradient(155deg, var(--accent-soft), rgba(255,255,255,.012));
   box-shadow: 0 22px 60px rgba(0,0,0,.28);
@@ -221,12 +224,12 @@ button,input,select,textarea { font: inherit; }
 /* The upper-right vertex is cut away; the canonical diamond becomes the corner. */
 .work-grid .portfolio-card-shell > .diamond-tab {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 0;
+  right: 0;
   bottom: auto;
   left: auto;
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
   transform: none;
@@ -235,7 +238,8 @@ button,input,select,textarea { font: inherit; }
   box-shadow: none;
   color: var(--accent);
   z-index: 8;
-  pointer-events: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .work-grid .portfolio-card-shell > .diamond-tab span {
@@ -244,6 +248,11 @@ button,input,select,textarea { font: inherit; }
   font-size: 1.15rem;
   line-height: 1;
   text-shadow: 0 0 14px currentColor;
+}
+
+.work-grid .portfolio-card-shell > .diamond-tab:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
 }
 .card-kicker {
   color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: .69rem;
