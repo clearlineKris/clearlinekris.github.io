@@ -7,7 +7,7 @@
     <title>The Clear Lines | Cannabis, Clearly Explained</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="clear-lines-styles.css?v=revo-desk-20260831">
+    <link rel="stylesheet" href="clear-lines-styles.css?v=live-lines-20260902">
     <style>html,body{background:#fff!important;color:#122033!important}</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,46 +86,56 @@
             <div class="signal-shell">
                 <div class="section-head">
                     <div>
-                        <span class="mono section-tag">Explanation floor</span>
-                        <h2>Four ways into the industry.</h2>
+                        <span class="mono section-tag">Live Lines</span>
+                        <h2>The latest, in rotation.</h2>
                     </div>
-                    <p>Start with a term, a system, a rule, or a contradiction. The Clear Lines gives the public-facing explanation; the rest of the ClearLine stack adds depth when the subject demands it.</p>
+                    <p>The three newest Lines share one square here. Move through them at your own pace, or open the full library when you want the whole record.</p>
                 </div>
 
-                <div class="dispatch-grid">
-                    <a class="dispatch-card featured" href="the-hemp-line/index.html">
-                        <span class="card-arrow">→</span>
-                        <div>
-                            <span class="card-index">02 / Latest line · Live now</span>
-                            <h3>The Hemp Line</h3>
-                            <p>How one plant became two legal categories, why 0.3 percent carries an entire industry, and where crop law stops answering finished-product questions.</p>
+                <div class="live-lines-carousel" data-live-lines>
+                    <div class="live-lines-square">
+                        <article class="live-line-slide is-active" data-line-slide aria-hidden="false">
+                            <a class="live-line-link" href="the-hemp-line/index.html">
+                                <span class="live-line-count mono">02 / Latest Line</span>
+                                <div class="live-line-copy">
+                                    <span class="live-line-status"><span class="signal-dot"></span> Live now</span>
+                                    <h3>The Hemp Line</h3>
+                                    <p>How one plant became two legal categories, why 0.3 percent carries an entire industry, and where crop law stops answering finished-product questions.</p>
+                                </div>
+                                <div class="live-line-foot">
+                                    <span>Hemp · THC · Federal law · Consumer products</span>
+                                    <span class="live-line-open">Read the Line →</span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="live-line-slide" data-line-slide aria-hidden="true">
+                            <a class="live-line-link" href="the-packaging-line/index.html" tabindex="-1">
+                                <span class="live-line-count mono">01 / Live Line</span>
+                                <div class="live-line-copy">
+                                    <span class="live-line-status"><span class="signal-dot"></span> Published</span>
+                                    <h3>The Packaging Line</h3>
+                                    <p>Why legal cannabis packaging has to protect the product, explain the record, resist small hands, survive fifty rulebooks, and still find room to look cute.</p>
+                                </div>
+                                <div class="live-line-foot">
+                                    <span>Packaging · Safety · Language · Waste</span>
+                                    <span class="live-line-open">Read the Line →</span>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+
+                    <div class="live-lines-controls">
+                        <div class="live-lines-nav" aria-label="Live Lines controls">
+                            <button type="button" class="live-line-button" data-line-prev aria-label="Previous article">←</button>
+                            <div class="live-line-dots" role="tablist" aria-label="Choose an article">
+                                <button type="button" class="live-line-dot is-active" data-line-dot="0" role="tab" aria-selected="true" aria-label="Show The Hemp Line"></button>
+                                <button type="button" class="live-line-dot" data-line-dot="1" role="tab" aria-selected="false" aria-label="Show The Packaging Line"></button>
+                            </div>
+                            <button type="button" class="live-line-button" data-line-next aria-label="Next article">→</button>
                         </div>
-                        <div class="article-meta">Hemp · THC · Federal law · Consumer products</div>
-                    </a>
-
-                    <a class="dispatch-card" href="the-packaging-line/index.html">
-                        <span class="card-arrow">→</span>
-                        <span class="card-index">01 / Live line</span>
-                        <h3>The Packaging Line</h3>
-                        <p>Why legal cannabis packaging has to protect the product, explain the record, resist small hands, survive fifty rulebooks, and still find room to look cute.</p>
-                        <div class="article-meta">Packaging · Safety · Language · Waste</div>
-                    </a>
-
-                    <a class="dispatch-card" href="../ir/index.html">
-                        <span class="card-arrow">→</span>
-                        <span class="card-index">03 / Context layer</span>
-                        <h3>RegMatrix</h3>
-                        <p>State-by-state regulatory context: what the rules say, where they came from, and how they shape real operations.</p>
-                        <div class="article-meta">Compliance intelligence</div>
-                    </a>
-
-                    <a class="dispatch-card" href="../rnp/index.html">
-                        <span class="card-arrow">→</span>
-                        <span class="card-index">04 / Behavior layer</span>
-                        <h3>Reg &amp; Pol</h3>
-                        <p>The political and regulatory environment around the plant: who makes the rules, how jurisdictions behave, and why the same issue moves differently from place to place.</p>
-                        <div class="article-meta">Regulatory behavior</div>
-                    </a>
+                        <a class="signal-button secondary live-lines-library-link" href="articles/index.html">Read all articles <span>→</span></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -179,5 +189,56 @@
             <p style="margin-top:8px;">The Clear Line from Regulation to Relief</p>
         </div>
     </footer>
+    <script>
+        (() => {
+            const carousel = document.querySelector('[data-live-lines]');
+            if (!carousel) return;
+
+            const slides = Array.from(carousel.querySelectorAll('[data-line-slide]')).slice(0, 3);
+            const dots = Array.from(carousel.querySelectorAll('[data-line-dot]')).slice(0, slides.length);
+            const previous = carousel.querySelector('[data-line-prev]');
+            const next = carousel.querySelector('[data-line-next]');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let active = 0;
+            let timer;
+
+            const show = (position) => {
+                active = (position + slides.length) % slides.length;
+                slides.forEach((slide, index) => {
+                    const selected = index === active;
+                    slide.classList.toggle('is-active', selected);
+                    slide.setAttribute('aria-hidden', String(!selected));
+                    const link = slide.querySelector('a');
+                    if (link) link.tabIndex = selected ? 0 : -1;
+                });
+                dots.forEach((dot, index) => {
+                    const selected = index === active;
+                    dot.classList.toggle('is-active', selected);
+                    dot.setAttribute('aria-selected', String(selected));
+                });
+            };
+
+            const stop = () => window.clearInterval(timer);
+            const start = () => {
+                stop();
+                if (!reduceMotion && slides.length > 1) {
+                    timer = window.setInterval(() => show(active + 1), 6500);
+                }
+            };
+
+            previous?.addEventListener('click', () => { show(active - 1); start(); });
+            next?.addEventListener('click', () => { show(active + 1); start(); });
+            dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); start(); }));
+            carousel.addEventListener('mouseenter', stop);
+            carousel.addEventListener('mouseleave', start);
+            carousel.addEventListener('focusin', stop);
+            carousel.addEventListener('focusout', (event) => {
+                if (!carousel.contains(event.relatedTarget)) start();
+            });
+
+            show(0);
+            start();
+        })();
+    </script>
 </body>
 </html>
