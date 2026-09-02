@@ -198,11 +198,11 @@ button,input,select,textarea { font: inherit; }
 }
 .diamond-tab span { transform: rotate(-45deg); font-size: 1.45rem; line-height: 1; text-shadow: 0 0 14px currentColor; }
 
-/* The feature cards carry only the small canonical diamond, inset at upper right. */
+/* The bare canonical diamond replaces the clip by straddling the card corner. */
 .work-grid .portfolio-card > .diamond-tab {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: -10px;
+  right: -10px;
   bottom: auto;
   left: auto;
   width: auto;
@@ -336,7 +336,6 @@ button,input,select,textarea { font: inherit; }
   .diamond-tab { right: 10px; }
   .work-grid { grid-template-columns: 1fr; }
   .portfolio-card { min-height: 390px; aspect-ratio: auto; }
-  .work-grid .portfolio-card > .diamond-tab { top: 16px; right: 16px; }
   .state-field { color: rgba(194,174,255,.09); }
 }
 
@@ -452,11 +451,6 @@ button,input,select,textarea { font: inherit; }
 @media (max-width: 700px) {
   .clear-lines-field { opacity: .54; clip-path: polygon(0 0, 100% 0, 68% 50%, 34% 100%, 0 100%); }
 }
-@media (max-width: 700px) {
-  .work-grid .portfolio-card > .diamond-tab { right: 10px; }
-}
-
-
 /* Full-width paired diagnostic banner above the four-card feature line. */
 .feature-row {
   display: grid;
