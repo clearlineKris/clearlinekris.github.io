@@ -70,13 +70,18 @@
 .brand-lockup--orange { --brand-primary: #ff6f3c; }
 .brand-lockup--aqua { --brand-primary: #009fbd; }
 
+.brand-lockup .brand-diamonds,
+.brand-lockup .brand-wordmark {
+  color: inherit !important;
+}
+
 .brand-wordmark {
   display: inline-block;
   white-space: nowrap;
 }
 
-.brand-wordmark .brand-kris {
-  color: var(--brand-primary);
+.brand-lockup .brand-wordmark .brand-kris {
+  color: var(--brand-primary) !important;
 }
 
 @media (max-width: 520px) {
