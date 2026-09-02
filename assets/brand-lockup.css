@@ -1,0 +1,104 @@
+/* clearlineKris shared navigation lockup: ordered diamonds place the page color closest to the wordmark. */
+.brand-lockup {
+  --brand-primary: #b9ff00;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: auto;
+  min-width: 0;
+  color: inherit !important;
+  text-decoration: none !important;
+  font-family: inherit;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1;
+}
+
+.brand-diamonds {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: max-content;
+  height: 22px;
+  padding: 3px 2px;
+  isolation: isolate;
+}
+
+.brand-diamond {
+  --diamond-color: #ffffff;
+  position: relative;
+  display: block;
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  transform: rotate(45deg);
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 1px;
+  background: var(--diamond-color);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.12),
+    0 0 10px color-mix(in srgb, var(--diamond-color) 48%, transparent);
+}
+
+.brand-diamond + .brand-diamond {
+  margin-left: -4px;
+}
+
+.brand-diamond:nth-child(1) { z-index: 1; }
+.brand-diamond:nth-child(2) { z-index: 2; }
+.brand-diamond:nth-child(3) { z-index: 3; }
+.brand-diamond:nth-child(4) { z-index: 4; }
+.brand-diamond:nth-child(5) { z-index: 5; }
+
+.brand-diamond:last-child {
+  transform: rotate(45deg) scale(1.08);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.14),
+    0 0 14px color-mix(in srgb, var(--diamond-color) 62%, transparent);
+}
+
+.brand-diamond--purple { --diamond-color: #8f5cff; }
+.brand-diamond--blue { --diamond-color: #1769ff; }
+.brand-diamond--chartreuse { --diamond-color: #b9ff00; }
+.brand-diamond--orange { --diamond-color: #ff6f3c; }
+.brand-diamond--aqua { --diamond-color: #009fbd; }
+
+.brand-lockup--purple { --brand-primary: #8f5cff; }
+.brand-lockup--blue { --brand-primary: #1769ff; }
+.brand-lockup--chartreuse { --brand-primary: #b9ff00; }
+.brand-lockup--orange { --brand-primary: #ff6f3c; }
+.brand-lockup--aqua { --brand-primary: #009fbd; }
+
+.brand-wordmark {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.brand-wordmark .brand-kris {
+  color: var(--brand-primary);
+}
+
+@media (max-width: 520px) {
+  .brand-lockup {
+    gap: 8px !important;
+    font-size: 1rem;
+  }
+
+  .brand-diamond {
+    width: 11px;
+    height: 11px;
+    flex-basis: 11px;
+  }
+
+  .brand-diamond + .brand-diamond {
+    margin-left: -3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-lockup,
+  .brand-diamond {
+    transition: none !important;
+  }
+}
