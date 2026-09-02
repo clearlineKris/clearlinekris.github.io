@@ -125,7 +125,7 @@ button,input,select,textarea { font: inherit; }
 .portfolio-card.purple { --accent: var(--purple); --accent-soft: var(--purple-soft); }
 .portfolio-card.blue { --accent: var(--revo); --accent-soft: var(--revo-soft); }
 .portfolio-card.green { --accent: var(--chartreuse); --accent-soft: var(--chartreuse-soft); }
-.portfolio-card > :not(.state-field):not(.clear-lines-field):not(.clear-lines-joints) { position: relative; z-index: 2; }
+.portfolio-card > :not(.state-field):not(.clear-lines-field):not(.joint-insights-field) { position: relative; z-index: 2; }
 
 /* RegMatrix state footprint: a quiet patchwork moving behind the purple card copy. */
 .state-field {
@@ -429,8 +429,8 @@ button,input,select,textarea { font: inherit; }
   color: #031013;
 }
 
-/* Generated joint cutouts share the same clipped upper-left field as The Clear Lines. */
-.clear-lines-joints {
+/* Generated joint cutouts occupy the upper-left field of the 68th Joint Insights card. */
+.joint-insights-field {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -448,8 +448,8 @@ button,input,select,textarea { font: inherit; }
   transition: opacity 180ms ease;
 }
 
-.portfolio-card.blue:hover .clear-lines-joints,
-.portfolio-card.blue:focus-visible .clear-lines-joints { opacity: .29; }
+.portfolio-card.green:hover .joint-insights-field,
+.portfolio-card.green:focus-visible .joint-insights-field { opacity: .29; }
 
 @media (max-width: 900px) {
   .feature-row { grid-template-columns: 1fr; }
@@ -458,7 +458,7 @@ button,input,select,textarea { font: inherit; }
 @media (max-width: 700px) {
   .engine-mini-grid { grid-template-columns: 1fr; }
   .engine-mini:first-child { grid-column: auto; }
-  .clear-lines-joints {
+  .joint-insights-field {
     opacity: .15;
     clip-path: polygon(0 0, 100% 0, 68% 50%, 34% 100%, 0 100%);
     background-size: 132% auto;
