@@ -317,6 +317,10 @@ button,input,select,textarea { font: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   .state-row { animation: none !important; transform: none !important; }
+  .clear-field-line {
+    animation: none !important;
+    transform: rotate(var(--r)) !important;
+  }
 }
 
 /* The Clear Lines: a partial diagonal field, deliberately quiet at lower right. */
@@ -345,14 +349,78 @@ button,input,select,textarea { font: inherit; }
   top: var(--y);
   width: var(--w);
   height: 0;
-  transform: rotate(var(--r));
+  transform: rotate(var(--r)) translate3d(-8px, 0, 0);
   transform-origin: left center;
   border-top-width: 1px;
   border-top-color: rgba(77,139,255,.28);
   filter: drop-shadow(0 0 5px rgba(23,105,255,.11));
+  animation: clear-line-shuffle 13s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
+
+.clear-field-line:nth-child(3n + 1) {
+  animation-duration: 10.5s;
+  animation-delay: -4.5s;
+}
+
+.clear-field-line:nth-child(3n + 2) {
+  animation-duration: 16s;
+  animation-delay: -9s;
+}
+
+.clear-field-line:nth-child(4n) {
+  animation-name: clear-line-shuffle-wide;
+  animation-duration: 18s;
+}
+
 .clear-field-line.solid { border-top-style: solid; }
-.clear-field-line.dotted { border-top: 2px dotted rgba(112,160,255,.24); }
+
+.clear-field-line.dotted {
+  border-top: 2px dotted rgba(112,160,255,.24);
+}
+
+/* Every dotted route travels with a quiet solid companion. */
+.clear-field-line.dotted::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  top: 7px;
+  width: 104%;
+  border-top: 1px solid rgba(77,139,255,.22);
+  filter: drop-shadow(0 0 4px rgba(23,105,255,.09));
+}
+
+.clear-field-line.dotted:nth-child(4n + 2)::after { top: -7px; }
+
+@keyframes clear-line-shuffle {
+  0% {
+    transform: rotate(var(--r)) translate3d(-11px, -1px, 0);
+    opacity: .54;
+  }
+  52% {
+    transform: rotate(calc(var(--r) + .35deg)) translate3d(10px, 1px, 0);
+    opacity: .9;
+  }
+  100% {
+    transform: rotate(calc(var(--r) - .25deg)) translate3d(27px, -2px, 0);
+    opacity: .68;
+  }
+}
+
+@keyframes clear-line-shuffle-wide {
+  0% {
+    transform: rotate(var(--r)) translate3d(-18px, 2px, 0);
+    opacity: .48;
+  }
+  46% {
+    transform: rotate(calc(var(--r) - .45deg)) translate3d(6px, -1px, 0);
+    opacity: .82;
+  }
+  100% {
+    transform: rotate(calc(var(--r) + .3deg)) translate3d(34px, 2px, 0);
+    opacity: .62;
+  }
+}
 .portfolio-card.blue:hover .clear-lines-field,
 .portfolio-card.blue:focus-visible .clear-lines-field { opacity: .9; }
 
