@@ -435,11 +435,13 @@ button,input,select,textarea { font: inherit; }
 /* Paired homepage features: current 68th review and the Five Engines system. */
 .feature-row {
   display: grid;
-  grid-template-columns: minmax(0, 660px);
+  width: min(100%, 660px);
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr);
   grid-auto-rows: 620px;
-  gap: 18px;
+  gap: 26px;
   align-items: stretch;
-  justify-content: start;
+  justify-content: stretch;
 }
 
 .feature-row .feature-panel {
