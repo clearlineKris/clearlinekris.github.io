@@ -109,6 +109,20 @@ button,input,select,textarea { font: inherit; }
 .section-deck { max-width: 720px; margin: 16px 0 0; color: var(--muted); }
 
 .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 32px; }
+.portfolio-card-shell {
+  --accent: var(--chartreuse);
+  --accent-soft: var(--chartreuse-soft);
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  transition: transform 180ms ease;
+}
+.portfolio-card-shell.purple { --accent: var(--purple); --accent-soft: var(--purple-soft); }
+.portfolio-card-shell.blue { --accent: var(--revo-cousin); --accent-soft: var(--revo-cousin-soft); }
+.portfolio-card-shell.aqua { --accent: var(--aqua); --accent-soft: var(--aqua-soft); }
+.portfolio-card-shell.green { --accent: var(--chartreuse); --accent-soft: var(--chartreuse-soft); }
+.portfolio-card-shell:hover,
+.portfolio-card-shell:focus-within { transform: translateY(-4px); }
 .portfolio-card {
   --accent: var(--chartreuse); --accent-soft: var(--chartreuse-soft);
   position: relative; min-height: 0; aspect-ratio: 1 / 1; padding: 34px 30px 28px;
@@ -119,8 +133,14 @@ button,input,select,textarea { font: inherit; }
   box-shadow: inset 0 1px 0 rgba(255,255,255,.025);
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
+.portfolio-card-shell > .portfolio-card {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  clip-path: polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%);
+}
 .portfolio-card:hover,.portfolio-card:focus-visible {
-  transform: translateY(-4px); outline: none;
+  transform: none; outline: none;
   background: linear-gradient(155deg, var(--accent-soft), rgba(255,255,255,.012));
   box-shadow: 0 22px 60px rgba(0,0,0,.28);
 }
@@ -198,28 +218,31 @@ button,input,select,textarea { font: inherit; }
 }
 .diamond-tab span { transform: rotate(-45deg); font-size: 1.45rem; line-height: 1; text-shadow: 0 0 14px currentColor; }
 
-/* The bare canonical diamond replaces the clip by straddling the card corner. */
-.work-grid .portfolio-card > .diamond-tab {
+/* The upper-right vertex is cut away; the canonical diamond becomes the corner. */
+.work-grid .portfolio-card-shell > .diamond-tab {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 6px;
+  right: 6px;
   bottom: auto;
   left: auto;
-  width: auto;
-  height: auto;
-  display: block;
-  transform: translate(50%, -50%);
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  transform: none;
   background: transparent;
   border: 0;
   box-shadow: none;
   color: var(--accent);
   z-index: 8;
+  pointer-events: none;
 }
 
-.work-grid .portfolio-card > .diamond-tab span {
+.work-grid .portfolio-card-shell > .diamond-tab span {
   display: block;
   transform: none;
   font-size: 1.15rem;
+  line-height: 1;
   text-shadow: 0 0 14px currentColor;
 }
 .card-kicker {
@@ -319,6 +342,7 @@ button,input,select,textarea { font: inherit; }
 
 @media (max-width: 780px) {
   .work-grid { grid-template-columns: 1fr; }
+  .portfolio-card-shell { min-height: 390px; aspect-ratio: auto; }
   .portfolio-card { min-height: 390px; aspect-ratio: auto; }
 }
 
