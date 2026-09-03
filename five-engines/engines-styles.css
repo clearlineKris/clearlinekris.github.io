@@ -161,16 +161,47 @@ body {
     opacity: 0.88;
 }
 
+.engine-card:nth-child(1) {
+    --engine-metal: linear-gradient(135deg, #6f4708 0%, #f7da72 22%, #b57b12 45%, #fff1aa 62%, #8c5b0b 82%, #e5bd4c 100%);
+    --engine-metal-shadow: rgba(139, 91, 11, 0.34);
+}
+
+.engine-card:nth-child(2) {
+    --engine-metal: linear-gradient(135deg, #713b35 0%, #f4c7b7 22%, #b97568 45%, #ffe1d6 62%, #8e5047 82%, #dba492 100%);
+    --engine-metal-shadow: rgba(142, 80, 71, 0.32);
+}
+
+.engine-card:nth-child(3) {
+    --engine-metal: linear-gradient(135deg, #56646c 0%, #f7fbfc 22%, #a9b7be 45%, #ffffff 62%, #77878f 82%, #d9e1e4 100%);
+    --engine-metal-shadow: rgba(72, 91, 100, 0.28);
+}
+
+.engine-card:nth-child(4) {
+    --engine-metal: linear-gradient(135deg, #17394c 0%, #9be8f3 20%, #3c7e9b 43%, #ddfbff 60%, #24536e 81%, #78bdd2 100%);
+    --engine-metal-shadow: rgba(36, 83, 110, 0.34);
+}
+
+.engine-card:nth-child(5) {
+    --engine-metal: linear-gradient(135deg, #30204f 0%, #ccb5ff 21%, #7358aa 43%, #f1eaff 61%, #4d3576 81%, #aa8fda 100%);
+    --engine-metal-shadow: rgba(77, 53, 118, 0.34);
+}
+
 .engine-card::after {
     content: attr(data-mark);
     position: absolute;
     right: -8px;
     bottom: -26px;
-    color: rgba(0, 111, 134, 0.09);
+    background: var(--engine-metal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
     font-size: 7.25rem;
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.09em;
+    opacity: 0.62;
+    filter: drop-shadow(0 3px 5px var(--engine-metal-shadow));
     pointer-events: none;
     z-index: -1;
 }
