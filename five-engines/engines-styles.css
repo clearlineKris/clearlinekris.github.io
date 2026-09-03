@@ -173,13 +173,13 @@ body {
 }
 
 .engine-card:nth-child(3) {
-    --engine-metal: linear-gradient(135deg, #713b35 0%, #f4c7b7 22%, #b97568 45%, #ffe1d6 62%, #8e5047 82%, #dba492 100%);
-    --engine-metal-shadow: rgba(142, 80, 71, 0.32);
+    --engine-metal: linear-gradient(135deg, #17394c 0%, #9be8f3 20%, #3c7e9b 43%, #ddfbff 60%, #24536e 81%, #78bdd2 100%);
+    --engine-metal-shadow: rgba(36, 83, 110, 0.34);
 }
 
 .engine-card:nth-child(4) {
-    --engine-metal: linear-gradient(135deg, #17394c 0%, #9be8f3 20%, #3c7e9b 43%, #ddfbff 60%, #24536e 81%, #78bdd2 100%);
-    --engine-metal-shadow: rgba(36, 83, 110, 0.34);
+    --engine-metal: linear-gradient(135deg, #713b35 0%, #f4c7b7 22%, #b97568 45%, #ffe1d6 62%, #8e5047 82%, #dba492 100%);
+    --engine-metal-shadow: rgba(142, 80, 71, 0.32);
 }
 
 .engine-card:nth-child(5) {
