@@ -158,33 +158,44 @@ body {
     position: absolute;
     inset: 0 auto 0 0;
     width: 3px;
-    background: linear-gradient(180deg, var(--color-accent), rgba(0, 159, 189, 0.08));
+    background: var(--engine-metal);
     opacity: 0.88;
 }
 
 .engine-card:nth-child(1) {
     --engine-metal: linear-gradient(135deg, #6f4708 0%, #f7da72 22%, #b57b12 45%, #fff1aa 62%, #8c5b0b 82%, #e5bd4c 100%);
     --engine-metal-shadow: rgba(139, 91, 11, 0.34);
+    --engine-tint: rgba(229, 189, 76, 0.13);
 }
 
 .engine-card:nth-child(2) {
     --engine-metal: linear-gradient(135deg, #4b2d18 0%, #d5a16c 22%, #7b4a25 45%, #f2c18d 62%, #5e351b 82%, #b7793f 100%);
     --engine-metal-shadow: rgba(94, 53, 27, 0.34);
+    --engine-tint: rgba(183, 121, 63, 0.12);
 }
 
 .engine-card:nth-child(3) {
     --engine-metal: linear-gradient(135deg, #17394c 0%, #9be8f3 20%, #3c7e9b 43%, #ddfbff 60%, #24536e 81%, #78bdd2 100%);
     --engine-metal-shadow: rgba(36, 83, 110, 0.34);
+    --engine-tint: rgba(120, 189, 210, 0.13);
 }
 
 .engine-card:nth-child(4) {
     --engine-metal: linear-gradient(135deg, #713b35 0%, #f4c7b7 22%, #b97568 45%, #ffe1d6 62%, #8e5047 82%, #dba492 100%);
     --engine-metal-shadow: rgba(142, 80, 71, 0.32);
+    --engine-tint: rgba(219, 164, 146, 0.13);
 }
 
 .engine-card:nth-child(5) {
     --engine-metal: linear-gradient(135deg, #30204f 0%, #ccb5ff 21%, #7358aa 43%, #f1eaff 61%, #4d3576 81%, #aa8fda 100%);
     --engine-metal-shadow: rgba(77, 53, 118, 0.34);
+    --engine-tint: rgba(170, 143, 218, 0.14);
+}
+
+.engine-card {
+    background:
+        linear-gradient(150deg, rgba(255, 255, 255, 0.94), var(--engine-tint)),
+        var(--color-bg-card);
 }
 
 .engine-card::after {
@@ -208,7 +219,7 @@ body {
 }
 
 .engine-card:hover {
-    border-color: #62bdcd;
+    border-color: color-mix(in srgb, var(--engine-metal-shadow) 65%, #9eb9c2);
     transform: translateY(-4px);
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.78),
@@ -229,11 +240,15 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-primary);
+    background: var(--engine-metal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .engine-card.is-evaluation .engine-status {
-    color: #466c76;
+    opacity: 0.76;
 }
 
 .engine-name {
