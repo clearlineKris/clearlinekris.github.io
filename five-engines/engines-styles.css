@@ -405,6 +405,27 @@ body.engines-page {
 .engine-name { margin: 0; color: #fff; font-size: 1.72rem; letter-spacing: -0.04em; }
 .engine-teaser { margin: 17px 0 0; max-width: 92%; color: var(--fe-muted); font-size: 0.98rem; line-height: 1.68; }
 .engine-role { margin-top: auto; padding-top: 24px; color: var(--fe-silver); font-size: 0.92rem; }
+.engine-detail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-top: 18px;
+    background: var(--metal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.engine-detail-link span { transition: transform 180ms ease; }
+.engine-detail-link:hover span { transform: translateX(4px); }
+.engine-detail-link:focus-visible {
+    outline: 3px solid rgba(143, 243, 255, 0.38);
+    outline-offset: 4px;
+}
 .engine-card.is-evaluation { background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.018) 0 10px, transparent 10px 20px), linear-gradient(150deg, rgba(244, 248, 248, 0.07), var(--metal-tint)), var(--fe-surface); }
 
 .architecture-section {
