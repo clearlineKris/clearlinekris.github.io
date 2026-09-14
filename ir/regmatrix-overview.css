@@ -373,10 +373,11 @@ body.regmatrix-page {
 .engine-domain-grid { display: grid; gap: 10px; }
 .engine-domain-grid span {
     display: grid;
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     min-height: 68px;
-    padding: 10px 18px;
+    padding: 10px 18px 10px 78px;
+    position: relative;
     border: 1px solid var(--rm-line);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.035);
@@ -384,9 +385,20 @@ body.regmatrix-page {
     font-size: 0.95rem;
 }
 .engine-domain-grid b {
-    color: var(--rm-violet);
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
     font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: 0.82rem;
+    font-size: clamp(3.2rem, 6vw, 4.6rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
 }
 
 .boundary-section { background: var(--rm-pearl); color: #1d1526; }
@@ -502,4 +514,71 @@ body.regmatrix-page {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+
+/* ===== Engine marks: oversized metallic initials + hover effects (2026-09-14) ===== */
+:root { --rm-teal: #2dd4bf; }
+
+.engine-domain-grid span { transition: border-color 0.35s ease; }
+.engine-domain-grid span:hover { border-color: rgba(45, 212, 191, 0.4); }
+
+.engine-domain-grid span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background: var(--rm-teal);
+    box-shadow: 0 0 12px rgba(45, 212, 191, 0.55);
+    transition: width 0.4s ease;
+}
+.engine-domain-grid span:hover::before { width: 100%; }
+
+.engine-domain-grid span[data-mark="RG"] b { background-image: linear-gradient(135deg, #684508, #ffe688 45%, #a36c0d); }
+.engine-domain-grid span[data-mark="PP"] b { background-image: linear-gradient(135deg, #4c2d19, #e8b27e 45%, #80502c); }
+.engine-domain-grid span[data-mark="KK"] b { background-image: linear-gradient(135deg, #16495b, #b8f7ff 45%, #3b9bb0); }
+.engine-domain-grid span[data-mark="RR"] b { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
+.engine-domain-grid span[data-mark="GG"] b { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
+
+.engines-section { position: relative; }
+.engines-layout { position: relative; z-index: 1; }
+.engine-backnames {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+.engine-backnames span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.86);
+    opacity: 0;
+    font-weight: 700;
+    font-size: clamp(2.8rem, 13vw, 11rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 0.45s ease, transform 0.55s ease;
+}
+.engine-backnames span[data-engine="RegulaGreen"]  { background-image: linear-gradient(135deg, #684508, #ffe688 45%, #a36c0d); }
+.engine-backnames span[data-engine="prfctPACK"]    { background-image: linear-gradient(135deg, #4c2d19, #e8b27e 45%, #80502c); }
+.engine-backnames span[data-engine="KiloKeep"]     { background-image: linear-gradient(135deg, #16495b, #b8f7ff 45%, #3b9bb0); }
+.engine-backnames span[data-engine="RecallRepel"]  { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
+.engine-backnames span[data-engine="GuaranGreen"]  { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
+
+.engines-section:has(span[data-mark="RG"]:hover) .engine-backnames span[data-engine="RegulaGreen"],
+.engines-section:has(span[data-mark="PP"]:hover) .engine-backnames span[data-engine="prfctPACK"],
+.engines-section:has(span[data-mark="KK"]:hover) .engine-backnames span[data-engine="KiloKeep"],
+.engines-section:has(span[data-mark="RR"]:hover) .engine-backnames span[data-engine="RecallRepel"],
+.engines-section:has(span[data-mark="GG"]:hover) .engine-backnames span[data-engine="GuaranGreen"] {
+    opacity: 0.16;
+    transform: translate(-50%, -50%) scale(1);
 }
