@@ -378,6 +378,7 @@ body.regmatrix-page {
     min-height: 68px;
     padding: 10px 18px 10px 78px;
     position: relative;
+    overflow: hidden;
     border: 1px solid var(--rm-line);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.035);
@@ -520,7 +521,6 @@ body.regmatrix-page {
 /* ===== Engine marks: oversized metallic initials + hover effects (2026-09-14) ===== */
 :root { --rm-teal: #2dd4bf; }
 
-.engine-domain-grid span { transition: border-color 0.35s ease; }
 .engine-domain-grid span:hover { border-color: rgba(45, 212, 191, 0.4); }
 
 .engine-domain-grid span::before {
@@ -542,43 +542,50 @@ body.regmatrix-page {
 .engine-domain-grid span[data-mark="RR"] b { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
 .engine-domain-grid span[data-mark="GG"] b { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
 
-.engines-section { position: relative; }
-.engines-layout { position: relative; z-index: 1; }
-.engine-backnames {
+/* in-rectangle hover reveal: full engine name + one-sentence focus */
+.engine-domain-grid span { transition: border-color 0.35s ease, min-height 0.45s ease; }
+.engine-domain-grid span:hover { min-height: 176px; }
+
+.engine-domain-grid .chip-rest { transition: opacity 0.25s ease; }
+.engine-domain-grid span:hover .chip-rest { opacity: 0; }
+.engine-domain-grid span:hover b { opacity: 0; }
+.engine-domain-grid b { transition: opacity 0.25s ease; }
+
+.engine-domain-grid .chip-reveal {
     position: absolute;
     inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-}
-.engine-backnames span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.86);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 22px;
     opacity: 0;
+    transition: opacity 0.3s ease 0.05s;
+}
+.engine-domain-grid span:hover .chip-reveal { opacity: 1; }
+.engine-domain-grid .chip-reveal strong {
+    font-size: clamp(1.8rem, 3.2vw, 2.7rem);
     font-weight: 700;
-    font-size: clamp(2.8rem, 13vw, 11rem);
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
     line-height: 1;
-    white-space: nowrap;
+    transform: scale(0.82);
+    transform-origin: left center;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    transition: opacity 0.45s ease, transform 0.55s ease;
 }
-.engine-backnames span[data-engine="RegulaGreen"]  { background-image: linear-gradient(135deg, #684508, #ffe688 45%, #a36c0d); }
-.engine-backnames span[data-engine="prfctPACK"]    { background-image: linear-gradient(135deg, #4c2d19, #e8b27e 45%, #80502c); }
-.engine-backnames span[data-engine="KiloKeep"]     { background-image: linear-gradient(135deg, #16495b, #b8f7ff 45%, #3b9bb0); }
-.engine-backnames span[data-engine="RecallRepel"]  { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
-.engine-backnames span[data-engine="GuaranGreen"]  { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
+.engine-domain-grid span:hover .chip-reveal strong { transform: scale(1); }
+.engine-domain-grid .chip-reveal small {
+    font-size: 0.84rem;
+    color: var(--rm-silver);
+    line-height: 1.45;
+    max-width: 46ch;
+}
 
-.engines-section:has(span[data-mark="RG"]:hover) .engine-backnames span[data-engine="RegulaGreen"],
-.engines-section:has(span[data-mark="PP"]:hover) .engine-backnames span[data-engine="prfctPACK"],
-.engines-section:has(span[data-mark="KK"]:hover) .engine-backnames span[data-engine="KiloKeep"],
-.engines-section:has(span[data-mark="RR"]:hover) .engine-backnames span[data-engine="RecallRepel"],
-.engines-section:has(span[data-mark="GG"]:hover) .engine-backnames span[data-engine="GuaranGreen"] {
-    opacity: 0.16;
-    transform: translate(-50%, -50%) scale(1);
-}
+.engine-domain-grid span[data-mark="RG"] .chip-reveal strong { background-image: linear-gradient(135deg, #684508, #ffe688 45%, #a36c0d); }
+.engine-domain-grid span[data-mark="PP"] .chip-reveal strong { background-image: linear-gradient(135deg, #4c2d19, #e8b27e 45%, #80502c); }
+.engine-domain-grid span[data-mark="KK"] .chip-reveal strong { background-image: linear-gradient(135deg, #16495b, #b8f7ff 45%, #3b9bb0); }
+.engine-domain-grid span[data-mark="RR"] .chip-reveal strong { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
+.engine-domain-grid span[data-mark="GG"] .chip-reveal strong { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
