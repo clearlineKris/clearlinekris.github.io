@@ -402,7 +402,11 @@ body.regmatrix-page {
     pointer-events: none;
 }
 
-.boundary-section { background: var(--rm-pearl); color: #1d1526; }
+.boundary-section {
+    background-color: var(--rm-pearl);
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='162'%20height='162'%3E%3Cg%20stroke='rgba(110,63,180,0.16)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-dasharray='0.1%208'%3E%3Cpath%20d='M0%200%20L162%20162'/%3E%3Cpath%20d='M0%20162%20L162%200'/%3E%3C/g%3E%3C/svg%3E");
+    color: #1d1526;
+}
 .boundary-section .section-label { color: #6e3fb4; }
 .boundary-section h2 { color: #1d1526; }
 .boundary-grid {
