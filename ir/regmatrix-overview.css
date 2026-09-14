@@ -546,7 +546,13 @@ body.regmatrix-page {
 .engine-domain-grid span { transition: border-color 0.35s ease, min-height 0.45s ease; }
 .engine-domain-grid span:hover { min-height: 176px; }
 
-.engine-domain-grid .chip-rest { transition: opacity 0.25s ease; }
+.engine-domain-grid .chip-rest {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 1.05rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    transition: opacity 0.25s ease;
+}
 .engine-domain-grid span:hover .chip-rest { opacity: 0; }
 .engine-domain-grid span:hover b { opacity: 0; }
 .engine-domain-grid b { transition: opacity 0.25s ease; }
