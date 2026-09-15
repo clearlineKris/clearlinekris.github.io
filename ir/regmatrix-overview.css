@@ -611,6 +611,12 @@ body.regmatrix-page {
     opacity: 1;
     transition: opacity 0.35s ease;
     pointer-events: none;
+    background-size: 168px 84px;
+    animation: engine-scroll 28s linear infinite;
+}
+@keyframes engine-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 168px 84px; }
 }
 .engine-domain-grid span:hover::after { opacity: 0; }
 /* lift chip content above the pattern plane */
