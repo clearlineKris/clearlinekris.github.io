@@ -678,36 +678,49 @@ button,input,select,textarea { font: inherit; }
 .portfolio-card.aqua:hover .engine-field,
 .portfolio-card.aqua:focus-visible .engine-field { opacity: .68; }
 
-/* Generated joint cutouts occupy the upper-left field of the 68th Joint Insights card. */
+/* 68th Joint Insights: solid numeric rain mixed through the joint field. */
 .joint-rain {
   position: absolute;
-  top: -18%;
-  right: 8%;
-  width: 42%;
-  height: 136%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  inset: -14% 0 -14% 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  display: block;
   font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(.62rem, 1vw, .78rem);
+  font-size: clamp(.82rem, 1.35vw, 1.08rem);
   font-weight: 700;
-  letter-spacing: .08em;
   line-height: 1;
+  letter-spacing: .045em;
+  color: rgba(218,255,212,.7);
+  perspective: 520px;
+  transform: rotate(3deg);
+  transform-origin: center;
+}
+.joint-rain span {
+  position: absolute;
+  left: var(--x);
+  top: -12%;
+  display: block;
+  min-width: .7em;
   text-align: center;
-  color: rgba(225,255,218,.34);
-  text-shadow: 0 0 12px rgba(155,255,170,.2);
-  transform: rotate(7deg);
-  animation: joint-rain-fall 11s linear infinite;
+  opacity: .72;
+  text-shadow:
+    1px 1px 0 rgba(76,105,70,.9),
+    2px 2px 0 rgba(38,55,35,.82),
+    0 0 9px rgba(185,255,0,.18);
+  transform: translate3d(0,0,18px) rotateY(-8deg) rotateX(2deg) scale(1);
+  animation: joint-digit-rain 8.5s linear infinite;
+  animation-delay: var(--d);
 }
-.joint-rain span:nth-child(odd) { opacity: .72; }
-.joint-rain span:nth-child(even) { opacity: .42; margin-left: 18%; }
-@keyframes joint-rain-fall {
-  from { transform: translate3d(0,-7%,0) rotate(7deg); }
-  to { transform: translate3d(0,7%,0) rotate(7deg); }
-}
-@media (max-width: 700px) {
-  .joint-rain { right: 5%; width: 48%; font-size: .58rem; opacity: .72; }
+.joint-rain span:nth-child(3n + 1) { font-size: 1.12em; opacity: .82; }
+.joint-rain span:nth-child(3n + 2) { font-size: .92em; opacity: .58; }
+.joint-rain span:nth-child(5n) { transform: translate3d(0,0,-8px) rotateY(10deg) rotateX(-2deg) scale(.9); opacity: .5; }
+@keyframes joint-digit-rain {
+  0% { top: -14%; opacity: 0; transform: translate3d(-3px,0,8px) rotateY(-10deg) rotateX(3deg) scale(.94); }
+  10% { opacity: .72; }
+  48% { transform: translate3d(4px,0,24px) rotateY(7deg) rotateX(-2deg) scale(1.02); }
+  86% { opacity: .58; }
+  100% { top: 112%; opacity: 0; transform: translate3d(-2px,0,4px) rotateY(-6deg) rotateX(2deg) scale(.96); }
 }
 
 .joint-insights-field {
