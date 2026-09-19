@@ -1,0 +1,54 @@
+/* 2026-09-19 square treatments */
+
+/* 68th: remove the numeric rain and replace it with a ghosted green flame. */
+.joint-rain { display:none !important; }
+.portfolio-card.green .joint-insights-field {
+  opacity: .62;
+  clip-path: none;
+  background:
+    radial-gradient(ellipse at 50% 58%, rgba(185,255,0,.08), transparent 38%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 700'%3E%3Cdefs%3E%3Cfilter id='g' x='-30%25' y='-30%25' width='160%25' height='160%25'%3E%3CfeGaussianBlur stdDeviation='9' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3CradialGradient id='f' cx='.5' cy='.65' r='.65'%3E%3Cstop offset='0' stop-color='%23d7ff72' stop-opacity='.72'/%3E%3Cstop offset='.45' stop-color='%23b9ff00' stop-opacity='.42'/%3E%3Cstop offset='1' stop-color='%231b4f00' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath d='M250 675 C155 620 118 555 165 474 C194 425 225 407 207 327 C203 291 224 235 270 183 C263 245 296 264 321 303 C351 350 329 397 365 431 C411 474 405 543 365 589 C334 624 299 652 250 675Z' fill='url(%23f)' filter='url(%23g)'/%3E%3Cpath d='M250 628 C204 584 199 537 229 493 C252 458 271 429 260 379 C306 426 325 463 309 504 C292 547 300 579 250 628Z' fill='%23e6ff9b' fill-opacity='.34'/%3E%3Cpath d='M185 566 C151 518 166 473 199 437 M346 566 C374 522 365 478 335 445 M235 244 C226 207 239 165 269 132' fill='none' stroke='%23b9ff00' stroke-opacity='.26' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center 58%;
+  background-size: 78% 92%;
+  mix-blend-mode: screen;
+  filter: saturate(.9) blur(.15px);
+}
+.portfolio-card.green:hover .joint-insights-field,
+.portfolio-card.green:focus-visible .joint-insights-field { opacity: .82; }
+
+/* The Clear Lines: replace the rigid line field with a slightly slouched technical net. */
+.portfolio-card.blue .clear-lines-field {
+  opacity: .7;
+  clip-path: none;
+  background:
+    linear-gradient(145deg, rgba(67,136,255,.08), transparent 68%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cdefs%3E%3Cfilter id='soft'%3E%3CfeGaussianBlur stdDeviation='1.1'/%3E%3C/filter%3E%3Cpattern id='net' width='58' height='58' patternUnits='userSpaceOnUse'%3E%3Cpath d='M-14 14 L14 -14 M0 58 L58 0 M44 72 L72 44' fill='none' stroke='%2390bcff' stroke-opacity='.27' stroke-width='2'/%3E%3Cpath d='M14 72 L72 14 M-14 44 L44 -14' fill='none' stroke='%235b97ff' stroke-opacity='.17' stroke-width='1.5'/%3E%3C/pattern%3E%3C/defs%3E%3Cpath d='M-40 95 C125 48 226 142 366 104 C518 62 610 158 842 90 L842 706 C678 748 566 650 424 698 C270 750 166 638 -40 710Z' fill='url(%23net)' filter='url(%23soft)'/%3E%3Cpath d='M-10 170 C145 116 250 205 386 164 C531 121 645 215 816 158 M-20 358 C135 305 241 395 388 350 C540 303 644 407 820 344 M-15 548 C145 492 260 584 402 540 C550 494 659 594 824 528' fill='none' stroke='%237eb0ff' stroke-opacity='.18' stroke-width='4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 122% 118%;
+  mix-blend-mode: screen;
+  filter: saturate(.9);
+}
+.portfolio-card.blue .clear-lines-field::after { background: linear-gradient(145deg, rgba(5,7,6,.02), transparent 46%, rgba(5,7,6,.42)); }
+
+/* The Five Engines: a transparent, ghostly souped-up engine replaces the abstract stripes. */
+.portfolio-card.aqua .engine-field {
+  opacity: .58;
+  background:
+    radial-gradient(circle at 58% 50%, rgba(0,159,189,.13), transparent 43%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3Cfilter id='ghost' x='-25%25' y='-25%25' width='150%25' height='150%25'%3E%3CfeGaussianBlur stdDeviation='1.7' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3CradialGradient id='metal' cx='.45' cy='.4' r='.72'%3E%3Cstop offset='0' stop-color='%23b9f4ff' stop-opacity='.28'/%3E%3Cstop offset='.5' stop-color='%23009fbd' stop-opacity='.2'/%3E%3Cstop offset='1' stop-color='%23003540' stop-opacity='.03'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg fill='url(%23metal)' stroke='%2385eaff' stroke-opacity='.25' stroke-width='6' filter='url(%23ghost)'%3E%3Cpath d='M102 212 L174 150 L260 150 L310 188 L489 188 L544 145 L626 154 L699 220 L662 273 L702 322 L655 391 L575 400 L520 455 L317 455 L263 414 L167 421 L101 361 L128 307 L99 263Z'/%3E%3Crect x='212' y='235' width='320' height='139' rx='24'/%3E%3Ccircle cx='279' cy='305' r='58' fill='none'/%3E%3Ccircle cx='279' cy='305' r='25' fill='none'/%3E%3Ccircle cx='477' cy='305' r='67' fill='none'/%3E%3Ccircle cx='477' cy='305' r='31' fill='none'/%3E%3Cpath d='M345 235 L370 176 L429 176 L452 235 M343 374 L366 430 L427 430 L452 374 M532 235 L584 207 M532 374 L587 405' fill='none'/%3E%3C/g%3E%3Cg fill='none' stroke='%23b7f6ff' stroke-opacity='.18' stroke-width='4'%3E%3Cpath d='M70 475 C180 535 270 518 352 493 C444 465 558 502 732 455'/%3E%3Cpath d='M85 112 C201 62 308 94 397 116 C509 143 624 103 724 126'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 116% 92%;
+  mix-blend-mode: screen;
+}
+.portfolio-card.aqua .engine-field i { display:none; }
+.portfolio-card.aqua:hover .engine-field,
+.portfolio-card.aqua:focus-visible .engine-field { opacity: .8; }
+
+@media (max-width: 700px) {
+  .portfolio-card.green .joint-insights-field { opacity: .45; background-size: 92% 86%; }
+  .portfolio-card.blue .clear-lines-field { opacity: .56; background-size: 138% 126%; }
+  .portfolio-card.aqua .engine-field { opacity: .43; background-size: 132% 82%; }
+}
