@@ -679,6 +679,37 @@ button,input,select,textarea { font: inherit; }
 .portfolio-card.aqua:focus-visible .engine-field { opacity: .68; }
 
 /* Generated joint cutouts occupy the upper-left field of the 68th Joint Insights card. */
+.joint-rain {
+  position: absolute;
+  top: -18%;
+  right: 8%;
+  width: 42%;
+  height: 136%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(.62rem, 1vw, .78rem);
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-align: center;
+  color: rgba(225,255,218,.34);
+  text-shadow: 0 0 12px rgba(155,255,170,.2);
+  transform: rotate(7deg);
+  animation: joint-rain-fall 11s linear infinite;
+}
+.joint-rain span:nth-child(odd) { opacity: .72; }
+.joint-rain span:nth-child(even) { opacity: .42; margin-left: 18%; }
+@keyframes joint-rain-fall {
+  from { transform: translate3d(0,-7%,0) rotate(7deg); }
+  to { transform: translate3d(0,7%,0) rotate(7deg); }
+}
+@media (max-width: 700px) {
+  .joint-rain { right: 5%; width: 48%; font-size: .58rem; opacity: .72; }
+}
+
 .joint-insights-field {
   position: absolute;
   inset: 0;
