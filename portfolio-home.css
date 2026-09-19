@@ -157,7 +157,7 @@ button,input,select,textarea { font: inherit; }
 .portfolio-card.blue { --accent: var(--revo-cousin); --accent-soft: var(--revo-cousin-soft); }
 .portfolio-card.aqua { --accent: var(--aqua); --accent-soft: var(--aqua-soft); }
 .portfolio-card.green { --accent: var(--chartreuse); --accent-soft: var(--chartreuse-soft); }
-.portfolio-card > :not(.state-field):not(.clear-lines-field):not(.engine-field):not(.joint-insights-field) { position: relative; z-index: 2; }
+.portfolio-card > :not(.state-field):not(.clear-lines-field):not(.engine-field):not(.joint-insights-field):not(.joint-rain) { position: relative; z-index: 2; }
 
 /* RegMatrix state footprint: a quiet patchwork moving behind the purple card copy. */
 .state-field {
