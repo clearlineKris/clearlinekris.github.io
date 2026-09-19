@@ -85,6 +85,12 @@ button,input,select,textarea { font: inherit; }
   margin: 0; max-width: 850px; font-size: clamp(3.6rem, 8.3vw, 7.6rem);
   line-height: .88; letter-spacing: -.075em; font-weight: 650;
 }
+.hero-subtitle {
+  margin: 0; color: #d3d8d3; font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(1rem, 1.7vw, 1.38rem); font-weight: 600; letter-spacing: .055em;
+  line-height: 1.35;
+}
+
 .hero-intro {
   max-width: 720px; margin: 32px 0 0; color: #d3d8d3; font-size: clamp(1.05rem, 1.6vw, 1.28rem);
 }
