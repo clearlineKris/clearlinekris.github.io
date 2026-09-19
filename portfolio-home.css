@@ -687,11 +687,11 @@ button,input,select,textarea { font: inherit; }
   pointer-events: none;
   display: block;
   font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(.82rem, 1.35vw, 1.08rem);
+  font-size: clamp(.88rem, 1.45vw, 1.14rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: .045em;
-  color: rgba(218,255,212,.7);
+  color: #d8f5d2;
   perspective: 520px;
   transform: rotate(3deg);
   transform-origin: center;
@@ -703,7 +703,7 @@ button,input,select,textarea { font: inherit; }
   display: block;
   min-width: .7em;
   text-align: center;
-  opacity: .72;
+  opacity: .88;
   text-shadow:
     1px 1px 0 rgba(76,105,70,.9),
     2px 2px 0 rgba(38,55,35,.82),
@@ -712,9 +712,9 @@ button,input,select,textarea { font: inherit; }
   animation: joint-digit-rain 8.5s linear infinite;
   animation-delay: var(--d);
 }
-.joint-rain span:nth-child(3n + 1) { font-size: 1.12em; opacity: .82; }
-.joint-rain span:nth-child(3n + 2) { font-size: .92em; opacity: .58; }
-.joint-rain span:nth-child(5n) { transform: translate3d(0,0,-8px) rotateY(10deg) rotateX(-2deg) scale(.9); opacity: .5; }
+.joint-rain span:nth-child(3n + 1) { font-size: 1.12em; opacity: .96; }
+.joint-rain span:nth-child(3n + 2) { font-size: .92em; opacity: .72; }
+.joint-rain span:nth-child(5n) { transform: translate3d(0,0,-8px) rotateY(10deg) rotateX(-2deg) scale(.9); opacity: .64; }
 @keyframes joint-digit-rain {
   0% { top: -14%; opacity: 0; transform: translate3d(-3px,0,8px) rotateY(-10deg) rotateX(3deg) scale(.94); }
   10% { opacity: .72; }
@@ -726,7 +726,7 @@ button,input,select,textarea { font: inherit; }
 .joint-insights-field {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
   border-radius: 3px;
   pointer-events: none;
