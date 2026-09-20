@@ -1375,3 +1375,109 @@ svg {
         box-shadow: 0 26px 70px rgba(18,5,1,.34);
     }
 }
+
+
+/* Fire Pack page palette: the page-level accent system must match the portfolio's hot copper. */
+body {
+    --ink: #100806;
+    --ink-soft: #1a0c08;
+    --ink-raised: #24110b;
+    --green: #ff6f3c;
+    --green-bright: #ff8a5f;
+    --green-dark: #9f482d;
+    --yellow: #ffc1a6;
+    --mint: #ffd9c9;
+    --text: #f8eee9;
+    --text-muted: #bdaea7;
+    --line: rgba(255, 201, 177, 0.17);
+    --line-dark: rgba(42, 19, 12, 0.18);
+    --shadow: 0 26px 70px rgba(18, 5, 1, 0.34);
+}
+
+body .brand-lockup--chartreuse .brand-kris {
+    color: var(--green-bright);
+}
+
+body .brand-lockup--chartreuse .brand-diamond--orange {
+    background: var(--green);
+}
+
+body .nav-cta {
+    border-color: rgba(255, 111, 60, 0.55);
+    color: var(--green-bright);
+}
+
+body .nav-cta:hover,
+body .nav-cta:focus-visible {
+    background: var(--green);
+    color: #160b07;
+}
+
+body .hero {
+    background:
+        radial-gradient(circle at 83% 24%, rgba(255, 111, 60, 0.20), transparent 34%),
+        linear-gradient(125deg, #100806 0%, #21100a 52%, #32170d 100%);
+}
+
+body .hero::before {
+    background-image:
+        linear-gradient(rgba(255, 201, 177, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 201, 177, 0.07) 1px, transparent 1px);
+}
+
+body .hero-lede {
+    color: #f0ddd5;
+}
+
+body .button-primary {
+    box-shadow: 0 12px 34px rgba(255, 111, 60, 0.20);
+}
+
+body .review-visual {
+    border-color: rgba(255, 185, 155, 0.22);
+    background:
+        radial-gradient(circle at 82% 16%, rgba(255, 111, 60, 0.12), transparent 38%),
+        linear-gradient(145deg, rgba(67, 25, 13, 0.84), rgba(16, 7, 4, 0.92));
+    box-shadow:
+        0 26px 70px rgba(18, 5, 1, 0.34),
+        0 0 42px rgba(255, 111, 60, 0.10);
+}
+
+body .review-visual::after {
+    background: var(--green);
+    box-shadow: 0 0 28px rgba(255, 111, 60, 0.28);
+}
+
+body .permission-band {
+    background: #1b0c07;
+    border-color: rgba(255, 111, 60, 0.24);
+}
+
+body .permission-inner p {
+    color: var(--green-bright);
+}
+
+body .step-card-accent {
+    background: #1b0c07;
+}
+
+body .outcomes-section {
+    background: #1a0c08;
+}
+
+body .outcome-good {
+    background: linear-gradient(155deg, rgba(255, 111, 60, 0.12), rgba(255, 255, 255, 0.025));
+    border-color: rgba(255, 111, 60, 0.28);
+}
+
+body .clearline-intro blockquote {
+    border-left-color: var(--green);
+    color: #ffc5ae;
+}
+
+body .form-group input:focus,
+body .form-group select:focus,
+body .form-group textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(255, 111, 60, 0.10);
+}
