@@ -1214,3 +1214,164 @@ svg {
         animation-iteration-count: 1 !important;
     }
 }
+
+
+/* Fire Pack signature treatment: carry the main portfolio's hot-copper glow into the landing page. */
+:root {
+    --fire-orange: #ff6f3c;
+    --fire-orange-soft: rgba(255,111,60,.14);
+    --fire-orange-line: rgba(255,111,60,.34);
+}
+
+.hero {
+    background:
+        radial-gradient(circle at 83% 24%, rgba(255,111,60,.20), transparent 34%),
+        linear-gradient(125deg, #160b07 0%, #21100a 52%, #32170d 100%);
+}
+
+.hero::before {
+    background-image:
+        linear-gradient(rgba(255,201,177,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,201,177,.07) 1px, transparent 1px);
+}
+
+.eyebrow,
+.review-code,
+.sample-label,
+.contact-copy .eyebrow {
+    color: var(--fire-orange);
+}
+
+.eyebrow span {
+    color: #ffb08f;
+}
+
+.button-primary {
+    background: var(--fire-orange);
+    color: #160b07;
+    box-shadow: 0 12px 34px rgba(255,111,60,.20);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+    background: #ff9a73;
+}
+
+.button-quiet:hover,
+.button-quiet:focus-visible {
+    border-color: var(--fire-orange-line);
+}
+
+.hero-facts li::before {
+    background: var(--fire-orange);
+}
+
+.review-visual {
+    border-color: rgba(255,185,155,.22);
+    background:
+        radial-gradient(circle at 82% 16%, rgba(255,111,60,.12), transparent 38%),
+        linear-gradient(145deg, rgba(67,25,13,.84), rgba(16,7,4,.92));
+    box-shadow:
+        0 26px 70px rgba(18,5,1,.34),
+        0 0 42px rgba(255,111,60,.10);
+}
+
+.review-visual::after {
+    background: var(--fire-orange);
+    box-shadow: 0 0 28px rgba(255,111,60,.28);
+}
+
+.review-status i {
+    background: var(--fire-orange);
+    box-shadow: 0 0 0 5px rgba(255,111,60,.10), 0 0 18px rgba(255,111,60,.32);
+}
+
+.sample {
+    border-color: rgba(255,185,155,.16);
+    background: rgba(255,111,60,.035);
+}
+
+.comparison-line b {
+    color: #c9937f;
+}
+
+.possible-finding {
+    background: var(--fire-orange);
+    color: #160b07;
+    box-shadow: 0 0 30px rgba(255,111,60,.18);
+}
+
+.permission-band {
+    border-top-color: rgba(255,111,60,.24);
+    border-bottom-color: rgba(255,111,60,.24);
+    background: #1b0c07;
+}
+
+.permission-inner p {
+    color: #ff9a73;
+}
+
+.section-heading .eyebrow,
+.centered-heading .eyebrow,
+.operator-copy .eyebrow,
+.contact-copy .eyebrow {
+    color: var(--fire-orange);
+}
+
+.step-kicker,
+.record-index {
+    color: #b65a38;
+}
+
+.step-card-accent {
+    background: #1b0c07;
+}
+
+.step-card-accent .step-kicker {
+    color: var(--fire-orange);
+}
+
+.outcome-card {
+    border-color: rgba(255,111,60,.16);
+}
+
+.outcome-symbol {
+    color: var(--fire-orange);
+}
+
+.outcome-good {
+    background: linear-gradient(155deg, rgba(255,111,60,.12), rgba(255,255,255,.025));
+    border-color: rgba(255,111,60,.28);
+}
+
+.outcome-context .outcome-symbol {
+    color: #ffb08f;
+}
+
+.outcome-repair .outcome-symbol {
+    color: #ff8057;
+}
+
+.clearline-intro blockquote {
+    border-left-color: var(--fire-orange);
+    color: #ffc5ae;
+}
+
+.system-code,
+.system-links b,
+.contact-fallback a {
+    color: var(--fire-orange);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--fire-orange);
+    box-shadow: 0 0 0 3px rgba(255,111,60,.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .review-visual {
+        box-shadow: 0 26px 70px rgba(18,5,1,.34);
+    }
+}
