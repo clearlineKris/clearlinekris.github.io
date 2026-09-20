@@ -12,6 +12,36 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assets/brand-lockup.css?v=diamond-tabs-20260902">
+<style>
+        .fire-pack-zap {
+            position: relative;
+            min-height: 1.5em;
+        }
+
+        .fire-pack-zap-word,
+        .fire-pack-zap-note {
+            display: inline-block;
+            transition: opacity .16s ease, transform .16s ease, filter .16s ease;
+        }
+
+        .fire-pack-zap-in {
+            animation: fire-pack-zap .42s cubic-bezier(.2,.8,.2,1);
+        }
+
+        @keyframes fire-pack-zap {
+            0% { opacity: .08; transform: translateY(.28em) scale(.98); filter: blur(4px); }
+            45% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fire-pack-zap-word,
+            .fire-pack-zap-note {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
