@@ -48,11 +48,9 @@
                         <a class="button button-primary" href="#fire-pack">See how the Fire Pack works</a>
                         <a class="button button-quiet" href="#contact">Bring the question</a>
                     </div>
-                    <ul class="hero-facts" aria-label="Offer details">
-                        <li>One defined question</li>
-                        <li>One bounded examination</li>
-                        <li>One evidence trail</li>
-                    </ul>
+                    <div class="hero-facts fire-pack-zap" aria-label="Offer details" aria-live="polite">
+                        <span class="fire-pack-zap-word">One defined question</span>
+                    </div>
                 </div>
 
                 <div class="review-visual" aria-label="How The Fire Pack investigates one defined point of concern">
@@ -86,7 +84,7 @@
             <div class="container permission-inner">
                 <span class="permission-index">02</span>
                 <p>If the evidence does not support the concern, we'll say so.</p>
-                <span class="permission-note">No manufactured emergency.</span>
+                <span class="permission-note fire-pack-zap-note">No manufactured emergency.</span>
             </div>
         </section>
 
@@ -305,6 +303,35 @@
         </div>
     </footer>
 
+    <script>
+        (function () {
+            const heroZap = document.querySelector('.fire-pack-zap-word');
+            const noteZap = document.querySelector('.fire-pack-zap-note');
+            if (!heroZap || !noteZap) return;
+
+            const statements = [
+                'One defined question',
+                'One bounded examination',
+                'One evidence trail',
+                'No manufactured emergency.'
+            ];
+
+            let index = 0;
+
+            function zap(element, text) {
+                element.classList.remove('fire-pack-zap-in');
+                void element.offsetWidth;
+                element.textContent = text;
+                element.classList.add('fire-pack-zap-in');
+            }
+
+            setInterval(function () {
+                index = (index + 1) % statements.length;
+                zap(heroZap, statements[index]);
+                zap(noteZap, statements[index]);
+            }, 2600);
+        })();
+    </script>
     <script src="form-handler.js"></script>
 </body>
 </html>
