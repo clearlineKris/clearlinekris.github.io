@@ -146,7 +146,7 @@ body.engines-page {
     outline-offset: 3px;
 }
 .button-primary {
-    background: linear-gradient(135deg, #45dff1, #098aa3);
+    background: linear-gradient(135deg, #fff27a, #ffe600);
     color: #021014;
     box-shadow: 0 16px 42px rgba(180, 150, 0, 0.22);
 }
