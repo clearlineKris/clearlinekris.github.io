@@ -743,3 +743,43 @@ body a { color: inherit; }
         0 0 0 1px rgba(13,45,100,.09),
         0 0 11px color-mix(in srgb, var(--diamond-color) 42%, transparent);
 }
+
+
+/* ===== Clear Lines brushed-steel field =====
+   The knowledge floor sits on a restrained metal surface rather than a flat white page.
+*/
+html,
+body {
+    background-color: #aeb4b8;
+    background-image:
+        linear-gradient(180deg, rgba(255,255,255,.34), rgba(70,78,84,.10) 48%, rgba(255,255,255,.22)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.055) 0px, rgba(255,255,255,.055) 1px, rgba(20,28,34,.035) 2px, rgba(20,28,34,.035) 3px),
+        repeating-linear-gradient(92deg, rgba(255,255,255,.045) 0px, rgba(255,255,255,.045) 1px, rgba(50,58,64,.028) 2px, rgba(50,58,64,.028) 5px);
+    background-size: auto, auto, 180px 100%;
+    background-attachment: fixed;
+}
+
+.signal-hero {
+    background:
+        linear-gradient(180deg, rgba(235,239,242,.82), rgba(184,191,196,.72)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 1px, rgba(20,28,34,.04) 2px, rgba(20,28,34,.04) 3px);
+}
+
+.dispatch-section,
+.process-section,
+.doctrine-section {
+    background:
+        linear-gradient(180deg, rgba(239,242,244,.82), rgba(196,202,206,.76)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.065) 0px, rgba(255,255,255,.065) 1px, rgba(40,48,54,.035) 2px, rgba(40,48,54,.035) 4px);
+}
+
+.ir-footer {
+    background:
+        linear-gradient(180deg, rgba(176,183,188,.88), rgba(150,158,164,.92)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0px, rgba(255,255,255,.05) 1px, rgba(30,38,44,.04) 2px, rgba(30,38,44,.04) 4px);
+}
+
+.signal-rail {
+    background: rgba(112,121,128,.78);
+    border-color: rgba(35,44,50,.18);
+}
