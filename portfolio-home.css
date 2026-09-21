@@ -782,10 +782,25 @@ button,input,select,textarea { font: inherit; }
     min-height: 650px;
   }
 
-  .diagnostic-double-blind { padding: 34px 30% 34px 24px; }
-  .diagnostic-heat-seeker { padding: 34px 24px 34px 30%; }
-  .diagnostic-name { font-size: clamp(1.8rem, 9vw, 2.45rem); }
-  .diagnostic-prompt { max-width: 235px; font-size: .98rem; }
+  .diagnostic-double-blind {
+    padding: 30px 34% 30px 24px;
+  }
+  .diagnostic-heat-seeker {
+    padding: 30px 24px 30px 34%;
+  }
+  .diagnostic-name {
+    max-width: 190px;
+    font-size: clamp(1.8rem, 9vw, 2.45rem);
+  }
+  .diagnostic-prompt {
+    max-width: 190px;
+    font-size: .96rem;
+    line-height: 1.38;
+  }
+  .diagnostic-cta {
+    max-width: 190px;
+    line-height: 1.35;
+  }
   .diagnostic-diagonal {
     inset: 0;
   }
