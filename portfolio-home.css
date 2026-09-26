@@ -270,6 +270,23 @@ button,input,select,textarea { font: inherit; }
   margin-top: auto; padding-top: 28px; color: var(--accent); font-family: "IBM Plex Mono", monospace;
   font-size: .71rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
 }
+.regmatrix-card-lede { margin-top: 18px !important; color: #e7e9e7 !important; font-family: "IBM Plex Mono", monospace; font-size: .79rem; letter-spacing: .04em; }
+.regmatrix-lines {
+  position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px; margin-top: 18px;
+}
+.regmatrix-lines span {
+  min-width: 0; padding: 9px 8px 8px; border: 1px solid rgba(143,92,255,.28);
+  background: rgba(8,6,13,.36); border-radius: 2px;
+}
+.regmatrix-lines b {
+  display: block; color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: .66rem;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.regmatrix-lines small {
+  display: block; margin-top: 4px; color: #9ea69f; font-size: .57rem; line-height: 1.25;
+}
+.regmatrix-card-copy { margin-top: 16px !important; font-size: .86rem; line-height: 1.5; }
 
 .portfolio-two-up { display: grid; grid-template-columns: 1.12fr .88fr; gap: 18px; margin-top: 18px; }
 .feature-panel,
