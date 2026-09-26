@@ -522,7 +522,7 @@ body.regmatrix-page {
 }
 
 
-/* ===== Engine marks: oversized metallic initials + hover effects (2026-09-14) ===== */
+/* ===== Five Vector marks: metallic symbols + hover reveals ===== */
 :root { --rm-teal: #2dd4bf; }
 
 .engine-domain-grid span:hover { border-color: rgba(45, 212, 191, 0.4); }
@@ -540,15 +540,38 @@ body.regmatrix-page {
 }
 .engine-domain-grid span:hover::before { width: 100%; }
 
-.engine-domain-grid span[data-mark="RG"] b { background-image: linear-gradient(135deg, #684508, #ffe688 45%, #a36c0d); }
-.engine-domain-grid span[data-mark="PP"] b { background-image: linear-gradient(135deg, #4c2d19, #e8b27e 45%, #80502c); }
-.engine-domain-grid span[data-mark="KK"] b { background-image: linear-gradient(135deg, #16495b, #b8f7ff 45%, #3b9bb0); }
-.engine-domain-grid span[data-mark="RR"] b { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
-.engine-domain-grid span[data-mark="GG"] b { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
-
-/* in-rectangle hover reveal: full engine name + one-sentence focus */
 .engine-domain-grid span { transition: border-color 0.35s ease, min-height 0.45s ease; }
 .engine-domain-grid span:hover { min-height: 176px; }
+
+.engine-domain-grid .vector-mark {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.35s ease;
+}
+.engine-domain-grid .vector-mark svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: drop-shadow(0 0 9px rgba(255,255,255,0.06));
+}
+.engine-domain-grid span:hover .vector-mark {
+    opacity: 0;
+    transform: translateY(-50%) scale(.88);
+}
+
+/* The five metals stay attached to the five vectors. */
+.engine-domain-grid span[data-mark="ST"] .chip-reveal strong { background-image: linear-gradient(135deg, #684508, #ffe688 45%, #a36c0d); }
+.engine-domain-grid span[data-mark="IN"] .chip-reveal strong { background-image: linear-gradient(135deg, #4c2d19, #e8b27e 45%, #80502c); }
+.engine-domain-grid span[data-mark="TR"] .chip-reveal strong { background-image: linear-gradient(135deg, #16495b, #b8f7ff 45%, #3b9bb0); }
+.engine-domain-grid span[data-mark="RE"] .chip-reveal strong { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
+.engine-domain-grid span[data-mark="CO"] .chip-reveal strong { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
 
 .engine-domain-grid .chip-rest {
     font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -558,8 +581,6 @@ body.regmatrix-page {
     transition: opacity 0.25s ease;
 }
 .engine-domain-grid span:hover .chip-rest { opacity: 0; }
-.engine-domain-grid span:hover b { opacity: 0; }
-.engine-domain-grid b { transition: opacity 0.25s ease; }
 
 .engine-domain-grid .chip-reveal {
     position: absolute;
@@ -594,38 +615,41 @@ body.regmatrix-page {
     max-width: 46ch;
 }
 
-.engine-domain-grid span[data-mark="RG"] .chip-reveal strong { background-image: linear-gradient(135deg, #684508, #ffe688 45%, #a36c0d); }
-.engine-domain-grid span[data-mark="PP"] .chip-reveal strong { background-image: linear-gradient(135deg, #4c2d19, #e8b27e 45%, #80502c); }
-.engine-domain-grid span[data-mark="KK"] .chip-reveal strong { background-image: linear-gradient(135deg, #16495b, #b8f7ff 45%, #3b9bb0); }
-.engine-domain-grid span[data-mark="RR"] .chip-reveal strong { background-image: linear-gradient(135deg, #713f3a, #ffd3c5 45%, #b8796d); }
-.engine-domain-grid span[data-mark="GG"] .chip-reveal strong { background-image: linear-gradient(135deg, #38245b, #dbcaff 45%, #7657aa); }
-
-/* ===== Engine chips: tessellated document-type backgrounds (2026-09-14) ===== */
-/* tilted tessellation plane: oversized pseudo-element rotated -30deg, clipped by the chip */
+/* Keep the pre-hover field alive without carrying the retired Engine copy. */
 .engine-domain-grid span::after {
     content: "";
     position: absolute;
-    inset: -60%;
-    transform: rotate(-35deg);
+    inset: 0;
     z-index: 0;
-    opacity: 1;
-    transition: opacity 0.35s ease;
     pointer-events: none;
-    animation: engine-scroll 16s ease-in-out infinite alternate;
-}
-@keyframes engine-scroll {
-    from { background-position: 0 0; }
-    to { background-position: -380px 0; }
+    opacity: .72;
+    transition: opacity .35s ease;
 }
 .engine-domain-grid span:hover::after { opacity: 0; }
-/* lift chip content above the pattern plane */
+.engine-domain-grid span[data-mark="ST"]::after {
+    background:
+        radial-gradient(circle at 18% 32%, rgba(255,230,136,.10) 0 2px, transparent 3px),
+        linear-gradient(135deg, transparent 0 46%, rgba(255,230,136,.055) 46.5% 47%, transparent 47.5% 100%);
+}
+.engine-domain-grid span[data-mark="IN"]::after {
+    background:
+        linear-gradient(90deg, transparent 0 18%, rgba(232,178,126,.055) 18.5% 19%, transparent 19.5% 100%),
+        linear-gradient(180deg, transparent 0 72%, rgba(232,178,126,.045) 72.5% 73%, transparent 73.5% 100%);
+}
+.engine-domain-grid span[data-mark="TR"]::after {
+    background:
+        repeating-linear-gradient(45deg, transparent 0 13px, rgba(184,247,255,.045) 13px 14px, transparent 14px 26px);
+}
+.engine-domain-grid span[data-mark="RE"]::after {
+    background:
+        repeating-linear-gradient(0deg, transparent 0 14px, rgba(255,211,197,.045) 14px 15px, transparent 15px 28px);
+}
+.engine-domain-grid span[data-mark="CO"]::after {
+    background:
+        radial-gradient(circle at 76% 28%, rgba(219,202,255,.09), transparent 30%),
+        linear-gradient(135deg, transparent 0 48%, rgba(219,202,255,.04) 48.5% 49%, transparent 49.5% 100%);
+}
 .engine-domain-grid .chip-rest { position: relative; z-index: 1; }
-.engine-domain-grid span b { z-index: 1; }
+.engine-domain-grid .vector-mark { z-index: 1; }
 .engine-domain-grid .chip-reveal { z-index: 2; }
-
-.engine-domain-grid span[data-mark="RG"]::after { background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2528'%20height='26'%3E%3Ctext%20x='0'%20y='17'%20font-family='monospace'%20font-size='12'%20letter-spacing='0.5'%20fill='rgba(245,242,248,0.085)'%3EDestruction%20Log%20%C2%B7%20Waste%20Manifest%20%C2%B7%20Disposal%20Record%20%C2%B7%20Destruction%20Log%20%C2%B7%20Waste%20Manifest%20%C2%B7%20Disposal%20Record%20%C2%B7%20Destruction%20Log%20%C2%B7%20Waste%20Manifest%20%C2%B7%20Disposal%20Record%20%C2%B7%20Destruction%20Log%20%C2%B7%20Waste%20Manifest%20%C2%B7%20Disposal%20Record%20%C2%B7%20Destruction%20Log%20%C2%B7%20Waste%20Manifest%20%C2%B7%20Disposal%20Record%20%C2%B7%20Destruction%20Log%20%C2%B7%20Waste%20Manifest%20%C2%B7%20Disposal%20Record%20%C2%B7%20%3C/text%3E%3C/svg%3E"); }
-.engine-domain-grid span[data-mark="PP"]::after { background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1466'%20height='26'%3E%3Ctext%20x='0'%20y='17'%20font-family='monospace'%20font-size='12'%20letter-spacing='0.5'%20fill='rgba(245,242,248,0.085)'%3ELabels%20%C2%B7%20COA%20%C2%B7%20Testing%20Info%20%C2%B7%20Labels%20%C2%B7%20COA%20%C2%B7%20Testing%20Info%20%C2%B7%20Labels%20%C2%B7%20COA%20%C2%B7%20Testing%20Info%20%C2%B7%20Labels%20%C2%B7%20COA%20%C2%B7%20Testing%20Info%20%C2%B7%20Labels%20%C2%B7%20COA%20%C2%B7%20Testing%20Info%20%C2%B7%20Labels%20%C2%B7%20COA%20%C2%B7%20Testing%20Info%20%C2%B7%20%3C/text%3E%3C/svg%3E"); }
-.engine-domain-grid span[data-mark="KK"]::after { background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2297'%20height='26'%3E%3Ctext%20x='0'%20y='17'%20font-family='monospace'%20font-size='12'%20letter-spacing='0.5'%20fill='rgba(245,242,248,0.085)'%3EPackage%20Tags%20%C2%B7%20Inventory%20Report%20%C2%B7%20Adjustments%20%C2%B7%20Package%20Tags%20%C2%B7%20Inventory%20Report%20%C2%B7%20Adjustments%20%C2%B7%20Package%20Tags%20%C2%B7%20Inventory%20Report%20%C2%B7%20Adjustments%20%C2%B7%20Package%20Tags%20%C2%B7%20Inventory%20Report%20%C2%B7%20Adjustments%20%C2%B7%20Package%20Tags%20%C2%B7%20Inventory%20Report%20%C2%B7%20Adjustments%20%C2%B7%20Package%20Tags%20%C2%B7%20Inventory%20Report%20%C2%B7%20Adjustments%20%C2%B7%20%3C/text%3E%3C/svg%3E"); }
-.engine-domain-grid span[data-mark="RR"]::after { background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='2343'%20height='26'%3E%3Ctext%20x='0'%20y='17'%20font-family='monospace'%20font-size='12'%20letter-spacing='0.5'%20fill='rgba(245,242,248,0.085)'%3ERecall%20Plan%20%C2%B7%20Batch%20Records%20%C2%B7%20Distribution%20Log%20%C2%B7%20Recall%20Plan%20%C2%B7%20Batch%20Records%20%C2%B7%20Distribution%20Log%20%C2%B7%20Recall%20Plan%20%C2%B7%20Batch%20Records%20%C2%B7%20Distribution%20Log%20%C2%B7%20Recall%20Plan%20%C2%B7%20Batch%20Records%20%C2%B7%20Distribution%20Log%20%C2%B7%20Recall%20Plan%20%C2%B7%20Batch%20Records%20%C2%B7%20Distribution%20Log%20%C2%B7%20Recall%20Plan%20%C2%B7%20Batch%20Records%20%C2%B7%20Distribution%20Log%20%C2%B7%20%3C/text%3E%3C/svg%3E"); }
-.engine-domain-grid span[data-mark="GG"]::after { background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1835'%20height='26'%3E%3Ctext%20x='0'%20y='17'%20font-family='monospace'%20font-size='12'%20letter-spacing='0.5'%20fill='rgba(245,242,248,0.085)'%3ELicenses%20%C2%B7%20SOPs%20%C2%B7%20Vendor%20Agreements%20%C2%B7%20Licenses%20%C2%B7%20SOPs%20%C2%B7%20Vendor%20Agreements%20%C2%B7%20Licenses%20%C2%B7%20SOPs%20%C2%B7%20Vendor%20Agreements%20%C2%B7%20Licenses%20%C2%B7%20SOPs%20%C2%B7%20Vendor%20Agreements%20%C2%B7%20Licenses%20%C2%B7%20SOPs%20%C2%B7%20Vendor%20Agreements%20%C2%B7%20Licenses%20%C2%B7%20SOPs%20%C2%B7%20Vendor%20Agreements%20%C2%B7%20%3C/text%3E%3C/svg%3E"); }
 .engine-domain-grid .chip-rest { color: var(--rm-pearl); }
