@@ -1,6 +1,6 @@
 # The Clear Lines — master bibliography
 
-Checked October 22, 2026. This inventory covers every distinct external research link in the eight article pages on this branch. It excludes fonts, navigation, and links between Clear Lines articles. A repeated link is listed once, with all articles that use it. There are **39 distinct URLs and 63 article-link occurrences**. The Federal Register rule appears at two government URLs, so there are **38 distinct linked materials**. This is a source inventory, not a claim that every page was independently available to automated review today.
+Checked October 22, 2026. This inventory covers every distinct external research link in the eight article pages on this branch. It excludes fonts, navigation, and links between Clear Lines articles. A repeated link is listed once, with all articles that use it. There are **40 distinct URLs and 65 article-link occurrences**. The Federal Register rule appears at two government URLs, so there are **39 distinct linked materials**. This is a source inventory, not a claim that every page was independently available to automated review today.
 
 Article key: **Friction**, **Hemp**, **Oversight**, **Packaging**, **Pause**, **Schedule**, **Calendar**, **Limits**.
 
@@ -36,7 +36,8 @@ Article key: **Friction**, **Hemp**, **Oversight**, **Packaging**, **Pause**, **
 | [FDA consumer update on delta-8 THC](https://www.fda.gov/consumers/consumer-updates/5-things-know-about-delta-8-tetrahydrocannabinol-delta-8-thc) | Hemp | Agency safety warning, not a universal legal classification of every delta-8 product. |
 | [New Jersey P.L. 2026, chapter 13, PDF](https://pub.njleg.state.nj.us/Bills/2026/PL26/13_.PDF) | Hemp, Calendar | Enacted state transition; November boundary is relevant to hemp beverages. Primary state law. |
 | [New Jersey CRC intoxicating-hemp FAQ](https://nj.gov/cannabis/resources/faqs/intoxicating-hemp/) | Calendar | Regulator explanation; its November 14 language does not erase the statute's November 13 wording. Clarify an edge-date transaction with the regulator. |
-| [New Jersey S4635, introduced text](https://pub.njleg.state.nj.us/Bills/2026/S5000/4635_I1.HTM) | Hemp, Calendar | Proposed replacement of fixed November dates with a federal compliance date no earlier than December 11. **Not enacted in this review.** A5604 is its Assembly companion but is not separately linked in the articles. |
+| [New Jersey S4635, introduced text](https://pub.njleg.state.nj.us/Bills/2026/S5000/4635_I1.HTM) | Hemp, Calendar | Proposed replacement of fixed November dates with a federal compliance date no earlier than December 11. **Not enacted in this review.** |
+| [New Jersey A5604, October 15 Assembly committee statement](https://pub.njleg.state.nj.us/Bills/2026/A6000/5604_S1.PDF) | Hemp, Calendar | Companion bill reported favorably, not enacted. Its summary uses November 13 for the federal first stage; use the federal statutes above for the actual November 12 date. |
 | [New Jersey October 15 legislative digest, PDF](https://pub.njleg.gov/publications/legislative-digest/101526.pdf) | Hemp, Calendar | Official record of S4635 and A5604 committee reports. **Committee progress does not amend the existing law.** The bill analysis's federal-date shorthand is not used as authority for the federal timetable. |
 
 ## State operations, packaging, safety, and research
