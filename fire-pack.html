@@ -72,12 +72,13 @@
             <div class="hero-grid container">
                 <div class="hero-copy">
                     <p class="eyebrow">The Fire Pack <span>·</span> 68th Joint Insights</p>
+                    <p class="hero-plain">Something feels off? I’ll find out what the record actually shows.</p>
                     <h1>When something is already hot, don't guess where the smoke is coming from.</h1>
                     <p class="hero-lede">A claim changed. A requirement moved. A label went out. A product shifted. A record doesn't say what somebody remembers it saying.</p>
                     <p class="hero-support">Sometimes the problem is obvious. Sometimes the problem is that nobody can tell you whether there is a problem at all. That's where The Fire Pack comes in: a focused regulatory investigation built around one defined point of concern.</p>
                     <div class="hero-actions">
                         <a class="button button-primary" href="#fire-pack">See how the Fire Pack works</a>
-                        <a class="button button-quiet" href="#contact">Bring the question</a>
+                        <a class="button button-quiet" href="#pricing">$50–$300 introductory range</a>
                     </div>
                     <div class="hero-facts fire-pack-zap" aria-label="Offer details" aria-live="polite">
                         <span class="fire-pack-zap-word">One defined question</span>
@@ -186,6 +187,43 @@
                         <p>The evidence establishes a practical vulnerability. The finding shows what supports it and what needs attention next.</p>
                     </article>
                 </div>
+
+                <div id="pricing" class="price-panel">
+                    <div class="price-label">
+                        <span>Introductory range</span>
+                        <strong>$50–$300</strong>
+                    </div>
+                    <div class="price-copy">
+                        <h3>One burning question—not a blanket audit.</h3>
+                        <p>The first 60-minute conversation is free. Pricing scales with the scope and complexity of the concern. You get a scoped quote before any work starts, and the engagement stays on the agreed question; it does not silently expand into a review of the entire operation.</p>
+                    </div>
+                    <a class="button button-dark" href="#contact">Open The Fire Pack</a>
+                </div>
+                <div class="next-steps" aria-labelledby="next-steps-title">
+                    <div class="next-steps-heading">
+                        <p class="eyebrow">What comes next</p>
+                        <h3 id="next-steps-title">The finding is the end of the Fire Pack. It doesn't have to be the end of the work.</h3>
+                        <p>If the finding shows work worth doing, there are three ways to keep going. Each one is optional. Each one is scoped and quoted before any work.</p>
+                    </div>
+                    <div class="next-steps-grid">
+                        <article class="next-step-card">
+                            <span class="outcome-code">If proof is thin</span>
+                            <h4>Documentation buildout</h4>
+                            <p>The work is right but the proof is thin. I help build the SOPs and record templates so the record can carry the work without a guided tour.</p>
+                        </article>
+                        <article class="next-step-card">
+                            <span class="outcome-code">If the heat is real</span>
+                            <h4>Scoped correction support</h4>
+                            <p>A real gap showed up. I help fix that one gap—the narrowest useful correction—not a blanket overhaul.</p>
+                        </article>
+                        <article class="next-step-card">
+                            <span class="outcome-code">Any finding</span>
+                            <h4>Recurring review</h4>
+                            <p>Rules move. Records drift. An optional repeat review keeps checking what holds, on a schedule that fits the operation.</p>
+                        </article>
+                    </div>
+                    <p class="next-steps-note">Scoped and quoted before any work. Nothing starts until you say yes.</p>
+                </div>
             </div>
         </section>
 
@@ -270,10 +308,17 @@
                     <p class="eyebrow">Open The Fire Pack</p>
                     <h2>Bring the question.</h2>
                     <p>We’ll begin with the concern, define the boundary of the examination, and identify what evidence can actually answer it. You do not need to arrive with a diagnosis.</p>
+                    <div class="book-call">
+                        <p class="book-call-label">Free 60-minute call</p>
+                        <!-- BOOKING LINK: when a scheduler exists (Calendly, Google Calendar booking page, etc.),
+                             swap this mailto href for the booking URL and change the button text to "Book your free 60-minute call". -->
+                        <a class="button button-primary book-call-button" href="mailto:clearlineKris@gmail.com?subject=Fire%20Pack%3A%20book%20my%20free%2060-minute%20call">Email me to book your free 60-minute call</a>
+                        <p class="book-call-email">Or write directly: <a href="mailto:clearlineKris@gmail.com">clearlineKris@gmail.com</a></p>
+                    </div>
                     <p class="contact-fallback">Prefer to connect directly? Find <a href="https://github.com/clearlineKris">@clearlineKris on GitHub</a>.</p>
                 </div>
 
-                <form id="contact-form" class="contact-form" method="post" action="https://script.google.com/macros/s/AKfycbwrKLuu1dvDwzpD72y1BSEBpMNzIXoPlrs9Q8HszOQwFwv7Www8cMSUBEzuFg2sOIiA/exec">
+                <form id="contact-form" class="contact-form" data-success-message="Request received. I’ll reply by email to set up your free 60-minute call. If you don’t hear back, email clearlineKris@gmail.com." method="post" action="https://script.google.com/macros/s/AKfycbwrKLuu1dvDwzpD72y1BSEBpMNzIXoPlrs9Q8HszOQwFwv7Www8cMSUBEzuFg2sOIiA/exec">
                     <input type="hidden" name="service" value="The Fire Pack — One Burning Heat Seeker">
                     <div class="form-honeypot" aria-hidden="true">
                         <label for="hp">Leave this field empty</label>
@@ -292,6 +337,91 @@
                     <div class="form-group">
                         <label for="company">Company or operation <span>(optional)</span></label>
                         <input type="text" id="company" name="company" autocomplete="organization">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="state">State <span>(optional)</span></label>
+                            <select id="state" name="state">
+                                <option value="">Select a state</option>
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>District of Columbia</option>
+                                <option>Florida</option>
+                                <option>Georgia</option>
+                                <option>Hawaii</option>
+                                <option>Idaho</option>
+                                <option>Illinois</option>
+                                <option>Indiana</option>
+                                <option>Iowa</option>
+                                <option>Kansas</option>
+                                <option>Kentucky</option>
+                                <option>Louisiana</option>
+                                <option>Maine</option>
+                                <option>Maryland</option>
+                                <option>Massachusetts</option>
+                                <option>Michigan</option>
+                                <option>Minnesota</option>
+                                <option>Mississippi</option>
+                                <option>Missouri</option>
+                                <option>Montana</option>
+                                <option>Nebraska</option>
+                                <option>Nevada</option>
+                                <option>New Hampshire</option>
+                                <option>New Jersey</option>
+                                <option>New Mexico</option>
+                                <option>New York</option>
+                                <option>North Carolina</option>
+                                <option>North Dakota</option>
+                                <option>Ohio</option>
+                                <option>Oklahoma</option>
+                                <option>Oregon</option>
+                                <option>Pennsylvania</option>
+                                <option>Rhode Island</option>
+                                <option>South Carolina</option>
+                                <option>South Dakota</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Utah</option>
+                                <option>Vermont</option>
+                                <option>Virginia</option>
+                                <option>Washington</option>
+                                <option>West Virginia</option>
+                                <option>Wisconsin</option>
+                                <option>Wyoming</option>
+                                <option>Other / outside the US</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="license-type">License type <span>(optional)</span></label>
+                            <select id="license-type" name="license_type">
+                                <option value="">Select a license type</option>
+                                <option>Cultivation</option>
+                                <option>Manufacturing / Processing</option>
+                                <option>Retail / Dispensary</option>
+                                <option>Distribution / Transport</option>
+                                <option>Testing lab</option>
+                                <option>Vertically integrated</option>
+                                <option>Hemp / CBD</option>
+                                <option>Not licensed yet</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">How soon do you need an answer? <span>(optional)</span></label>
+                        <select id="urgency" name="urgency">
+                            <option value="">Select a timeframe</option>
+                                <option>Exploring</option>
+                                <option>This month</option>
+                                <option>This week</option>
+                                <option>Urgent / under review</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="record-type">What is closest to the concern?</label>
@@ -329,7 +459,7 @@
             </div>
             <div class="footer-meta">
                 <p>Services are provided by Kristopher Gracia, sole proprietor. ClearLine is a methodology and product family used in the practice. I provide operational and regulatory-intelligence support, not legal advice. Outcomes depend on jurisdiction, facts, and regulator discretion.</p>
-                <p>&copy; 2026 Kristopher Gracia · <a href="https://github.com/clearlineKris">GitHub</a></p>
+                <p>&copy; 2026 Kristopher Gracia · <a href="mailto:clearlineKris@gmail.com">clearlineKris@gmail.com</a> · <a href="https://github.com/clearlineKris">GitHub</a></p>
             </div>
         </div>
     </footer>

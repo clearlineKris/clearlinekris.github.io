@@ -1481,3 +1481,108 @@ body .form-group textarea:focus {
     border-color: var(--green);
     box-shadow: 0 0 0 3px rgba(255, 111, 60, 0.10);
 }
+
+
+/* Funnel fixes: plain-language opener, email booking CTA, and paid next steps. */
+.hero-plain {
+    margin: 0 0 14px;
+    color: var(--white);
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.book-call {
+    margin-top: 28px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.book-call-label {
+    margin: 0 0 12px;
+    color: var(--text-muted);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.book-call-button {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+}
+
+.book-call-email {
+    margin: 12px 0 0;
+    font-size: 0.86rem;
+    overflow-wrap: anywhere;
+}
+
+.book-call-email a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.next-steps {
+    margin-top: 48px;
+}
+
+.next-steps-heading {
+    max-width: 760px;
+    margin-bottom: 24px;
+}
+
+.next-steps-heading h3 {
+    margin: 0 0 10px;
+    color: var(--white);
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+    letter-spacing: -0.03em;
+}
+
+.next-steps-heading > p:last-child {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.next-step-card {
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.next-step-card h4 {
+    margin: 0 0 10px;
+    color: var(--white);
+    font-size: 1.15rem;
+}
+
+.next-step-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.next-steps-note {
+    margin: 18px 0 0;
+    color: var(--text-muted);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
