@@ -12,7 +12,7 @@ A public-facing regulatory signal desk for cannabis operators.
 - Tracks meaningful regulatory change
 - Flags enforcement drift and operational contradictions
 - Explains why a change matters in plain language
-- Routes deeper questions into RegMatrix and other ClearLine work
+- Routes deeper questions into RegMatrix and other 68th Lat & Lit work
 
 ## The Point
 
