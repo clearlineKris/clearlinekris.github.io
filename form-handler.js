@@ -1,8 +1,9 @@
 /**
  * form-handler.js
  *
- * Sends The Double Blind intake form to the ClearLine Google Apps Script
- * web app. The form action in index.html uses the same endpoint as a
+ * Sends the site's intake forms (homepage contact, The Fresh Freeze on
+ * double-blind.html, and The Fire Pack on fire-pack.html) to the 68th Lat & Lit
+ * Google Apps Script web app. Each form's action uses the same endpoint as a
  * no-JavaScript fallback.
  */
 (function () {
