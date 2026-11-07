@@ -9,7 +9,8 @@
  *   5. Copy the production /exec URL into form-handler.js and index.html.
  *
  * The first submission creates a "Leads" tab with these columns:
- * Timestamp, Name, Email, Company, Service, Record Type, Message.
+ * Timestamp, Name, Email, Company, Service, Record Type, Message,
+ * State, License Type, Urgency (optional fields from the diagnostic pages).
  *
  * If a Leads tab already uses the previous schema, this script preserves its
  * existing columns and appends any missing ClearLine fields to the right.
@@ -25,7 +26,10 @@ var EXPECTED_HEADERS = [
   'Company',
   'Service',
   'Record Type',
-  'Message'
+  'Message',
+  'State',
+  'License Type',
+  'Urgency'
 ];
 
 function sanitizeCell(value) {
@@ -138,7 +142,10 @@ function appendSubmission(sheet, headers, p) {
     'Company': p.company || '',
     'Service': p.service || 'The Double Blind',
     'Record Type': p.record_type || '',
-    'Message': p.message || ''
+    'Message': p.message || '',
+    'State': p.state || '',
+    'License Type': p.license_type || '',
+    'Urgency': p.urgency || ''
   };
 
   var row = headers.map(function (header) {

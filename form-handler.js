@@ -15,6 +15,7 @@
 
   var submitBtn = form.querySelector('button[type="submit"]');
   var statusEl  = document.getElementById('form-status');
+  var CONTACT_EMAIL = 'clearlineKris@gmail.com';
   var submitLabel = submitBtn ? submitBtn.textContent : 'Request the opening conversation';
 
   // Keep the native form fallback aligned with the JavaScript endpoint.
@@ -48,11 +49,14 @@
       body: params.toString()
     })
       .then(function () {
-        showStatus('success', 'Request received \u2014 I\u2019ll be in touch soon.');
+        // The no-cors post cannot confirm receipt, so say what happens next and
+        // give the email as a fallback. Pages can override via data-success-message.
+        showStatus('success', form.getAttribute('data-success-message') ||
+          'Request received. I\u2019ll reply by email. If you don\u2019t hear back, email ' + CONTACT_EMAIL + '.');
         form.reset();
       })
       .catch(function () {
-        showStatus('error', 'Something went wrong. Please try again or reach out through GitHub.');
+        showStatus('error', 'Something went wrong. Please try again, or email ' + CONTACT_EMAIL + ' directly.');
       })
       .finally(function () {
         if (submitBtn) {
