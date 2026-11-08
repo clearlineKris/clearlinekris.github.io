@@ -122,9 +122,9 @@
     line-height: 1.12;
   }
 
-  .nav,
-  .portfolio-nav,
-  .bio-nav {
+  body .nav,
+  body .portfolio-nav,
+  body .bio-nav {
     gap: 10px;
   }
 
