@@ -1,6 +1,6 @@
 ---
 title: What I Do
-description: ClearLine work across RegMatrix, The Clear Lines, AI and automation, and operational compliance systems.
+description: 68th Lat & Lit work across RegMatrix, The Clear Lines, AI and automation, and operational compliance systems.
 ---
 
 # What I Do

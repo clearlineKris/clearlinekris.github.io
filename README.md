@@ -1,10 +1,10 @@
-# ClearLine
+# 68th Lat & Lit
 
-The public site for ClearLine and its 68th Joint Insights work.
+The public site for 68th Lat & Lit and its 68th Joint Insights work. (Formerly ClearLine; The Clear Lines keeps the origin in its name.)
 
 **Live site:** [clearlinekris.github.io](https://clearlinekris.github.io)
 
-ClearLine helps cannabis teams make sense of rules, records, and the gray area between them. The homepage is intentionally simple; deeper detail lives inside the individual project pages.
+68th Lat & Lit helps cannabis teams make sense of rules, records, and the gray area between them. The homepage is intentionally simple; deeper detail lives inside the individual project pages.
 
 ## Repository map
 
@@ -34,6 +34,6 @@ Do not collect METRC exports, invoices, or other sensitive operating records thr
 
 ## Positioning
 
-ClearLine provides operational and regulatory-intelligence support, not legal advice. Outcomes depend on jurisdiction, facts, and regulator discretion.
+68th Lat & Lit provides operational and regulatory-intelligence support, not legal advice. Outcomes depend on jurisdiction, facts, and regulator discretion.
 
 [Connect with @clearlineKris](https://github.com/clearlineKris)
