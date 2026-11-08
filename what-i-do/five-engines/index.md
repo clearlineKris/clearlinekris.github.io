@@ -1,8 +1,10 @@
 ---
-title: Five Engines
-description: The canonical Five Engines page now lives at /five-engines/.
+title: Five Engines — Legacy Overview
+description: The former Five Engines overview is not published at this address. The Five Vectors are a separate methodology.
 ---
 
-# Five Engines
+# Five Engines — Legacy Link
 
-The current Five Engines page is available at [clearlineKris.github.io/five-engines/](/five-engines/).
+The Five Engines and **The Five Vectors are different parts of the work**. The former Engines overview is not currently published at `/five-engines/`.
+
+For available public information, explore [The Five Vectors](/five-vectors/), [RegMatrix](/ir/), or [68th Lat & Lit](/).
