@@ -23,6 +23,6 @@ Guardrailed AI agents and automation for compliance workflows — grounded in th
 
 - [RegMatrix](../regmatrix/index.md) — compliance intelligence backbone
 - [The Clear Lines](../clear-lines/index.md) — signal layer
-- [Five Engines](../five-engines/index.md) — operational products
+- [Five Engines (legacy overview)](/what-i-do/five-engines/) — operational products
 
 [← Back to What I Do](../index.md)
