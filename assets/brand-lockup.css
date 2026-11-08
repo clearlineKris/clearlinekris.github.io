@@ -1,4 +1,4 @@
-/* clearlineKris shared navigation lockup: ordered diamonds place the page color closest to the wordmark. */
+/* 68th Lat & Lit shared navigation lockup: ordered diamonds place the page color closest to the wordmark. */
 .brand-lockup {
   --brand-primary: #b9ff00;
   display: inline-flex !important;
@@ -107,6 +107,25 @@
   .brand-lockup {
     gap: 8px !important;
     font-size: 1rem;
+  }
+
+  /* Let the longer 68th wordmark wrap instead of pushing the contact CTA out. */
+  .brand-lockup.brand,
+  .brand-lockup.portfolio-brand {
+    flex: 0 1 auto;
+  }
+
+  .brand-lockup .brand-wordmark {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-width: 11ch;
+    line-height: 1.12;
+  }
+
+  .nav,
+  .portfolio-nav,
+  .bio-nav {
+    gap: 10px;
   }
 
   .brand-diamond {
