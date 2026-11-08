@@ -981,6 +981,13 @@ svg {
     color: var(--green-bright);
 }
 
+/* The intake uses an opaque response; an attempted send is not verified success. */
+.form-status--notice {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--line);
+    color: var(--text);
+}
+
 .form-status--error {
     background: rgba(255, 158, 116, 0.12);
     color: #ffc1a6;
