@@ -26,7 +26,7 @@
     event.preventDefault();
 
     if (!isConfiguredAppsScriptUrl(SCRIPT_URL)) {
-      showStatus('error', 'The form is not configured yet. Please reach out through GitHub.');
+      showStatus('error', 'The form is not configured yet. Please email ' + CONTACT_EMAIL + ' directly.');
       return;
     }
 
@@ -41,8 +41,8 @@
       submitBtn.textContent = 'Sending\u2026';
     }
 
-    // Apps Script does not return CORS headers, so the browser cannot inspect
-    // the response. A resolved fetch confirms that the request was sent.
+    // Apps Script does not return CORS headers. The browser cannot inspect
+    // its response or confirm that the lead was saved.
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
@@ -50,11 +50,10 @@
       body: params.toString()
     })
       .then(function () {
-        // The no-cors post cannot confirm receipt, so say what happens next and
-        // give the email as a fallback. Pages can override via data-success-message.
-        showStatus('success', form.getAttribute('data-success-message') ||
-          'Request received. I\u2019ll reply by email. If you don\u2019t hear back, email ' + CONTACT_EMAIL + '.');
-        form.reset();
+        // An opaque response is NOT proof of receipt. Keep the fields in place
+        // so the visitor can copy the message or contact Kris directly.
+        showStatus('notice', form.getAttribute('data-unconfirmed-message') ||
+          'We tried to send your request, but this page cannot confirm delivery. If I don\u2019t reply, email ' + CONTACT_EMAIL + ' directly.');
       })
       .catch(function () {
         showStatus('error', 'Something went wrong. Please try again, or email ' + CONTACT_EMAIL + ' directly.');
