@@ -23,7 +23,7 @@ The Clear Lines is not here to create more noise. It is here to make movement ea
 ## Related
 
 - [RegMatrix](../regmatrix/index.md) — deeper state and rule context
-- [Five Engines](../five-engines/index.md) — operational concepts
+- [Five Engines (legacy overview)](/what-i-do/five-engines/) — operational concepts
 - [Open The Clear Lines](../../the-clear-lines/index.html) — regulatory signal desk
 
 [← Back to What I Do](../index.md)
