@@ -21,7 +21,7 @@ The public site for 68th Lat & Lit and its 68th Joint Insights work. (Formerly C
 
 The homepage, Fresh Freeze (`double-blind.html`), and Fire Pack (`fire-pack.html`) forms send URL-encoded submissions to a Google Apps Script web app. `form-handler.js` and each form `action` use the same endpoint, so the form still submits when JavaScript is unavailable.
 
-`google-apps-script/Code.gs` is the replacement writer for the private Leads spreadsheet `1ftivFZXkkVN346FdEGCvWMvZ2Cu_ynuFZZUz38TbOO8`. Deploy it from that spreadsheet's bound Apps Script editor using `google-apps-script/DEPLOYMENT.md`. The live site endpoint stays on the current web app until the deployed `/exec` URL from that deployment is available.
+`google-apps-script/Code.gs` writes leads to the private spreadsheet `1lci_GiNle5KHMICP76THihdAwTpY93vmF9g5U7cu_hk`. The forms post to `https://script.google.com/macros/s/AKfycbym6aP7bGMbJ_X_Yt2hq1Tt6Qg6RSmr5VLzRg9k99205Xj08V6jcAj7z-JK--cEj_ud/exec`. Deploy script edits from that spreadsheet's bound Apps Script editor using `google-apps-script/DEPLOYMENT.md`.
 
 ### Field mapping
 

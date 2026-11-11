@@ -1,12 +1,12 @@
 # Deploy the intake script
 
-This replaces the unverified intake script with a writer bound to the private spreadsheet `1ftivFZXkkVN346FdEGCvWMvZ2Cu_ynuFZZUz38TbOO8`, tab `Leads`. The website still posts to the existing web app. After this deployment succeeds, send back the new `/exec` URL. A follow-up will point the site at it.
+This writer is bound to the private spreadsheet `1lci_GiNle5KHMICP76THihdAwTpY93vmF9g5U7cu_hk`, tab `Leads`. The homepage, Fresh Freeze, and Fire Pack forms post to the deployed web app `https://script.google.com/macros/s/AKfycbym6aP7bGMbJ_X_Yt2hq1Tt6Qg6RSmr5VLzRg9k99205Xj08V6jcAj7z-JK--cEj_ud/exec`.
 
 The spreadsheet ID is an address, not a password. Leave the Sheet shared only with the owning account. Do not put Google credentials, an API key, or a service-account file in this repository.
 
 ## Before you deploy
 
-1. Open the private spreadsheet `1ftivFZXkkVN346FdEGCvWMvZ2Cu_ynuFZZUz38TbOO8`.
+1. Open the private spreadsheet `1lci_GiNle5KHMICP76THihdAwTpY93vmF9g5U7cu_hk`.
 2. Confirm the tab name is exactly `Leads`.
 3. Confirm row 1 is exactly these ten headers, in this order:
 
@@ -28,9 +28,8 @@ The spreadsheet ID is an address, not a password. Leave the Sheet shared only wi
 1. **Deploy → New deployment**. Choose the gear icon, then **Web app**.
 2. Execute as: **Me** (the account that can edit this private Sheet).
 3. Who has access: **Anyone**. If the dialog still says "Anyone, even anonymous", choose that. Stop if the only public option is limited to a company domain; the site's visitors would not be able to submit.
-4. Deploy and authorize. Copy the web app URL that ends in `/exec`.
-5. Use that versioned `/exec` URL later. The `/dev` URL is only for the Apps Script tester.
-6. Send the `/exec` URL back for the site update. Leave `form-handler.js`, `index.html`, `double-blind.html`, and `fire-pack.html` on the current endpoint until that update.
+4. Deploy and authorize. The site already uses `https://script.google.com/macros/s/AKfycbym6aP7bGMbJ_X_Yt2hq1Tt6Qg6RSmr5VLzRg9k99205Xj08V6jcAj7z-JK--cEj_ud/exec`.
+5. Publish later edits as a new version of that same deployment so this `/exec` URL stays in place. The `/dev` URL is only for the Apps Script tester.
 
 To publish a later edit of `Code.gs`, open **Deploy → Manage deployments**, edit this web app, set **Version** to **New version**, and deploy. That keeps the same `/exec` URL.
 

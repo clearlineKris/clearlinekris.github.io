@@ -9,8 +9,8 @@ const vm = require('node:vm');
 const ROOT = path.join(__dirname, '..');
 const SOURCE_PATH = path.join(__dirname, 'Code.gs');
 const source = fs.readFileSync(SOURCE_PATH, 'utf8');
-const SPREADSHEET_ID = '1ftivFZXkkVN346FdEGCvWMvZ2Cu_ynuFZZUz38TbOO8';
-const LIVE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwrKLuu1dvDwzpD72y1BSEBpMNzIXoPlrs9Q8HszOQwFwv7Www8cMSUBEzuFg2sOIiA/exec';
+const SPREADSHEET_ID = '1lci_GiNle5KHMICP76THihdAwTpY93vmF9g5U7cu_hk';
+const LIVE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbym6aP7bGMbJ_X_Yt2hq1Tt6Qg6RSmr5VLzRg9k99205Xj08V6jcAj7z-JK--cEj_ud/exec';
 const HEADERS = [
   'Timestamp',
   'Name',
@@ -250,7 +250,7 @@ test('source is bound to the new spreadsheet and has no side channels', () => {
   });
 });
 
-test('site forms still post to the existing endpoint with a shared field map', () => {
+test('site forms post to the deployed intake endpoint with a shared field map', () => {
   const handler = fs.readFileSync(path.join(ROOT, 'form-handler.js'), 'utf8');
   assert.equal(handler.includes(LIVE_ENDPOINT), true);
   assert.equal(handler.split(LIVE_ENDPOINT).length - 1, 1);

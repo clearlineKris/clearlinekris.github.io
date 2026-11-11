@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwrKLuu1dvDwzpD72y1BSEBpMNzIXoPlrs9Q8HszOQwFwv7Www8cMSUBEzuFg2sOIiA/exec';
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbym6aP7bGMbJ_X_Yt2hq1Tt6Qg6RSmr5VLzRg9k99205Xj08V6jcAj7z-JK--cEj_ud/exec';
 
   var form = document.getElementById('contact-form');
   if (!form) return;

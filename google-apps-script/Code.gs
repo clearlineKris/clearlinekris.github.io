@@ -18,7 +18,7 @@
  */
 'use strict';
 
-var SPREADSHEET_ID = '1ftivFZXkkVN346FdEGCvWMvZ2Cu_ynuFZZUz38TbOO8';
+var SPREADSHEET_ID = '1lci_GiNle5KHMICP76THihdAwTpY93vmF9g5U7cu_hk';
 var SHEET_NAME = 'Leads';
 var MAX_PER_WINDOW = 5;
 var WINDOW_SECONDS = 3600;
